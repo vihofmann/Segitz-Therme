@@ -1,17 +1,140 @@
+/* changed by Viktoria */
+.logo {
+  height: 2cm; 
+  width: auto; 
+}
 .slider-banner .item-kv-1 {
-  background: url(images/current/background-banner.jpeg) top center no-repeat; /* changed by Viktoria */
+  background: url(images/current/background-banner.png) top center no-repeat; 
+}
+.doc-section {
+  background-color: #c3ecf2;
+  padding-top: 4em;
+  padding-bottom: 5em;
+  text-align: center;
+}
+.sticky {
+  width: 70%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+.main-nav nav {
+  margin-left: 15px;
+ backdrop-filter: blur(4.6px);
+  -webkit-backdrop-filter: blur(4.6px);
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.1); /* white with 30% opacity */
+}
+.main-nav nav a {
+  display: block;
+  padding: 1.5rem 1rem;
+  color: #1d425b;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  
 }
 
+.banner-1-bg {
+  background: url(images/current/mid-img.png) center no-repeat fixed !important;
+}
+.main-footer {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  color: #434445;
+  background-color:  #c3ecf2;
+}
+.main-footer h3 {
+  color: #4a90e2 !important; 
+}
+
+.item img {
+  max-height: 200px;
+  padding: 1cm 0;
+}
+
+.fill-banner {
+  background-color: #f0f0f0;
+}
+
+.banner-1-bg {
+  background-image: url('images/current/banner.jpeg');
+}
+
+.kv  .doc-section .btn, .main-footer .submit-btn {
+  background-color: #0066cc;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.kv .btn:hover, .doc-section .btn:hover, .main-footer .submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.goTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ddd;
+  color: #333;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: none;
+}
+
+.goTop.active {
+  display: block;
+}
+body {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  background-color:  #c3ecf2;
+}
+.main-footer .sns a {
+  display: inline-block;
+  color: #072a4b;
+  padding: 10px 12px;
+}
+
+.main-footer .copyright,
+.main-footer .copyright a {
+  color: #777777;
+  padding: 100px 0 0 20px;
+}
+.submit-btn {
+  padding: 15px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: #fff;
+  display: block;
+  border: 0;
+  font-weight: 700;
+  box-shadow: 0 0 14px -7px #85ffeb;
+  background-color: #1a7f8e;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+/* till here changed by Viktoria */
 * {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-body {
-  font-family: "Lato", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  background-color: #e7fffb;
-}
+
 a {
   text-decoration: none;
   transition: all 0.3s ease-in-out;
@@ -272,13 +395,7 @@ a {
   flex-wrap: wrap;
   align-items: center;
 }
-.contact .contact-icon i {
-  font-size: 20px;
-  padding: 13px 16px;
-  background-color: #ffffff40;
-  border-radius: 50%;
-  margin: 0 10px;
-}
+
 .contact .contact-main {
   width: auto;
 }
@@ -306,39 +423,10 @@ a {
 .main-nav {
   margin: auto;
 }
-.sticky {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 1;
-}
-.main-nav.sticky {
-  background: rgba(243, 157, 182, 0.15);
-  backdrop-filter: blur(4.6px);
-  -webkit-backdrop-filter: blur(4.6px);
-}
-.main-nav nav {
-  margin-left: 15px;
-  margin-right: 15px;
-  background: rgba(243, 157, 182, 0.15);
-  backdrop-filter: blur(4.6px);
-  -webkit-backdrop-filter: blur(4.6px);
-  display: flex;
-  justify-content: space-between;
-}
-.main-nav nav a {
-  display: block;
-  padding: 1.5rem 1rem;
-  color: #fff;
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-.main-nav nav a:hover,
-.main-nav nav a:focus,
-.main-nav nav a.active {
-  background-color: #efa6baa6;
-}
+
+
+
+
 .main-header .contact:first-of-type .contact-main {
   width: 120px;
 }
@@ -380,8 +468,7 @@ a {
 
 .slider-banner .item-kv-txt {
   display: block;
-  padding-top: 5em;
-  padding-bottom: 5em;
+  padding-top: 5em 0;
 }
 .slider-banner .slider-dot {
   position: absolute;
@@ -389,12 +476,7 @@ a {
   bottom: 50px;
   width: 100%;
 }
-.doc-section {
-  background-color: #fee3ec;
-  padding-top: 4em;
-  padding-bottom: 5em;
-  text-align: center;
-}
+
 .doc-section h2 {
   color: #272727;
   font-size: 3rem;
@@ -430,15 +512,7 @@ a {
   left: 0;
   right: 0;
 }
-.doc-section .icon-pills:after {
-  background-image: url(images/person-1.png);
-}
-.doc-section .icon-doctor:after {
-  background-image: url(images/person-2.png);
-}
-.doc-section .icon-car:after {
-  background-image: url(images/person-3.png);
-}
+
 @media screen and (min-width: 768) {
   .doc-section {
     text-align: left;
@@ -449,9 +523,7 @@ a {
   padding-top: 5em;
   padding-bottom: 5em;
 }
-.banner-1-bg {
-  background: url(images/mid-img.jpg) center no-repeat fixed;
-}
+
 .banner-2-bg {
   background: url(images/bottom-img.jpg) center no-repeat fixed;
 }
@@ -570,14 +642,7 @@ a {
 .img-hover:hover img {
   transform: scale(1.1);
 }
-.main-footer {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  padding-top: 3em;
-  padding-bottom: 3em;
-  color: #fdfdfd;
-  background-color: #f98cac;
-}
+
 .main-footer h3 {
   color: #fff;
   font-size: 1.2rem;
@@ -613,11 +678,7 @@ a {
   display: inline;
   margin: 0 5px;
 }
-.main-footer .sns a {
-  display: inline-block;
-  color: #fee3ec;
-  padding: 10px 12px;
-}
+
 .main-footer .icon-fb a {
   padding: 10px 14px;
 }
@@ -627,11 +688,7 @@ a {
 .main-footer .sns a:hover {
   color: #fff;
 }
-.main-footer .copyright,
-.main-footer .copyright a {
-  color: #afd7eb;
-  padding-top: 100px;
-}
+
 .form-group {
   display: flex;
 }
@@ -660,23 +717,7 @@ a {
   background-color: #333;
   border: transparent;
 }
-.submit-btn {
-  padding: 15px 30px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: #fff;
-  display: block;
-  border: 0;
-  font-weight: 700;
-  box-shadow: 0 0 14px -7px #85ffeb;
-  background-color: #abe7dd;
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
+
 .submit-btn:hover {
   background-position: right center;
   color: #fff;
