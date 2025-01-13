@@ -6,7 +6,7 @@
 body {
   font-family: "Lato", Helvetica, Arial, sans-serif;
   font-size: 16px;
-  background-color: #fee3ec;
+  background-color: #e7fffb;
 }
 a {
   text-decoration: none;
@@ -40,12 +40,12 @@ a {
   font-family: inherit;
   font-weight: 500;
   color: #000;
-  background-color: #f8d0e0;
+  background-color: #e7fffb;
 }
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  background-color: #f8d0e0a4;
+  background-color: #adefe4;
 }
 .btn:active {
   transform: translateY(-1px);
@@ -62,7 +62,7 @@ a {
   left: 0;
   z-index: -1;
   transition: all 0.4s;
-  background-color: #f8d0e0;
+  background-color: #e7fffb;
 }
 .btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
@@ -668,8 +668,8 @@ a {
   display: block;
   border: 0;
   font-weight: 700;
-  box-shadow: 0 0 14px -7px #ee6cff;
-  background-color: #ff709b;
+  box-shadow: 0 0 14px -7px #85ffeb;
+  background-color: #abe7dd;
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none;
