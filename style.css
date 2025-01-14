@@ -1,6 +1,46 @@
 /* changed by Viktoria */
- .slider-banner.sauna-banner {
+ul li {
+  
+  margin-left: 50px;
+  padding: 20px 50px 20px 0;
+  font-size: 0.9rem;
+  color: #434445;
+  line-height: 1.5;
+}
+
+
+
+.dresscode {
+  margin: 10px 0px 20px 215px ;
+}
+
+.row .btn {
+  margin: 20px;
+}
+
+.slider-banner .sauna-banner {
   background: url(images/current/sauna-banner.png) top center no-repeat;
+}
+.expandable-section {
+  display: none;
+  padding: 20px;
+  margin: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px; /* Ovalish rectangle */
+  border: 2px solid #ccc;
+}
+
+.toggle-icon {
+  float: right;
+  font-size: 20px;
+}
+.sauna-map {
+  background: url(images/current/map_sauna.png) center center no-repeat;
+  background-size: contain;
+  height: 800px;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 2cm;
 }
 
 .logo {
