@@ -1,11 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop und Gutscheine</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segitz Therme</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Shop und Gutscheine1</h1>
+  <div class="main-nav">
+    <div class="container">
+      <nav class ="sticky">
+        <img src="images/current/logo.jpeg" alt="Segitz Therme Logo" class="logo"> 
+        <a href="#" class="active">Therme</a>
+        <a href="#" class="active">Sauna</a>
+        <a href="#" class="active">Wellness</a>
+        <a href="ShopGutscheineSeite.html" class="active">Shop & Gutscheine</a>
+        <a href="#" class="active">Info</a>
+      </nav>
+    </div>
+  </div>
+  <section class="kv">
+    <div class="slider-banner">
+      <div class="slider-container">
+        <div class="item item-kv-1 active">
+          <div class="container">
+            <div class="row">
+              <div class="item-kv-txt col-md-6 col-xl-4">
+                <h2>Willkommen bei der Segitz Therme!</h2>
+                <h3>Entfliehen Sie dem Alltag in der Segitz Therme, Ihrem Ort der Entspannung.</h3>
+                <a href="#" class="btn">Mehr über uns</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="doc-section">
+    <div class="container">
+      <div class="row">
+        <h2 class="col-12">Heiße Angebote</h2>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6 col-xl-4 item">
+          <img src="images/current/massage.jpeg" alt="Massage Booking" class="img">
+          <h3>Massagebuchung leicht gemacht!</h3>
+          <p>Jetzt können Sie Ihre Massage ganz einfach über unser Online-Formular reservieren. 
+            <br><a href="link-zur-massage-seite">Erfahren Sie mehr...</a>
+          </p>
+        </div>
+        <div class="col-12 col-md-6 col-xl-4 item">
+          <img src="images/current/azubi.jpeg" alt="Azubi Angebote" class="img">
+          <h3>Azubi Angebote</h3>
+          <p>Entdecken Sie unsere speziellen Angebote für Auszubildende und junge Fachkräfte.
+            <br><a href="link-zur-massage-seite">Erfahren Sie mehr...</a>
+          </p>
+        </div>
+        <div class="col-12 col-md-6 col-xl-4 item">
+          <img src="images/current/family.jpeg" alt="Family Wellness" class="img">
+          <h3>Familien-Wellness-Workshop</h3>
+          <p>Nehmen Sie an einem exklusiven Workshop teil, der Tipps für gemeinsame Entspannungsübungen und Aktivitäten bietet, um das Wohlbefinden der ganzen Familie zu fördern. 
+            <br><a href="link-zum-angebot">Erfahren Sie mehr...</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="fill-banner banner-1-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-10 col-xl-5">
+          <h2>Irgendwelche Fragen?</h2>
+          <p>Geben Sie Ihre E-Mail-Adresse ein, um aktuelle Angebote, exklusive Wellness-Tipps und Neuigkeiten rund um die Segitz Therme direkt in Ihr Postfach zu erhalten.</p>
+          <div class="form-group">
+            <input class="form-control" type="text" placeholder="Ihre E-Mail..." />
+            <button class="submit-btn" type="submit">Abonnieren</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <h3>Segitz Therme</h3>
+          <p>Zaunstraße 5, 90768 Fürth</p>
+          <p>Telefon: 7864546876</p>
+          <p>Email: segitz-therme@mail.com</p>
+          <ul class="sns">
+            <li class="icon-fb">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="icon-twitter">
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="icon-instagram">
+              <a href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-4">
+          <h3>Öffnungszeiten</h3>
+          <p>Mo-Fr: 09:00 - 20:00 Uhr</p>
+          <p>Sa-So: 10:00 - 22:00 Uhr</p>
+        </div>
+        <div class="col-4">
+          <h3>Informationen</h3>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Kontakt</a></li>
+            <li><a href="#">Impressum</a></li>
+            <li><a href="#">Datenschutz</a></li>
+            <li><a href="#">AGB</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="copyright">
+          © 2025 Segitz Therme GmbH
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div id="goTop" class="goTop"></div>
+  <script src="jquery.min.js"></script>
+  <script>
+    $(function() {
+      $(window).scroll(function() {
+        if ($(document).scrollTop() > 60) {
+          $(".main-nav").addClass("sticky");
+        } else {
+          $(".main-nav").removeClass("sticky");
+        }
+      });
+      $("#goTop").click(function() {
+        $("html,body").animate({
+          scrollTop: 0
+        }, "slow");
+        return false;
+      });
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 300) {
+          $("#goTop").addClass("active");
+        } else {
+          $("#goTop").removeClass("active");
+          return false;
+        }
+      }).scroll();
+    });
+  </script>
 </body>
 </html>
