@@ -42,7 +42,14 @@ ul li {
   max-width: 100%;
   margin-bottom: 2cm;
 }
-
+.therme-map {
+  background: url(images/current/map_therme.png) center center no-repeat;
+  background-size: contain;
+  height: 800px;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 2cm;
+}
 .logo {
   height: 2cm; 
   width: auto; 
