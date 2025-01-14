@@ -14,15 +14,16 @@
   text-align: center;
 }
 .sticky {
-  width: 70%;
+  width: 100%;
   position: fixed;
   top: 0;
   z-index: 1;
 }
 .main-nav nav {
-  margin-left: 15px;
+  width: 90%;
+  padding-right: 20%;
  backdrop-filter: blur(4.6px);
-  -webkit-backdrop-filter: blur(4.6px);
+  -webkit-backdrop-filter: blur(7px);
   display: flex;
   justify-content: space-between;
   background-color: rgba(255, 255, 255, 0.1); /* white with 30% opacity */
