@@ -1,8 +1,17 @@
 /* changed by Viktoria */
+ .slider-banner.sauna-banner {
+  background: url(images/current/sauna-banner.png) top center no-repeat;
+}
+
 .logo {
   height: 2cm; 
   width: auto; 
+  
 }
+section.doc-section div.container div.row p {
+  color: #434445; 
+}
+
 .slider-banner .item-kv-1 {
   background: url(images/current/background-banner.png) top center no-repeat; 
 }
