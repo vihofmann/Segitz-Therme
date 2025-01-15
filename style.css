@@ -1,13 +1,95 @@
 /* changed by Viktoria */
-ul li {
+.multi-container {
+  display: flex; /* Establishes a flex container for children alignment */
+  max-height: 200px; /* Sets maximum height of the section */
+  overflow: hidden; /* Hides anything outside of the section boundary */
+}
 
+.container-sauna {
+  flex: 1; /* Gives the text container a flexible space, but ensures image has enough space */
+  padding: 10px; /* Provides padding inside the text container */
+  display: flex; /* Makes this a flex container too */
+  align-items: center; /* Centers the text vertically */
+  justify-content: center; /* Centers the text horizontally */
+}
+
+.img {
+  flex: 1; /* Allocates equal space to the image container as the text container */
+  display: flex; /* Utilizes flexbox to align the image */
+  align-items: center; /* Centers the image vertically within the container */
+  justify-content: center; /* Centers the image horizontally within the container */
+}
+
+.img img {
+  max-height: 100%; /* Ensures the image does not exceed the container's height */
+  width: auto;
+   /* Maintains the image's aspect ratio */
+}
+
+
+.btn {
+  position: relative;
+  font-size: 17px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1em 2.5em;
+  display: flex;
+  justify-content: center; /* Horizontally centers the content */
+  align-items: center;
+  border-radius: 6em;
+  transition: all 0.2s;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  color: #000;
+  background-color: #e7fffb;
+}
+.btn .toggle-icon {
+  margin-left: 10px;
+  align-items: center;
+  padding: 0;
+  margin: 0 0 0 10px;
+  font-size: 30px;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: #adefe4;
+}
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+  background-color: #e7fffb;
+}
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.expandable-section ul li {
+  display: flex;
+  align-items: center; /* Vertically centers the icon and text */
   margin-left: 50px;
   padding: 20px 50px 20px 0;
   font-size: 0.9rem;
   color: #434445;
   line-height: 1.5;
 }
-
+.expandable-section ul li i {
+  margin-right: 10px; /* Adds space between the icon and the text */
+}
 h2 {
   margin-top: 2rem; /* Abstand nach oben */
 }
@@ -213,47 +295,7 @@ a {
 .txt-right {
   float: right;
 }
-.btn {
-  position: relative;
-  font-size: 17px;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1em 2.5em;
-  display: inline-block;
-  border-radius: 6em;
-  transition: all 0.2s;
-  border: none;
-  font-family: inherit;
-  font-weight: 500;
-  color: #000;
-  background-color: #e7fffb;
-}
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  background-color: #adefe4;
-}
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s;
-  background-color: #e7fffb;
-}
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
+
 .container {
   width: 100%;
   margin: auto;
