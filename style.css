@@ -1,5 +1,9 @@
 
 /* Viktoria */
+.banner-2-bg{
+  background: url(images/current/mid-img.png) center no-repeat fixed !important;
+}
+
 .sauna-arten {
 margin: 80px 0;
 }
