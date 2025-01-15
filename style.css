@@ -1,3 +1,4 @@
+
 /* Viktoria */
 .banner-2-bg{
   background: url(images/current/mid-img.png) center no-repeat fixed !important;
@@ -9,6 +10,7 @@ margin: 80px 0;
 .img_sauna_left img, .img_sauna_right img {
   transition: transform 0.5s ease; /* Ensure a smooth transition back */
   display: block; /* Ensures proper rendering */
+
 }
 
 .img_sauna_left, .img_sauna_right {
@@ -210,6 +212,10 @@ h2 {
 .slider-banner .sauna-banner {
   background: url(images/current/sauna-banner.png) top center no-repeat;
 }
+.slider-banner .therme-banner {
+  background: url(images/current/therme-banner.png) top center no-repeat;
+}
+
 .expandable-section {
   display: none;
   padding: 20px;
@@ -268,8 +274,8 @@ section.doc-section div.container div.row p {
   z-index: 1;
 }
 .main-nav nav {
-  width: 90%;
-  padding-right: 20%;
+  width: 70%;
+  padding: 0 15%;
   backdrop-filter: blur(4.6px);
   -webkit-backdrop-filter: blur(7px);
   display: flex;
@@ -1045,13 +1051,6 @@ a {
   margin: 20px;
 }
 
-.img_slide {
-
-  background-color: #ACBEC1;
-
-}
-
-
 .image-container {
   position: relative;
   overflow: hidden;
@@ -1086,3 +1085,12 @@ a {
   opacity: 1;
 }
 
+#secondary-color{
+  background-color: #1f3d46;
+  color: white;
+}
+
+#secondary-color-text{
+  color: #1f3d46;
+
+}
