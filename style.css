@@ -1,7 +1,7 @@
 
 /* Viktoria */
 .banner-2-bg{
-  background: url(images/current/mid-img.png) center no-repeat fixed !important;
+  background: url(images/current/mid-img-big.png) center no-repeat fixed !important;
 }
 
 .sauna-arten {
@@ -198,8 +198,16 @@ margin: 80px 0;
 }
 h2 {
   margin-top: 2rem; /* Abstand nach oben */
+  
 }
-
+.container .row .col-12.col-md-10.col-xl-5 h2 {
+  text-shadow: 2px 2px 15px rgb(95, 101, 104);
+  
+}
+.container .row .col-12.col-md-10.col-xl-5 p {
+  text-shadow: -3px -1px 20px rgb(53, 56, 57);
+  
+}
 .dresscode {
   margin: 10px 0px 20px 0px;
   padding-left: 220px; 
@@ -248,12 +256,23 @@ h2 {
 .logo {
   height: 2cm;
   width: auto;
+  
 }
+
+
+
 .main-nav .logo  {
   padding: 0; /* Entfernt zusätzliche Abstände */
   margin: 0;
 }
+.main-nav{
+ 
+    text-shadow: 2px 2px 10px rgb(255, 255, 255);
+    color: #1f3d46;
+    
 
+
+}
 section.doc-section div.container div.row p {
   color: #434445;
 }
@@ -313,7 +332,7 @@ section.doc-section div.container div.row p {
 }
 
 .fill-banner {
-  background-color: #f0f0f0;
+  
 }
 
 .banner-1-bg {
@@ -488,6 +507,7 @@ a {
   width: 16.666666%;
 }
 @media screen and (min-width: 768px) {
+  
   .container {
     max-width: 768px;
   }
@@ -1031,11 +1051,14 @@ a {
   object-fit: cover; /* Bessere Skalierung, falls das Bild größer ist */
 }
 
+.all-content {
+  padding: 100px;
+}
 
 /* created by Daniel */
 .content {
   max-width: 1200px; /* Maximale Breite des Inhalts */
-  margin: 100px auto 50px auto; /* Abstand zur Navbar und nach unten */
+  margin: 0px auto 50px auto; /* Abstand zur Navbar und nach unten */
   padding: 20px; /* Innenabstand für Luftigkeit */
   line-height: 1.6; /* Lesefreundlicher Zeilenabstand */
   font-size: 18px; /* Angenehme Schriftgröße */
