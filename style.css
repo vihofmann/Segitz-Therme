@@ -55,8 +55,12 @@ h2 {
 .logo {
   height: 2cm;
   width: auto;
-
 }
+.main-nav .logo  {
+  padding: 0; /* Entfernt zusätzliche Abstände */
+  margin: 0;
+}
+
 section.doc-section div.container div.row p {
   color: #434445;
 }
@@ -79,7 +83,7 @@ section.doc-section div.container div.row p {
 .main-nav nav {
   width: 90%;
   padding-right: 20%;
- backdrop-filter: blur(4.6px);
+  backdrop-filter: blur(4.6px);
   -webkit-backdrop-filter: blur(7px);
   display: flex;
   justify-content: space-between;
