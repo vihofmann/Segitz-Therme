@@ -1,6 +1,6 @@
 /* changed by Viktoria */
 ul li {
-  
+
   margin-left: 50px;
   padding: 20px 50px 20px 0;
   font-size: 0.9rem;
@@ -8,7 +8,9 @@ ul li {
   line-height: 1.5;
 }
 
-
+h2 {
+  margin-top: 2rem; /* Abstand nach oben */
+}
 
 .dresscode {
   margin: 10px 0px 20px 215px ;
@@ -51,16 +53,16 @@ ul li {
   margin-bottom: 2cm;
 }
 .logo {
-  height: 2cm; 
-  width: auto; 
-  
+  height: 2cm;
+  width: auto;
+
 }
 section.doc-section div.container div.row p {
-  color: #434445; 
+  color: #434445;
 }
 
 .slider-banner .item-kv-1 {
-  background: url(images/current/background-banner.png) top center no-repeat; 
+  background: url(images/current/background-banner.png) top center no-repeat;
 }
 .doc-section {
   background-color: #c3ecf2;
@@ -90,7 +92,7 @@ section.doc-section div.container div.row p {
   font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: 1px;
-  
+
 }
 
 .banner-1-bg {
@@ -105,7 +107,7 @@ section.doc-section div.container div.row p {
   background-color:  #c3ecf2;
 }
 .main-footer h3 {
-  color: #1d425b !important; 
+  color: #1d425b !important;
 }
 
 .item img {
@@ -851,4 +853,13 @@ a {
     flex: none; /* Beide nehmen den gesamten Platz ein */
     width: 100%; /* Volle Breite */
   }
+}
+
+.doc-section .item .img.centered-image {
+  display: block;
+  max-width: 100%; /* Bild soll an die Breite des Containers anpassen */
+  height: auto; /* Passende Höhe zum Bild einstellen */
+  margin: 0 auto; /* Bild in der Mitte ausrichten */
+  max-height: 400px; /* Maximale Höhe */
+  object-fit: cover; /* Bessere Skalierung, falls das Bild größer ist */
 }
