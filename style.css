@@ -909,3 +909,11 @@ a {
   max-height: 400px; /* Maximale Höhe */
   object-fit: cover; /* Bessere Skalierung, falls das Bild größer ist */
 }
+
+.margin {
+  margin: 20px;
+}
+
+.img_slide {
+  background-color: #ACBEC1;
+}
