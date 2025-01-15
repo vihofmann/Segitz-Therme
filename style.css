@@ -239,7 +239,9 @@ section.doc-section div.container div.row p {
 .goTop.active {
   display: block;
 }
+
 body {
+  padding-top: 100px; /* created by Daniel */
   font-family: "Lato", Helvetica, Arial, sans-serif;
   font-size: 16px;
   background-color:  #c3ecf2;
@@ -525,8 +527,16 @@ a {
 .main-info a {
   color: #fff;
 }
+
+/* changed by Daniel */
 .main-nav {
-  margin: auto;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; 
+  background-color: rgba(255, 255, 255, 0.95); 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 
@@ -909,3 +919,18 @@ a {
   max-height: 400px; /* Maximale Höhe */
   object-fit: cover; /* Bessere Skalierung, falls das Bild größer ist */
 }
+
+/* created by Daniel */
+.content {
+  max-width: 1200px; /* Maximale Breite des Inhalts */
+  margin: 100px auto 50px auto; /* Abstand zur Navbar und nach unten */
+  padding: 20px; /* Innenabstand für Luftigkeit */
+  line-height: 1.6; /* Lesefreundlicher Zeilenabstand */
+  font-size: 18px; /* Angenehme Schriftgröße */
+  color: #333; /* Dunkelgraue Schriftfarbe */
+  background-color: white; /* Weißer Hintergrund */
+  border-radius: 10px; /* Leicht abgerundete Ecken */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Leichter Schatten für Trennung */
+  border: 1px solid #ddd; /* Dezente Umrandung */
+}
+
