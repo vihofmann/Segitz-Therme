@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Segitz Therme</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .content {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            width: 40%;
+        }
+
+        .contact-form {
+            width: 50%;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-btn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .contact-info p a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        .contact-info p a:hover {
+            text-decoration: underline;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        #datenschutz {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!--Navbar-->
+    <div class="main-nav">
+        <nav class="sticky">
+            <img src="images/current/logo.png" alt="Segitz Therme Logo" class="logo">
+            <a href="therme.html">Therme</a>
+            <a href="sauna.html">Sauna</a>
+            <a href="wellness.html">Wellness</a>
+            <a href="ShopGutscheineSeite.html">Shop & Gutscheine</a>
+            <a href="info.html">Info</a>
+        </nav>
+    </div>
+
+    <!--Kontaktbereich-->
+    <section class="content">
+        <div class="contact-info">
+            <h1>Ihr Kontakt zu uns</h1>
+            <p><a href="tel:+49911688350"><small><a href="tel:+49911688350">TELEFON:</a></small></a><br>(0911) 688 35 0</p>
+            <p><a href="mailto:mail@kristall-palm-beach.de"><small><a href="mailto:mail@kristall-palm-beach.de">E-MAIL:</a></small></a><br>mail@kristall-palm-beach.de</p>
+            <p><a href="index.html"><small><a href="index.html">ÖFFNUNGSZEITEN:</a></small></a><br>Unsere Öffnungszeiten finden Sie <a href="index.html">hier</a>.</p>
+            <p><a href="index.html"><small><a href="index.html">ROUTE BERECHNEN:</a></small></a><br>Zu Google Maps gelangen Sie <a href="index.html">hier</a>.</p>
+        </div>
+
+        <div class="contact-form">
+            <form action="kontakt-senden.html" method="POST">
+                <label for="anrede">Anrede:</label><br>
+                <div class="radio-group">
+                    <input type="radio" id="herr" name="anrede" value="Herr"> Herr
+                    <input type="radio" id="frau" name="anrede" value="Frau"> Frau
+                    <input type="radio" id="divers" name="anrede" value="Divers"> Divers
+                </div>
+                <br>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Max Mustermann" required>
+
+                <label for="email">E-Mail-Adresse:</label>
+                <input type="email" id="email" name="email" placeholder="beispiel@mail.com" required>
+
+                <label for="thema">Thema:</label>
+                <select id="thema" name="thema" required>
+                    <option value="">- Bitte auswählen -</option>
+                    <option value="allgemein">Allgemeine Anfrage</option>
+                    <option value="therme">Therme</option>
+                    <option value="sauna">Sauna</option>
+                    <option value="wellness">Wellness</option>
+                    <option value="shop">Shop & Gutscheine</option>
+                </select>
+
+                <label for="nachricht">Ihre Nachricht an uns:</label>
+                <textarea id="nachricht" name="nachricht" rows="5" required></textarea>
+                
+                <input type="checkbox" id="datenschutz" name="datenschutz" required>
+                <label for="datenschutz">Ich erkläre mich mit der Verarbeitung der eingegebenen Daten sowie der <a href="datenschutzerklaerung.html">Datenschutzerklärung</a> einverstanden. *</label>
+                <br><br>
+
+                <button type="submit" class="submit-btn">Absenden</button>
+            </form>
+        </div>
+    </section>
+
+  <!--Footer-->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <h3>Segitz Therme</h3>
+          <p>Gärtnerstraße 45, 90416 Fürth</p>
+          <p>Telefon: 7864546876</p>
+          <p>Email: segitz-therme@mail.com</p>
+          <ul class="sns">
+            <li class="icon-fb">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="icon-twitter">
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="icon-instagram">
+              <a href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-4">
+          <h3>Öffnungszeiten</h3>
+          <p>Mo-Fr: 09:00 - 20:00 Uhr</p>
+          <p>Sa-So: 10:00 - 22:00 Uhr</p>
+        </div>
+        <div class="col-4">
+          <h3>Informationen</h3>
+          <ul>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutzerklaerung.html">Datenschutz</a></li>
+            <li><a href="agb.html">AGB</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="copyright">
+          © 2025 Segitz Therme GmbH
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!--JS-->
+  <div id="goTop" class="goTop"></div>
+  <script src="jquery.min.js"></script>
+  <script>
+    $(function() {
+      $(window).scroll(function() {
+        if ($(document).scrollTop() > 60) {
+          $(".main-nav").addClass("sticky");
+        } else {
+          $(".main-nav").removeClass("sticky");
+        }
+      });
+      $("#goTop").click(function() {
+        $("html,body").animate({
+          scrollTop: 0
+        }, "slow");
+        return false;
+      });
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 300) {
+          $("#goTop").addClass("active");
+        } else {
+          $("#goTop").removeClass("active");
+          return false;
+        }
+      }).scroll();
+    });
+  </script>
+</body>
+</html>

@@ -1,8 +1,45 @@
 
+/* Viktoria */
+.img_sauna_left img, .img_sauna_right img {
+  transition: transform 0.5s ease; /* Ensure a smooth transition back */
+  display: block; /* Ensures proper rendering */
 
-.dresscode .btn {
-  
 }
+
+.img_sauna_left, .img_sauna_right {
+  overflow: hidden; /* Ensures scaling doesn't spill outside container */
+  position: relative; /* For stacking context */
+  z-index: 2; /* Make sure it's in the correct stacking context */
+}
+
+.transparent-gray-overlay {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(200, 200, 200, 0.5); /* Light gray with 50% transparency */
+  pointer-events: none; /* This prevents the overlay from capturing clicks */
+  z-index: -1; /* Ensures it stays under the content */
+}
+
+
+
+ 
+.flex-row-reverse {
+  flex-direction: row-reverse !important; /* Reverses the order of flex items */
+}
+
+.img_sauna_left:hover {
+  transform: scale(1.2); /* Increase the scale value */
+  transition: transform 0.5s ease; /* Longer duration for a smoother transition */
+}
+
+.img_sauna_right:hover {
+  transform: scale(1.2); /* Increase the scale value */
+  transition: transform 0.5s ease; /* Longer duration for a smoother transition */
+}
+
 
 .content-center{
   display: block;               /* Switches from flex to block to simplify left alignment */
@@ -24,7 +61,10 @@
   flex-direction: column;        /* Aligns children in a vertical column */
   justify-content: flex-start;       /* Centers the content vertically */
   align-items: center;       /* Aligns children to the start (left) of the container */
-  height: 100%;                  /* Ensures the parent container takes full height */
+  height: 100%;   
+  position: relative;
+  overflow: hidden;
+  z-index: 1;               /* Ensures the parent container takes full height */
 }
  /* Styling for the paragraph in the text container */
 .container-sauna p {
@@ -58,17 +98,31 @@
     align-items: center;
 }
 
-.img_sauna img  {
+.img_sauna_left img  {
    /* Make the image fill the container */
-  height: 450px; /* Maintain the aspect ratio of the image */
+  height: 300px; /* Maintain the aspect ratio of the image */
   border-radius: 1000px; /* Optional: adds rounded corners to the image */
-  padding: 25px;
+  padding: 50px ;
+  
   
 }
-.img_sauna {
-  flex: 1 1 50%; /* Allows the container to grow and shrink but starts at 50% of the parent container */
+.img_sauna_right img  {
+  /* Make the image fill the container */
+ height: 300px; /* Maintain the aspect ratio of the image */
+ border-radius: 1000px; /* Optional: adds rounded corners to the image */
+ padding: 50px ;
+}
+
+.img_sauna_left {
+  flex: 1 1 70%; /* Allows the container to grow and shrink but starts at 50% of the parent container */
   display: flex; /* Uses flexbox to center the image */
-  justify-content: center; /* Centers the image horizontally */
+  justify-content:flex-end; /* Centers the image horizontally */
+  align-items: center; /* Centers the image vertically */
+}
+.img_sauna_right {
+  flex: 1 1 70%; /* Allows the container to grow and shrink but starts at 50% of the parent container */
+  display: flex; /* Uses flexbox to center the image */
+  justify-content:flex-start; /* Centers the image horizontally */
   align-items: center; /* Centers the image vertically */
 }
 
