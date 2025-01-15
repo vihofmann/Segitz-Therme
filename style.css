@@ -938,6 +938,7 @@ a {
   text-align: center;
   color: black;
   font-size: 1.1rem;
+  font-weight: bold;
   opacity: 0;
   z-index: 2;
   transition: opacity 0.3s ease;
