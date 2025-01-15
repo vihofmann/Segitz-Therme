@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Info</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .accordion {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      transition: 0.4s;
+    }
+
+    .active, .accordion:hover {
+      background-color: #ccc; 
+    }
+
+    .panel {
+      padding: 0 18px;
+      display: none;
+      background-color: white;
+      overflow: hidden;
+    }
+
+    .icon-container {
+      float: right;
+    }
+
+    .open_icon {
+      display: block;
+    }
+
+    .close_icon {
+      display: none;
+    }
+
+    .faq-contact {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto; /* Container zentrieren */
+}
+  </style>
+</head>
+<body>
+    <!--Navbar-->
+    <div class="main-nav">
+        <nav class="sticky">
+            <img src="images/current/logo.png" alt="Segitz Therme Logo" class="logo">
+            <a href="therme.html">Therme</a>
+            <a href="sauna.html">Sauna</a>
+            <a href="wellness.html">Wellness</a>
+            <a href="ShopGutscheineSeite.html">Shop & Gutscheine</a>
+            <a href="info.html">Info</a>
+        </nav>
+    </div>
+
+    <!--Inhalt-->
+    <section class="content">
+        <h2>Häufig gestellte Fragen (FAQ)</h2>
+        <br>
+        <!----------------------------------------------------------------------->
+        <button class="accordion">Frage 1: Welche Öffnungszeiten hat die Therme?
+            <span class="icon-container">
+                <i class="fa fa-chevron-down open_icon"></i>
+                <i class="fa fa-chevron-up close_icon"></i>
+            </span>
+        </button>
+        <div class="panel">
+            <p>Unsere Therme ist täglich von 09:00 bis 22:00 Uhr geöffnet. An Feiertagen können die Öffnungszeiten abweichen.</p>
+        </div>
+        <!----------------------------------------------------------------------->
+        <!----------------------------------------------------------------------->
+        <button class="accordion">Frage 2: Muss ich meinen Besuch im Voraus buchen?
+            <span class="icon-container">
+                <i class="fa fa-chevron-down open_icon"></i>
+                <i class="fa fa-chevron-up close_icon"></i>
+            </span>
+        </button>
+        <div class="panel">
+            <p>Nein, ein Besuch ist ohne vorherige Buchung möglich. Eine Reservierung ist nicht erforderlich.</p>
+        </div>
+        <!----------------------------------------------------------------------->
+        <!----------------------------------------------------------------------->
+        <button class="accordion">Frage 3: Welche Zahlungsmöglichkeiten gibt es vor Ort?
+            <span class="icon-container">
+                <i class="fa fa-chevron-down open_icon"></i>
+                <i class="fa fa-chevron-up close_icon"></i>
+            </span>
+        </button>
+        <div class="panel">
+            <p>Sie können vor Ort bar, mit EC-Karte, Kreditkarte (Visa/MasterCard) oder per kontaktloser Zahlung bezahlen.</p>
+        </div>
+        <!----------------------------------------------------------------------->
+        <!----------------------------------------------------------------------->
+        <button class="accordion">Frage 4: Gibt es spezielle Angebote für Familien oder Gruppen?
+            <span class="icon-container">
+                <i class="fa fa-chevron-down open_icon"></i>
+                <i class="fa fa-chevron-up close_icon"></i>
+            </span>
+        </button>
+        <div class="panel">
+            <p>Ja, wir bieten spezielle Familienkarten sowie Gruppenrabatte an. Weitere Informationen dazu erhalten Sie an der Kasse oder auf der Preisseite.</p>
+        </div>
+        <!----------------------------------------------------------------------->
+        <!----------------------------------------------------------------------->
+        <button class="accordion">Frage 5: Sind alle Bereiche der Therme barrierefrei zugänglich?
+            <span class="icon-container">
+                <i class="fa fa-chevron-down open_icon"></i>
+                <i class="fa fa-chevron-up close_icon"></i>
+            </span>
+        </button>
+        <div class="panel">
+            <p>Ja, unsere Therme ist vollständig barrierefrei gestaltet. Es gibt behindertengerechte Umkleiden und Pools.</p>
+        </div>
+        <!----------------------------------------------------------------------->
+        <!----------------------------------------------------------------------->
+        <button class="accordion">Frage 6: Darf ich eigene Speisen und Getränke mitbringen?
+            <span class="icon-container">
+                <i class="fa fa-chevron-down open_icon"></i>
+                <i class="fa fa-chevron-up close_icon"></i>
+            </span>
+        </button>
+        <div class="panel">
+            <p>Das Mitbringen von eigenen Speisen und Getränken ist nicht gestattet. In unserem Bistro bieten wir jedoch eine große Auswahl an Speisen und Getränken an.</p>
+        </div>
+        <!----------------------------------------------------------------------->
+        <!----------------------------------------------------------------------->
+        <button class="accordion">Frage 7: Wie finde ich die Therme und gibt es Parkplätze?
+            <span class="icon-container">
+                <i class="fa fa-chevron-down open_icon"></i>
+                <i class="fa fa-chevron-up close_icon"></i>
+            </span>
+        </button>
+        <div class="panel">
+            <p>Die Therme befindet sich in der Gärtnerstraße 45, 90416 Fürth. Kostenlose Parkplätze stehen direkt am Eingang zur Verfügung.</p>
+        </div>
+        <!----------------------------------------------------------------------->
+        <!----------------------------------------------------------------------->
+        <button class="accordion">Frage 8: Werden Handtücher und Bademäntel verliehen?
+            <span class="icon-container">
+                <i class="fa fa-chevron-down open_icon"></i>
+                <i class="fa fa-chevron-up close_icon"></i>
+            </span>
+        </button>
+        <div class="panel">
+            <p>Ja, Handtücher und Bademäntel können vor Ort ausgeliehen werden. Eine Übersicht der verfügbaren Artikel finden Sie in unserer Produktgalerie auf der Website.</p>
+        </div>
+        <!----------------------------------------------------------------------->
+        <!----------------------------------------------------------------------->
+        <button class="accordion">Frage 2: Wie sind die Öffnungszeiten?
+            <span class="icon-container">
+                <i class="fa fa-chevron-down open_icon"></i>
+                <i class="fa fa-chevron-up close_icon"></i>
+            </span>
+        </button>
+        <div class="panel">
+            <p>Unsere Therme ist täglich von 9:00 bis 22:00 Uhr geöffnet.</p>
+        </div>
+        <!----------------------------------------------------------------------->
+        <!----------------------------------------------------------------------->
+        <button class="accordion">Frage 2: Wie sind die Öffnungszeiten?
+            <span class="icon-container">
+                <i class="fa fa-chevron-down open_icon"></i>
+                <i class="fa fa-chevron-up close_icon"></i>
+            </span>
+        </button>
+        <div class="panel">
+            <p>Unsere Therme ist täglich von 9:00 bis 22:00 Uhr geöffnet.</p>
+        </div>
+        <!----------------------------------------------------------------------->
+
+        <br><br>
+        <p class="faq-contact">
+            Nicht das Passende gefunden? Zögern Sie nicht, Kontakt zum Segitz Therme
+            aufzunehmen. Unser freundliches Team hilft Ihnen stets gerne weiter. 
+            <a href="kontakt.html">Kontakt aufnehmen <i class="fa-solid fa-arrow-right"></i></a>.
+        </p>
+    </section>
+
+       <!--Newsletter-->
+  <section class="fill-banner banner-1-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-10 col-xl-5">
+          <h2>Irgendwelche Fragen?</h2>
+          <p>Geben Sie Ihre E-Mail-Adresse ein, um aktuelle Angebote, exklusive Wellness-Tipps und Neuigkeiten rund um die Segitz Therme direkt in Ihr Postfach zu erhalten.</p>
+          <div class="form-group">
+            <input class="form-control" type="text" placeholder="Ihre E-Mail..." />
+            <button class="submit-btn" type="submit">Abonnieren</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Footer-->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <h3>Segitz Therme</h3>
+          <p>Gärtnerstraße 45, 90416 Fürth</p>
+          <p>Telefon: 7864546876</p>
+          <p>Email: segitz-therme@mail.com</p>
+          <ul class="sns">
+            <li class="icon-fb">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="icon-twitter">
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="icon-instagram">
+              <a href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-4">
+          <h3>Öffnungszeiten</h3>
+          <p>Mo-Fr: 09:00 - 20:00 Uhr</p>
+          <p>Sa-So: 10:00 - 22:00 Uhr</p>
+        </div>
+        <div class="col-4">
+          <h3>Informationen</h3>
+          <ul>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutzerklaerung.html">Datenschutz</a></li>
+            <li><a href="agb.html">AGB</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="copyright">
+          © 2025 Segitz Therme GmbH
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <!--JS-->
+    <script>
+      var acc = document.getElementsByClassName("accordion");
+      for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+          var isActive = this.classList.contains("active");
+          for (var j = 0; j < acc.length; j++) {
+            acc[j].classList.remove("active");
+            acc[j].nextElementSibling.style.display = "none";
+            acc[j].querySelector('.open_icon').style.display = "block";
+            acc[j].querySelector('.close_icon').style.display = "none";
+          }
+          if (!isActive) {
+            this.classList.add("active");
+            this.nextElementSibling.style.display = "block";
+            this.querySelector('.open_icon').style.display = "none";
+            this.querySelector('.close_icon').style.display = "block";
+          }
+        });
+      }
+    </script>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<div id="goTop" class="goTop"></div>
+<script src="jquery.min.js"></script>
+<script>
+  $(function() {
+    $(window).scroll(function() {
+      if ($(document).scrollTop() > 60) {
+        $(".main-nav").addClass("sticky");
+      } else {
+        $(".main-nav").removeClass("sticky");
+      }
+    });
+    $("#goTop").click(function() {
+      $("html,body").animate({
+        scrollTop: 0
+      }, "slow");
+      return false;
+    });
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 300) {
+        $("#goTop").addClass("active");
+      } else {
+        $("#goTop").removeClass("active");
+        return false;
+      }
+    }).scroll();
+  });
+</script>
+</body>
+</html>
