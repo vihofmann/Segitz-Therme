@@ -920,6 +920,7 @@ a {
   object-fit: cover; /* Bessere Skalierung, falls das Bild größer ist */
 }
 
+<<<<<<< HEAD
 /* created by Daniel */
 .content {
   max-width: 1200px; /* Maximale Breite des Inhalts */
@@ -934,3 +935,12 @@ a {
   border: 1px solid #ddd; /* Dezente Umrandung */
 }
 
+=======
+.margin {
+  margin: 20px;
+}
+
+.img_slide {
+  background-color: #ACBEC1;
+}
+>>>>>>> 554d5c707553bd601d68c5bd373e6f99cd7817e0
