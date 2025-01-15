@@ -211,6 +211,9 @@ h2 {
 .slider-banner .therme-banner {
   background: url(images/current/therme-banner.png) top center no-repeat;
 }
+.slider-banner .wellness-banner {
+  background: url(images/current/wellness-banner.png) top center no-repeat;
+}
 
 .expandable-section {
   display: none;
@@ -1044,7 +1047,7 @@ a {
 
 
 .margin {
-  margin: 20px;
+  margin: 0 5%;
 }
 
 .image-container {
