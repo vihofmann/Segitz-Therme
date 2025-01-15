@@ -208,6 +208,10 @@ h2 {
 .slider-banner .sauna-banner {
   background: url(images/current/sauna-banner.png) top center no-repeat;
 }
+.slider-banner .therme-banner {
+  background: url(images/current/therme-banner.png) top center no-repeat;
+}
+
 .expandable-section {
   display: none;
   padding: 20px;
