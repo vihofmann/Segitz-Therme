@@ -1,10 +1,14 @@
 /* Viktoria */
+.sauna-arten {
+margin: 80px 0;
+}
 .img_sauna_left img, .img_sauna_right img {
   transition: transform 0.5s ease; /* Ensure a smooth transition back */
   display: block; /* Ensures proper rendering */
 }
 
 .img_sauna_left, .img_sauna_right {
+  transition: transform 0.5s ease;
   overflow: hidden; /* Ensures scaling doesn't spill outside container */
   position: relative; /* For stacking context */
   z-index: 2; /* Make sure it's in the correct stacking context */
@@ -29,12 +33,12 @@
 }
 
 .img_sauna_left:hover {
-  transform: scale(1.2); /* Increase the scale value */
+  transform: scale(1.3); /* Increase the scale value */
   transition: transform 0.5s ease; /* Longer duration for a smoother transition */
 }
 
 .img_sauna_right:hover {
-  transform: scale(1.2); /* Increase the scale value */
+  transform: scale(1.3); /* Increase the scale value */
   transition: transform 0.5s ease; /* Longer duration for a smoother transition */
 }
 
@@ -65,15 +69,11 @@
   z-index: 1;               /* Ensures the parent container takes full height */
 }
  /* Styling for the paragraph in the text container */
-.container-sauna p {
-  color: #333; /* Change the text color */
-  font-size: 20px; /* Set the font size */
-   padding:  50px 0px 0 220px;
-}
+
 .container-sauna h2
 {
   color: #333; /* Change the text color */
-  font-size: 40px; /* Set the font size */
+  font-size: 60px; /* Set the font size */
   padding: 20px 0 50px 200px;
   
 }
@@ -83,7 +83,7 @@
   align-items: center; /* Vertically centers the icon and text */
   margin: 0 50px 0 220px;
   padding: 0px 50px 20px 0;
-  font-size: 0.9rem;
+  font-size: 25px;
   color: #434445;
   line-height: 1.5;
 }
