@@ -1173,3 +1173,14 @@ a {
   opacity: 1;
 }
 
+.hover-quote {
+  color: #ffffff; /* Weiß für das Zitat */
+  font-style: italic; /* Kursiv für das Zitat */
+  font-size: 0.95rem; /* Etwas kleiner als der Name */
+  margin: 10px 0; /* Abstand zum Text oben und unten */
+}
+#hover-text-desc {
+  color: #0ba7ff;
+  font-size: 0.9rem; /* Kleine Schriftgröße */
+}
+
