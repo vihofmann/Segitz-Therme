@@ -1,15 +1,123 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Info</title>
+  <title>FAQ</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .accordion {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      transition: 0.4s;
+    }
+
+    .active,
+    .accordion:hover {
+      background-color: #ccc;
+    }
+
+    .panel {
+      padding: 0 18px;
+      display: none;
+      background-color: white;
+      overflow: hidden;
+    }
+
+    .icon-container {
+      float: right;
+    }
+
+    .open_icon {
+      display: block;
+    }
+
+    .close_icon {
+      display: none;
+    }
+
+    .faq-contact {
+      width: 50%;
+      text-align: center;
+      margin: 0 auto;
+      /* Container zentrieren */
+    }
+    .panel ul {
+  list-style: disc; /* Setzt die Standard-Aufzählungspunkte zurück */
+  margin: 10px 0; /* Abstand zur Umgebung */
+  padding-left: 20px; /* Einzug für die Liste */
+}
+
+.panel li {
+  list-style: disc; /* Erzwingt Punkte für die Listenelemente */
+  display: list-item; /* Stellt sicher, dass die Listenelemente korrekt dargestellt werden */
+  margin-bottom: 5px; /* Abstand zwischen den Punkten */
+}
+
+.jobs-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px; /* Abstand zwischen Inhalt und Bild */
+}
+
+.jobs-content {
+  flex: 2; /* Linker Bereich nimmt mehr Platz ein */
+}
+
+.jobs-image {
+  flex: 1; /* Rechter Bereich für das Bild */
+  text-align: center; /* Bild zentrieren */
+}
+
+.jobs-image img {
+  max-width: 100%; /* Bild passt sich an den Container an */
+  height: auto; /* Proportionen bleiben erhalten */
+  border-radius: 10px; /* Optional: Abgerundete Ecken */
+}
+
+    /* Flexbox-Container für den Inhalt und das Bild */
+    .panel-container {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    /* Linker Bereich mit dem Inhalt */
+    .panel-content {
+      flex: 2;
+    }
+
+    /* Rechter Bereich mit dem Bild */
+    .panel-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      padding-top: 1em;
+    }
+
+    /* Bild-Styling */
+    .panel-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px; /* Optional: Abgerundete Ecken */
+    }
+  </style>
 </head>
+
 <body>
+  <!--Navbar-->
   <div class="main-nav">
-    <nav class ="sticky">
+    <nav class="sticky">
       <a href="index.html" class="logo"><img src="images/current/logo.png" alt="Segitz Therme Logo" class="logo"></a>
       <a href="therme.html">Therme</a>
       <a href="sauna.html">Sauna</a>
@@ -18,87 +126,517 @@
       <a href="info.html">Info</a>
     </nav>
   </div>
-  <section class="fill-banner banner-1-bg">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-10 col-xl-5">
-          <h2>Irgendwelche Fragen?</h2>
-          <p>Geben Sie Ihre E-Mail-Adresse ein, um aktuelle Angebote, exklusive Wellness-Tipps und Neuigkeiten rund um die Segitz Therme direkt in Ihr Postfach zu erhalten.</p>
-          <div class="form-group">
-            <input class="form-control" type="text" placeholder="Ihre E-Mail..." />
-            <button class="submit-btn" type="submit">Abonnieren</button>
+  <section class="banner-2-bg">
+    <!--Inhalt-->
+    <section class="all-content"> <!--damit hintergrundsbild gut aussieht-->
+
+      
+
+      <section class="content">
+        <br>
+        <h1>JOBS & KARRIERE</h1>
+        <h2>Arbeiten unter der Sonne</h2>
+        <br>
+        <p>Arbeiten, wo andere ihre Freizeit verbringen: Da ist gute Laune garantiert!
+          Als inhabergeführtes Unternehmen ist das Segitz Therma Teil einer deutschlandweiten
+          Thermen- und Bädergruppe. Das Wohl unserer Gäste steht für uns an erster Stelle:
+          Wir setzen auf engagierten Mitarbeiter:innen, die in ihrem jeweiligen Fachgebiet
+          Profis und mit Leidenschaft bei der Sache sind. Werden auch Sie Teil unserer Betriebsfamilie!</p>
+        <br>
+        <p>Aktuelle Stellenangebote</p>
+        <br>
+<!-----------------------------------------------------------------------> 
+<button class="accordion">Küchenhilfe (m/w/d) | Vollzeit
+  <span class="icon-container">
+    <i class="fa fa-chevron-down open_icon"></i>
+    <i class="fa fa-chevron-up close_icon"></i>
+  </span>
+</button>
+<div class="panel">
+  <div class="panel-container">
+    <!-- Linker Inhalt -->
+    <div class="panel-content">
+      <h4>
+        Ihre Aufgaben:
+      </h4>
+      <ul>
+        <li>Sie unterstützen das Küchenteam bei der Vor- und Zubereitung von Speisen</li>
+        <li>Sie bereiten eigenständig kleinere Speisen zu</li>
+        <li>Sie reinigen Geschirr und Tische im Speisesaal</li>
+      </ul>
+      <h4>Das wünschen wir uns von Ihnen:</h4>
+      <ul>
+        <li>Deutschkenntnisse in Wort und Schrift</li>
+        <li>Sie arbeiten service- und qualitätsorientiert</li>
+      </ul>
+      <h4>Das bieten wir:</h4>
+      <ul>
+        <li>Eine abwechslungsreiche Tätigkeit in einem tollen Team</li>
+        <li>Ein sicherer Arbeitsplatz in einem erfolgreichen Unternehmen</li>
+        <li>Flexible Vergütungsmodelle bei Übernahme zusätzlicher Aufgaben</li>
+        <li>Möglichkeiten zur beruflichen Entwicklung</li>
+      </ul>
+    </div>
+    <!-- Rechtes Bild -->
+    <div class="panel-image">
+      <img src="images/current/azubi.jpeg" alt="Bild einer Küchenhilfe">
+    </div>
+  </div>
+</div>
+<!-----------------------------------------------------------------------> 
+
+<!-----------------------------------------------------------------------> 
+<button class="accordion">Servicekraft (m/w/d) | Voll-, Teilzeit oder Minijob
+  <span class="icon-container">
+    <i class="fa fa-chevron-down open_icon"></i>
+    <i class="fa fa-chevron-up close_icon"></i>
+  </span>
+</button>
+<div class="panel">
+  <div class="panel-container">
+    <!-- Linker Inhalt -->
+    <div class="panel-content">
+      <h4>
+        Ihre Aufgaben:
+      </h4>
+      <ul>
+        <li>Sie versorgen unsere Gäste mit Speisen und Getränken</li>
+        <li>Das Bedienen und Abräumen von Tischen</li>
+        <li>Arbeitsbereiche sind das Wave Restaurant im Wellenbad sowie der Gasthof zur Post und die Pool-Bar</li>
+      </ul>
+      <h4>Das wünschen wir uns von Ihnen:</h4>
+      <ul>
+        <li>Serviceorientiertes, umsichtiges Arbeiten</li>
+        <li>Freundlichkeit</li>
+        <li>Idealerweise Spaß an der Interaktion mit Gästen</li>
+      </ul>
+      <h4>Das bieten wir:</h4>
+      <ul>
+        <li>Eine abwechslungsreiche Arbeit durch verschiedene Einsatzbereiche (traditioneller Tischservice, Bartender an der Pool-Bar, Eis und Eisbecher erstellen im Wellenbad)</li>
+        <li>Attraktive Vergütung</li>
+      </ul>
+    </div>
+    <!-- Rechtes Bild -->
+    <div class="panel-image">
+      <img src="images/current/azubi.jpeg" alt="Bild einer Servicekraft">
+    </div>
+  </div>
+</div>
+<!-----------------------------------------------------------------------> 
+
+<!-----------------------------------------------------------------------> 
+<button class="accordion">Physiotherapeut (m/w/d) | Vollzeit
+  <span class="icon-container">
+    <i class="fa fa-chevron-down open_icon"></i>
+    <i class="fa fa-chevron-up close_icon"></i>
+  </span>
+</button>
+<div class="panel">
+  <div class="panel-container">
+    <!-- Linker Inhalt -->
+    <div class="panel-content">
+      <h4>Das wünschen wir uns von Ihnen:</h4>
+      <ul>
+        <li>Erforderlicher Bildungsabschluss: Mittlere Reife / Mittlerer Bildungsabschluss</li>
+        <li>Berufsausbildung / Studium: Physiotherapeut/in (schulische Ausbildung)</li>
+        <li>Persönliche Stärken: Motivation, Leistungsbereitschaft, Zuverlässigkeit, Zielstrebigkeit, Ergebnisorientierung, Kundenorientierung, selbstständiges Arbeiten</li>
+      </ul>
+      <h4>Wir bieten:</h4>
+      <ul>
+        <li>Ein angenehmes Betriebsklima in einem erfahrenen Team</li>
+        <li>Ausführliche Einarbeitung</li>
+        <li>Leistungsgerechte Vergütung</li>
+        <li>Abwechslungsreiche Arbeit, z. B. Therapie im oder am Wasser, Durchführen von Wassergymnastiken oder Präventionskursen</li>
+      </ul>
+      <h4>Unsere Leistungen:</h4>
+      <ul>
+        <li>Krankengymnastik</li>
+        <li>Krankengymnastik mit Bewegungsbad</li>
+        <li>Krankengymnastik am Gerät</li>
+        <li>Manuelle Therapie</li>
+        <li>Klassische Massagetherapie</li>
+        <li>Fango</li>
+        <li>Lymphdrainage</li>
+        <li>Wärme-, Kälte- und Stromanwendungen</li>
+      </ul>
+    </div>
+    <!-- Rechtes Bild -->
+    <div class="panel-image">
+      <img src="images/current/azubi.jpeg" alt="Bild eines Physiotherapeuten">
+    </div>
+  </div>
+</div>
+<!-----------------------------------------------------------------------> 
+
+<!-----------------------------------------------------------------------> 
+<button class="accordion">Rettungsschwimmer (m/w/d) | Quereinsteiger | Vollzeit
+  <span class="icon-container">
+    <i class="fa fa-chevron-down open_icon"></i>
+    <i class="fa fa-chevron-up close_icon"></i>
+  </span>
+</button>
+<div class="panel">
+  <div class="panel-container">
+    <!-- Linker Inhalt -->
+    <div class="panel-content">
+      <h4>
+        Ihre Aufgaben:
+      </h4>
+      <ul>
+        <li>Sie beaufsichtigen unsere Schwimmbecken und sorgen für einen reibungslosen Bäderbetrieb</li>
+        <li>Mit Ihnen am Beckenrand fühlen sich unsere Gäste sicher und können relaxt schwimmen gehen</li>
+        <li>Ob klein oder groß: Alle Gäste werden gleich aufmerksam betreut oder auch verarztet</li>
+        <li>Sie helfen bei den täglichen Reinigungsarbeiten: Aufgeräumt und sauber haben es alle gern</li>
+        <li>Sie unterstützen Ihre Kollegen</li>
+        <li>Und die Sauna nicht vergessen: Darf es noch ein Aufguss sein?</li>
+      </ul>
+      <h4>Das wünschen wir uns von Ihnen:</h4>
+      <ul>
+        <li>Sie sind mindestens 18 Jahre alt</li>
+        <li>Sie sind von Natur aus eine Wasserratte</li>
+        <li>Sie besitzen eine Erste-Hilfe-Schulung</li>
+        <li>Im Laufe Ihrer Probezeit unterstützen wir Sie beim Erwerb des silbernen Rettungsschwimmer-Abzeichens</li>
+      </ul>
+    </div>
+    <!-- Rechtes Bild -->
+    <div class="panel-image">
+      <img src="images/current/azubi.jpeg" alt="Bild eines Rettungsschwimmers">
+    </div>
+  </div>
+</div>
+<!-----------------------------------------------------------------------> 
+<!-----------------------------------------------------------------------> 
+<button class="accordion">Rettungsschwimmer oder Fachangestellter für Bäderbetriebe (m/w/d) | Vollzeit
+  <span class="icon-container">
+    <i class="fa fa-chevron-down open_icon"></i>
+    <i class="fa fa-chevron-up close_icon"></i>
+  </span>
+</button>
+<div class="panel">
+  <div class="panel-container">
+    <!-- Linker Inhalt -->
+    <div class="panel-content">
+      <h4>
+        Ihre Aufgaben:
+      </h4>
+      <ul>
+        <li>Sie beaufsichtigen unsere Schwimmbecken und sorgst für einen reibungslosen Bäderbetrieb</li>
+        <li>Mit Ihnen am Beckenrand sind unsere Gäste sicher und können relaxt schwimmen gehen</li>
+        <li>Ob klein oder groß: Alle Gäste werden gleich aufmerksam betreut oder auch verarztet</li>
+        <li>Sie helfen bei den täglichen Reinigungsarbeiten: Aufgeräumt und sauber haben es alle gern</li>
+        <li>Und die Sauna nicht vergessen: Darf es noch ein Aufguss sein?</li>
+      </ul>
+      <h4>Das wünschen wir uns von Ihnen:</h4>
+      <ul>
+        <li>Sie sind von Natur aus eine Wasserratte und haben Ihre Leidenschaft zum Beruf gemacht</li>
+        <li>Rettungsschwimmer (silbernes Rettungsschwimmer-Abzeichen) oder abgeschlossene Ausbildung als Fachangestellter Bäderbetriebe (m/w/d)</li>
+        <li>Sie unterstützen Ihre Kollegen und wollen Einsatz</li>
+        <li>Sie besitzen eine Erste-Hilfe-Schulung</li>
+        <li>Sie sind mindestens 18 Jahre alt</li>
+      </ul>
+    </div>
+    <!-- Rechtes Bild -->
+    <div class="panel-image">
+      <img src="images/current/azubi.jpeg" alt="Bild eines Rettungsschwimmers">
+    </div>
+  </div>
+</div>
+<!-----------------------------------------------------------------------> 
+
+<!-----------------------------------------------------------------------> 
+<button class="accordion">Mitarbeiter an der Empfangskasse (m/w/d), in Teilzeit (20-35 Stunden)
+  <span class="icon-container">
+    <i class="fa fa-chevron-down open_icon"></i>
+    <i class="fa fa-chevron-up close_icon"></i>
+  </span>
+</button>
+<div class="panel">
+  <div class="panel-container">
+    <!-- Linker Inhalt -->
+    <div class="panel-content">
+      <h4>
+        Ihre Aufgaben:
+      </h4>
+      <ul>
+        <li>Gäste beraten</li>
+        <li>Kassieren</li>
+        <li>Telefongespräche entgegennehmen</li>
+      </ul>
+      <h4>Das wünschen wir uns von Ihnen:</h4>
+      <ul>
+        <li>Eine freundliche und dienstleistungsorientierte Persönlichkeit mit ansprechendem und selbstsicherem Auftreten</li>
+        <li>Teamfähigkeit</li>
+        <li>Zuverlässigkeit</li>
+        <li>Bereitschaft zu Wochenendarbeit</li>
+        <li>Polizeiliches Führungszeugnis</li>
+      </ul>
+      <h4>Das bieten wir Ihnen:</h4>
+      <ul>
+        <li>Erster Ansprechpartner für unsere Gäste</li>
+        <li>Eine leistungsgerechte Vergütung</li>
+        <li>Gründliche Einarbeitung durch eine kompetente Kollegin</li>
+        <li>Nach der Probezeit freier Eintritt ins Palm Beach (mit eigener Familie)</li>
+        <li>Attraktive Aufstiegs- und Weiterbildungsmöglichkeiten</li>
+        <li>Abwechslungsreicher Alltag</li>
+        <li>Vergünstigt speisen in den hauseigenen Restaurants</li>
+      </ul>
+    </div>
+    <!-- Rechtes Bild -->
+    <div class="panel-image">
+      <img src="images/current/azubi.jpeg" alt="Bild eines Mitarbeiters an der Empfangskasse">
+    </div>
+  </div>
+</div>
+<!-----------------------------------------------------------------------> 
+
+<!-----------------------------------------------------------------------> 
+<button class="accordion">Kaufmann/-frau für Büromanagement (m/w/d), in Teilzeit (20-25 Stunden)
+  <span class="icon-container">
+    <i class="fa fa-chevron-down open_icon"></i>
+    <i class="fa fa-chevron-up close_icon"></i>
+  </span>
+</button>
+<div class="panel">
+  <div class="panel-container">
+    <!-- Linker Inhalt -->
+    <div class="panel-content">
+      <p>
+        Über uns: Wir sind als familiengeführtes Unternehmen Teil einer deutschlandweiten Thermen- und Bädergruppe. Für uns steht das Wohl unserer Gäste an erster Stelle. Flache Hierarchien und schnelle Entscheidungswege sind uns als inhabergeführtes Unternehmen wichtig. Werden Sie Teil des Teams, um gemeinsam mit uns alles für unsere Gäste zu geben!
+      </p>
+      <h4>
+        Ihre Aufgaben:
+      </h4>
+      <ul>
+        <li>Ausführung aller klassischen administrativen und kaufmännischen Sekretariatstätigkeiten</li>
+        <li>Unterstützung bei der Durchführung von Aktionen</li>
+        <li>Erster Kontakt für die Kommunikation mit Gästen und Dienstleistern</li>
+        <li>Beschwerdemanagement</li>
+        <li>Erstellung von Präsentationen/Statistiken</li>
+        <li>Lohnauswertungen/Lohnabrechnungen erstellen</li>
+      </ul>
+      <h4>Das wünschen wir uns von Ihnen:</h4>
+      <ul>
+        <li>Ausbildung zum Kaufmann/-frau für Büromanagement oder ein vergleichbarer Abschluss</li>
+        <li>Motiviert, effizient, lösungsorientiert und teamfähig</li>
+        <li>Freude am Umgang mit Menschen in einem Umfeld mit täglich wechselnden Aufgaben</li>
+        <li>Organisationsvermögen</li>
+        <li>Gute MS-Office-Kenntnisse, vor allem Excel</li>
+      </ul>
+      <h4>Das bieten wir Ihnen:</h4>
+      <ul>
+        <li>Einen modernen Arbeitsplatz in einem spannenden Umfeld</li>
+        <li>Eine anspruchsvolle und abwechslungsreiche Tätigkeit</li>
+      </ul>
+    </div>
+    <!-- Rechtes Bild -->
+    <div class="panel-image">
+      <img src="images/current/azubi.jpeg" alt="Bild eines Bürokaufmanns">
+    </div>
+  </div>
+</div>
+<!-----------------------------------------------------------------------> 
+
+<!-----------------------------------------------------------------------> 
+<button class="accordion">Reinigungskraft (m/w/d) | Voll-, Teilzeit oder Minijob
+  <span class="icon-container">
+    <i class="fa fa-chevron-down open_icon"></i>
+    <i class="fa fa-chevron-up close_icon"></i>
+  </span>
+</button>
+<div class="panel">
+  <div class="panel-container">
+    <!-- Linker Inhalt -->
+    <div class="panel-content">
+      <h4>
+        Ihre Aufgaben:
+      </h4>
+      <ul>
+        <li>Reinigungstätigkeiten in den verschiedenen Bereichen Sauna/Bad/Sanitärbereiche</li>
+        <li>Einsätze an Wochenenden und an Feiertagen nach den Bedürfnissen des Dienstbetriebes mit Ausgleich durch freie Wochenarbeitstage</li>
+      </ul>
+      <h4>Das wünschen wir uns von Ihnen:</h4>
+      <ul>
+        <li>Einschlägige Berufserfahrung in der Reinigungsbranche</li>
+        <li>Gute Deutschkenntnisse</li>
+        <li>Hohe Einsatzbereitschaft und Zuverlässigkeit sowie Flexibilität in der Zeiteinteilung</li>
+        <li>Befähigung zum selbstständigen Arbeiten</li>
+        <li>Hohe körperliche Belastbarkeit</li>
+      </ul>
+    </div>
+    <!-- Rechtes Bild -->
+    <div class="panel-image">
+      <img src="images/current/azubi.jpeg" alt="Bild einer Reinigungskraft">
+    </div>
+  </div>
+</div>
+<!-----------------------------------------------------------------------> 
+
+<!-----------------------------------------------------------------------> 
+<button class="accordion">Elektriker (m/w/d) | Vollzeit
+  <span class="icon-container">
+    <i class="fa fa-chevron-down open_icon"></i>
+    <i class="fa fa-chevron-up close_icon"></i>
+  </span>
+</button>
+<div class="panel">
+  <div class="panel-container">
+    <!-- Linker Inhalt -->
+    <div class="panel-content">
+      <h4>
+        Ihre Aufgaben:
+      </h4>
+      <ul>
+        <li>Durchführung von Fehlersuche, Reparatur und Wartung und Instandhaltung der elektrischen Anlagen in allen Bereichen des Palm Beach</li>
+        <li>Begleitung und Überwachung von externen Dienstleistern bei Wartungs-, Instandhaltungs- und Installationsarbeiten</li>
+        <li>Mitarbeit und Unterstützung des Technikteams bei allen anfallenden handwerklichen Tätigkeiten</li>
+      </ul>
+      <h4>Das wünschen wir uns von Ihnen:</h4>
+      <ul>
+        <li>Eine abgeschlossene Berufsausbildung im Bereich Elektrotechnik oder vergleichbare Ausbildung</li>
+        <li>Praktische Berufserfahrungen und sehr gute handwerkliche Fähigkeiten</li>
+        <li>Dienstleistungsorientierung und Teamfähigkeit</li>
+        <li>Flexibilität, Einsatzbereitschaft und Motivation</li>
+        <li>Teamgeist und eine gute Kommunikationsfähigkeit</li>
+      </ul>
+      <h4>Das bieten wir Ihnen:</h4>
+      <ul>
+        <li>38,5 Stundenwoche</li>
+        <li>Eine leistungsgerechte Vergütung mit attraktiven Zuschlägen</li>
+        <li>Vergünstigte Speisen in unseren Restaurants</li>
+        <li>Als Mitarbeiter erhalten Sie und Ihre engsten Familienmitglieder freien Eintritt in das Erlebnisbad sowie die Sauna- und Thermalwelt</li>
+      </ul>
+    </div>
+    <!-- Rechtes Bild -->
+    <div class="panel-image">
+      <img src="images/current/azubi.jpeg" alt="Bild eines Elektrikers">
+    </div>
+  </div>
+</div>
+<!-----------------------------------------------------------------------> 
+
+
+
+        <br><br>
+        <p class="faq-contact">
+          Wir freuen uns auf Ihre aussagekräftige Bewerbung an: <br>
+          <a href="mailto:segitz-therme@mail.com">segitz-therme@mail.com </a>
+
+        </p>
+      </section>
+    </section>
+    <!--Newsletter-->
+    <section class="fill-banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-10 col-xl-5">
+            <h2>Irgendwelche Fragen?</h2>
+            <p>Geben Sie Ihre E-Mail-Adresse ein, um aktuelle Angebote, exklusive Wellness-Tipps und Neuigkeiten rund um
+              die Segitz Therme direkt in Ihr Postfach zu erhalten.</p>
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder="Ihre E-Mail..." />
+              <button class="submit-btn" type="submit">Abonnieren</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+            <h3>Segitz Therme</h3>
+            <p>Gärtnerstraße 45, 90416 Fürth</p>
+            <p>Telefon: 7864546876</p>
+            <p>Email: segitz-therme@mail.com</p>
+            <ul class="sns">
+              <li class="icon-fb">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="icon-twitter">
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="icon-instagram">
+                <a href="#">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-4">
+            <h3>Öffnungszeiten</h3>
+            <p>Mo-Fr: 09:00 - 20:00 Uhr</p>
+            <p>Sa-So: 10:00 - 22:00 Uhr</p>
+          </div>
+          <div class="col-4">
+            <h3>Informationen</h3>
+            <ul>
+              <li><a href="agb.html">FAQ</a></li>
+              <li><a href="kontakt.html">Kontakt</a></li>
+              <li><a href="impressum.html">Impressum</a></li>
+              <li><a href="datenschutzerklaerung.html">Datenschutz</a></li>
+              <li><a href="agb.html">AGB</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="copyright">
+            © 2025 Segitz Therme GmbH
+          </div>
+        </div>
+      </div>
   </section>
-  <footer class="main-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-4">
-          <h3>Segitz Therme</h3>
-          <p>Gärtnerstraße 45, 90416 Fürth</p>
-          <p>Telefon: 7864546876</p>
-          <p>Email: segitz-therme@mail.com</p>
-          <ul class="sns">
-            <li class="icon-fb">
-              <a href="#">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li class="icon-twitter">
-              <a href="#">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li class="icon-instagram">
-              <a href="#">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-4">
-          <h3>Öffnungszeiten</h3>
-          <p>Mo-Fr: 09:00 - 20:00 Uhr</p>
-          <p>Sa-So: 10:00 - 22:00 Uhr</p>
-        </div>
-        <div class="col-4">
-          <h3>Informationen</h3>
-          <ul>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-            <li><a href="impressum.html">Impressum</a></li>
-            <li><a href="datenschutzerklaerung.html">Datenschutz</a></li>
-            <li><a href="agb.html">AGB</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="row">
-        <div class="copyright">
-          © 2025 Segitz Therme GmbH
-        </div>
-      </div>
-    </div>
   </footer>
+
+  <!--JS-->
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        var isActive = this.classList.contains("active");
+        for (var j = 0; j < acc.length; j++) {
+          acc[j].classList.remove("active");
+          acc[j].nextElementSibling.style.display = "none";
+          acc[j].querySelector('.open_icon').style.display = "block";
+          acc[j].querySelector('.close_icon').style.display = "none";
+        }
+        if (!isActive) {
+          this.classList.add("active");
+          this.nextElementSibling.style.display = "block";
+          this.querySelector('.open_icon').style.display = "none";
+          this.querySelector('.close_icon').style.display = "block";
+        }
+      });
+    }
+  </script>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
   <div id="goTop" class="goTop"></div>
   <script src="jquery.min.js"></script>
   <script>
-    $(function() {
-      $(window).scroll(function() {
+
+    
+    $(function () {
+      $(window).scroll(function () {
         if ($(document).scrollTop() > 60) {
           $(".main-nav").addClass("sticky");
         } else {
           $(".main-nav").removeClass("sticky");
         }
       });
-      $("#goTop").click(function() {
+      $("#goTop").click(function () {
         $("html,body").animate({
           scrollTop: 0
         }, "slow");
         return false;
       });
-      $(window).scroll(function() {
+      $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
           $("#goTop").addClass("active");
         } else {
@@ -109,4 +647,5 @@
     });
   </script>
 </body>
+
 </html>
