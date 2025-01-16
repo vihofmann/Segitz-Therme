@@ -1180,7 +1180,7 @@ a {
   margin: 10px 0; /* Abstand zum Text oben und unten */
 }
 #hover-text-desc {
-  color: #0ba7ff;
-  font-size: 0.9rem; /* Kleine Schriftgröße */
+  color: #66CDCA;
+  font-size: 1.2rem; /* Kleine Schriftgröße */
 }
 
