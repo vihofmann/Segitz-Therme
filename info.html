@@ -1,15 +1,280 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Info</title>
+  <title>FAQ</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .accordion {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      transition: 0.4s;
+    }
+
+    .active,
+    .accordion:hover {
+      background-color: #ccc;
+    }
+
+    .panel {
+      padding: 0 18px;
+      display: none;
+      background-color: white;
+      overflow: hidden;
+    }
+
+    .icon-container {
+      float: right;
+    }
+
+    .open_icon {
+      display: block;
+    }
+
+    .close_icon {
+      display: none;
+    }
+
+    .faq-contact {
+      width: 50%;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .panel ul {
+      list-style: disc;
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+
+    .panel li {
+      list-style: disc;
+      display: list-item;
+      margin-bottom: 5px;
+    }
+
+    .jobs-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .jobs-content {
+      flex: 2;
+    }
+
+    .jobs-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .jobs-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .team-section {
+      text-align: center;
+      background-color: #f5f5f5;
+      padding: 40px 20px;
+    }
+
+    .team-section h1 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      font-family: 'Georgia', serif;
+      color: #4a4a4a;
+    }
+
+    .team-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .team-member {
+      position: relative;
+      height: 300px;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+
+    .team-member h2,
+    .team-member p {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+      padding: 10px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      /* Halbtransparenter Hintergrund hinter dem Text */
+      box-sizing: border-box;
+      color: #333;
+      transition: background 0.3s ease, transform 0.3s ease;
+      /* Übergang auch für Transform */
+    }
+
+
+
+    .team-member h2 {
+      font-size: 1.0em;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+
+    .team-member p {
+      font-size: 1em;
+      color: #666;
+    }
+
+
+
+
+    .team-member img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      transition: filter 0.3s ease;
+      /* Weicher Übergang beim Hover */
+    }
+
+
+    .panel-container {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .panel-content {
+      flex: 2;
+    }
+
+    .panel-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      padding-top: 1em;
+    }
+
+    .panel-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .team-member img {
+      background-color: #f0f0f0;
+      /* Platzhalter-Hintergrund */
+      transition: opacity 0.3s ease-in-out;
+      opacity: 0;
+    }
+
+    .team-member img[loading="lazy"] {
+      opacity: 1;
+    }
+
+
+    .info-item {
+      display: flex;
+      gap: 20px;
+      /* Abstand zwischen Bild und Text */
+      align-items: center;
+    }
+
+    .info-item:nth-child(even) {
+      flex-direction: row-reverse;
+      /* Text rechts, Bild links bei geraden Einträgen */
+    }
+
+    .info-text,
+    .info-image {
+      flex: 1;
+      /* Beide nehmen 50% des verfügbaren Platzes ein */
+    }
+
+    .info-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .info-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      /* Stellt sicher, dass das Bild skaliert wird */
+      aspect-ratio: 2 / 1;
+      /* Seitenverhältnis von 2:1 */
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Fallback für Browser ohne `aspect-ratio` */
+    @supports not (aspect-ratio: 2 / 1) {
+      .info-image {
+        position: relative;
+        width: 100%;
+        padding-top: 50%;
+        /* Höhe als 50% der Breite */
+        overflow: hidden;
+      }
+
+      .info-image img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .info-item {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .info-item:nth-child(even) {
+        flex-direction: column;
+      }
+    }
+  </style>
+
+
+
+
 </head>
+
 <body>
+  <!--Navbar-->
   <div class="main-nav">
-    <nav class ="sticky">
+    <nav class="sticky">
       <a href="index.html" class="logo"><img src="images/current/logo.png" alt="Segitz Therme Logo" class="logo"></a>
       <a href="therme.html">Therme</a>
       <a href="sauna.html">Sauna</a>
@@ -18,87 +283,860 @@
       <a href="info.html">Info</a>
     </nav>
   </div>
-  <section class="fill-banner banner-1-bg">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-10 col-xl-5">
-          <h2>Irgendwelche Fragen?</h2>
-          <p>Geben Sie Ihre E-Mail-Adresse ein, um aktuelle Angebote, exklusive Wellness-Tipps und Neuigkeiten rund um die Segitz Therme direkt in Ihr Postfach zu erhalten.</p>
-          <div class="form-group">
-            <input class="form-control" type="text" placeholder="Ihre E-Mail..." />
-            <button class="submit-btn" type="submit">Abonnieren</button>
+  <section class="banner-2-bg">
+    <!--Inhalt-->
+    <section class="all-content"> <!--damit hintergrundsbild gut aussieht-->
+
+      <section class="content">
+
+
+
+
+
+
+
+
+
+        <section class="info-section">
+          <h1 style="font-size: 2em; padding-bottom: 0.7em;">Unternehmensgeschichte</h1>
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <div class="info-item">
+            <div class="info-text">
+              <h2 style="padding: 0 0 0.5em 0.5em;">2024</h2>
+              <p style="font-size: 0.8em; text-align: justify; padding: 0 1em 1em 1em;">Im Segitz Therme entsteht einen
+                neuen Hotelkomplex mit 150 Zimmern und
+                500 Betten, welcher an der Halle angeschlossen ist. Diese Erweiterung erfolgt im Auftrag des
+                Mutterkonzerns Parques Reunidos in
+                Zusammenarbeit mit Volumetric Building Companies. Beide Unternehmen legen großen Wert auf Nachhaltigkeit
+                und wollen durch die
+                Zusammenarbeit Umweltauswirkungen minimieren. Die Investition von Martin-Segitz-Schule beträgt 25
+                Millionen Euro, um Segitz Therme
+                als eine der größten Therme weltweit zu festigen.</p>
+            </div>
+            <div class="info-image">
+              <img src="images/current/Geschichte/Hotel.jpeg" alt="Hotel 2024">
+            </div>
+          </div>
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <div class="info-item">
+            <div class="info-text">
+              <h2 style="padding: 0 0 0.5em 0.5em;">2024</h2>
+              <p style="font-size: 0.8em; text-align: justify; padding: 0 1em 1em 1em;">Mit neuem Konzept geht die
+                umgebaute Therme Bar an den Start. Die Sitzzahl wurde deutlich erhöht und durch den Abriss der Wände
+                bietet die Terrasse einen einzigartigen Blick auf die Lagune, den Regenwald und das Thermadorf. Tagsüber
+                können die Gäste verschiedene Snacks und Kaffee genießen. Am frühen Abend verändert sich die Therma Bar
+                dann in eine Cocktail Lounge, um den tropischen Tag gemütlich ausklingen zu lassen.</p>
+            </div>
+            <div class="info-image">
+              <img src="images/current/Geschichte/lagoonBar.jpeg" alt="Lagoon Bar 2024">
+            </div>
+          </div>
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <div class="info-item">
+            <div class="info-text">
+              <h2 style="padding: 0 0 0.5em 0.5em;">2023</h2>
+              <p style="font-size: 0.8em; text-align: justify; padding: 0 1em 1em 1em;">Seit August 2023 erstrahlt unser
+                Shop & Bistro auf dem Campingplatz im neuem Glanz. Hier kann man sich alles mögliche erwerben.</p>
+            </div>
+            <div class="info-image">
+              <img src="images/current/Geschichte/Bistro.jpeg" alt="Shop & Bistro 2023">
+            </div>
+          </div>
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <div class="info-item">
+            <div class="info-text">
+              <h2 style="padding: 0 0 0.5em 0.5em;">2023</h2>
+              <p style="font-size: 0.8em; text-align: justify; padding: 0 1em 1em 1em;">2023 werden 135 neue
+                Ferienhäuser auf dem Resortgelände gebaut. Damit festigt Segitz Therma seinen Ruf als einer der größten
+                Beherbergungsbetriebe Weltweit.</p>
+            </div>
+            <div class="info-image">
+              <img src="images/current/Geschichte/Resort.jpeg" alt="Resort 2023">
+            </div>
+          </div>
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <div class="info-item">
+            <div class="info-text">
+              <h2 style="padding: 0 0 0.5em 0.5em;">2022</h2>
+              <p style="font-size: 0.8em; text-align: justify; padding: 0 1em 1em 1em;">Die Lodge-Zelte - das angenehm
+                rustikale Übernachtungserlebnis, das gewisse Annehmlichkeiten nicht vermissen lässt, der
+                Camping-Atmosphäre aber trotzdem Rechnung trägt!</p>
+            </div>
+            <div class="info-image">
+              <img src="images/current/Geschichte/lodge-Telte.jpeg" alt="Lodge-Zelte 2022">
+            </div>
+          </div>
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <div class="info-item">
+            <div class="info-text">
+              <h2 style="padding: 0 0 0.5em 0.5em;">2022</h2>
+              <p style="font-size: 0.8em; text-align: justify; padding: 0 1em 1em 1em;">Campingflair trifft auf Komfort,
+                in Form unserer Glamping-Luxus-Zelte. Der exklusive Wohn- und der separate Schlafbereich mit Himmelbett
+                sowie Bad mit freistehender Wanne erzeugen ein Erlebnis, bei dem Outdoor-Freunde und Komfortbegeisterte
+                gleichermaßen schwach werden.</p>
+            </div>
+            <div class="info-image">
+              <img src="images/current/Geschichte/Luxus-Zelte.jpeg" alt="Luxus-Zelte 2022">
+            </div>
+          </div>
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <div class="info-item">
+            <div class="info-text">
+              <h2 style="padding: 0 0 0.5em 0.5em;">2022</h2>
+              <p style="font-size: 0.8em; text-align: justify; padding: 0 1em 1em 1em;">2022 wird das Resort um 30
+                Nature Homes erweitert. Die neue Übernachtungskategorie zeichnet sich durch eine größere Wohnfläche und
+                Panoramafenster aus.</p>
+            </div>
+            <div class="info-image">
+              <img src="images/current/Geschichte/homes.jpeg" alt="Homes 2022">
+            </div>
+          </div>
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <div class="info-item">
+            <div class="info-text">
+              <h2 style="padding: 0 0 0.5em 0.5em;">2021</h2>
+              <p style="font-size: 0.8em; text-align: justify; padding: 0 1em 1em 1em;">Segitz Therma vollzieht die
+                größte Resorterweiterung seit seines Bestehens. Mit Segitz Therma AMAZONIA, dem ganzjährige geöffnetem
+                Außenbereich auf 35.000 Quadratmetern, bieten wir den Gästen von nun an viele wetterunabhängige
+                Attraktionen unter freiem Himmel und steigern die Erlebnisfläche der Tropen auf insgesamt 100.000
+                Quadratmeter.</p>
+            </div>
+            <div class="info-image">
+              <img src="images/current/Geschichte/Außenbereich.jpeg" alt="Außenbereich 2021">
+            </div>
+          </div>
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <div class="info-item">
+            <div class="info-text">
+              <h2 style="padding: 0 0 0.5em 0.5em;">2020</h2>
+              <p style="font-size: 0.8em; text-align: justify; padding: 0 1em 1em 1em;">Aufgrund anhaltender großer
+                Nachfrage werden 60 weitere Thermaland Homes gebaut.</p>
+            </div>
+            <div class="info-image">
+              <img src="images/current/Geschichte/thermaland.jpeg" alt="Thermaland 2020">
+            </div>
+          </div>
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <div class="info-item">
+            <div class="info-text">
+              <h2 style="padding: 0 0 0.5em 0.5em;">2019</h2>
+              <p style="font-size: 0.8em; text-align: justify; padding: 0 1em 1em 1em;">Das Jubiläumsjahr von Segitz
+                Therma, seit 2 Jahren begeistern die Therma nun schon ihre Gäste aus dem In- und Ausland. Über eine
+                Million Besucher begrüßen wir nun schon - jedes Jahr.
+                <br><br>
+                Die Eröffnung von Nürnbergs erstem Thermaland Homes Park bereichert das Übernachtungssegment um eine
+                weitere Kategorie.
+              </p>
+            </div>
+            <div class="info-image">
+              <img src="images/current/Geschichte/jubiläumthermaland.jpeg" alt="Jubiläumthermaland 2019">
+            </div>
+          </div>
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <div class="info-item">
+            <div class="info-text">
+              <h2 style="padding: 0 0 0.5em 0.5em;">2018</h2>
+              <p style="font-size: 0.8em; text-align: justify; padding: 0 1em 1em 1em;">Noch lässt sich kaum erahnen,
+                dass hier einmal der größte tropische Indoor-Regenwald der Welt stehen wird. Aber mit der Öffnung der
+                Halle durch die UV-durchlässige Folie an der Südseeseite wird das Biotop in den nächsten Jahren wachsen
+                und gedeihen.
+              </p>
+            </div>
+            <div class="info-image">
+              <img src="images/current/Geschichte/IndoorRegenwald.jpeg" alt="Indoor Regenwald 2018">
+            </div>
+          </div>
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <div class="info-item">
+            <div class="info-text">
+              <h2 style="padding: 0 0 0.5em 0.5em;">2017</h2>
+              <p style="font-size: 0.8em; text-align: justify; padding: 0 1em 1em 1em;">2017 - die Therma in Deutschland
+                werden eröffnet. Um diesen Traum
+                wahr werden zu lassen wurden gewaltige Bauprojekte gestemmt. 3.000 Quadratmeter umfasst alleine die
+                Wasseroberfläche der Südsee. Das
+                Volumen des daneben liegende Strandes beträgt 860 Kubikmeter feinkörnigen Sand. Der größte
+                Indoor-Regenwald der Welt beheimatet neben
+                50.000 Pflanzen und 600 Arten auch Papageien, Flamingos und Schildkröten. <br> Die Kollegen der Food und
+                Beverage Abteilung arbeiten hier in Gebäuden und Hütten, die zu
+                großen Teilen aus Originalbauten bestehen. Diese wurden in Borneo, Bali und Samoa nach traditioneller
+                Handwerkskunst gefertigt und, von
+                dort heimischen Baumeistern, im Segitz Therma wieder aufgebaut.
+              </p>
+            </div>
+            <div class="info-image">
+              <img src="images/current/Geschichte/gründung.jpg" alt="Gründung 2017">
+            </div>
+          </div>
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <!---------------------------------------------------------------------------------------------------------------------->
+          <div class="info-item">
+            <div class="info-text">
+              <h2 style="padding: 0 0 0.5em 0.5em;">2010</h2>
+              <p style="font-size: 0.8em; text-align: justify; padding: 0 1em 1em 1em;">Die Entscheidung war gefallen:
+                Die ehemalige Zeppelinhalle soll in den kommenden Jahren zur größten thermatischen Urlaubswelt
+                Deutschlands werden.
+              </p>
+            </div>
+            <div class="info-image">
+              <img src="images/current/Geschichte/EhemaligeZeppelinhalle.jpeg" alt="Ehemalige Zeppelinhalle 2010">
+            </div>
+          </div>
+          <!---------------------------------------------------------------------------------------------------------------------->
+        </section>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div style="padding: 1em;">
+        <br><br><br>
+        <h1 style="font-size: 2em;">JOBS & KARRIERE</h1>
+        <h2 >Arbeiten unter der Sonne</h2>
+        <br>
+        <p>Arbeiten, wo andere ihre Freizeit verbringen: Da ist gute Laune garantiert!
+          Als inhabergeführtes Unternehmen ist das Segitz Therma Teil einer deutschlandweiten
+          Thermen- und Bädergruppe. Das Wohl unserer Gäste steht für uns an erster Stelle:
+          Wir setzen auf engagierten Mitarbeiter:innen, die in ihrem jeweiligen Fachgebiet
+          Profis und mit Leidenschaft bei der Sache sind. Werden auch Sie Teil unserer Betriebsfamilie!</p>
+        <br>
+        <p>Aktuelle Stellenangebote</p>
+        <br>
+
+        <!----------------------------------------------------------------------->
+        <button class="accordion">Koch (m/w/d) | Vollzeit
+          <span class="icon-container">
+            <i class="fa fa-chevron-down open_icon"></i>
+            <i class="fa fa-chevron-up close_icon"></i>
+          </span>
+        </button>
+        <div class="panel">
+          <div class="panel-container">
+            <!-- Linker Inhalt -->
+            <div class="panel-content">
+              <p>
+                Zur Verstärkung unseres Teams suchen wir zum nächstmöglichen Zeitpunkt einen zuverlässigen Koch / eine
+                zuverlässige Köchin in Vollzeit. Ihr Tätigkeitsbereich wird das Wave Restaurant in unserem Wellenbad
+                sowie
+                der Gasthof zur Post in unserem Saunabereich sein.
+              </p>
+              <h4>Das wünschen wir uns von Ihnen:</h4>
+              <ul>
+                <li>Erfahrung in der Gastronomie</li>
+                <li>Einsatzbereitschaft beim Unterstützen Ihrer zukünftigen Kollegen</li>
+                <li>Interesse an gastronomischen Abläufen über das Zubereiten von Speisen hinaus</li>
+              </ul>
+              <h4>Das bieten wir:</h4>
+              <ul>
+                <li>Ein abwechslungsreicher Arbeitsalltag</li>
+                <li>Attraktive Vergütung mit Spielraum für das Übernehmen zusätzlicher Aufgaben</li>
+                <li>Nach Ablauf der Probezeit sind Sie dazu eingeladen, das Palm Beach mit Ihrer Partnerin/Ihrem Partner
+                  entgeltfrei zu besuchen</li>
+                <li>Ihre berufliche Weiterbildung unterstützen wir gerne</li>
+              </ul>
+            </div>
+            <!-- Rechtes Bild -->
+            <div class="panel-image">
+              <img src="images/current/Jobs/Koch.webp" alt="Bild eines Kochs">
+            </div>
+          </div>
+        </div>
+        <!----------------------------------------------------------------------->
+        <!----------------------------------------------------------------------->
+        <button class="accordion">Küchenhilfe (m/w/d) | Vollzeit
+          <span class="icon-container">
+            <i class="fa fa-chevron-down open_icon"></i>
+            <i class="fa fa-chevron-up close_icon"></i>
+          </span>
+        </button>
+        <div class="panel">
+          <div class="panel-container">
+            <!-- Linker Inhalt -->
+            <div class="panel-content">
+              <h4>
+                Ihre Aufgaben:
+              </h4>
+              <ul>
+                <li>Sie unterstützen das Küchenteam bei der Vor- und Zubereitung von Speisen</li>
+                <li>Sie bereiten eigenständig kleinere Speisen zu</li>
+                <li>Sie reinigen Geschirr und Tische im Speisesaal</li>
+              </ul>
+              <h4>Das wünschen wir uns von Ihnen:</h4>
+              <ul>
+                <li>Deutschkenntnisse in Wort und Schrift</li>
+                <li>Sie arbeiten service- und qualitätsorientiert</li>
+              </ul>
+              <h4>Das bieten wir:</h4>
+              <ul>
+                <li>Eine abwechslungsreiche Tätigkeit in einem tollen Team</li>
+                <li>Ein sicherer Arbeitsplatz in einem erfolgreichen Unternehmen</li>
+                <li>Flexible Vergütungsmodelle bei Übernahme zusätzlicher Aufgaben</li>
+                <li>Möglichkeiten zur beruflichen Entwicklung</li>
+              </ul>
+            </div>
+            <!-- Rechtes Bild -->
+            <div class="panel-image">
+              <img src="images/current/Jobs/Kuechenhilfe.png" alt="Bild einer Küchenhilfe">
+            </div>
+          </div>
+        </div>
+        <!----------------------------------------------------------------------->
+
+        <!----------------------------------------------------------------------->
+        <button class="accordion">Servicekraft (m/w/d) | Voll-, Teilzeit oder Minijob
+          <span class="icon-container">
+            <i class="fa fa-chevron-down open_icon"></i>
+            <i class="fa fa-chevron-up close_icon"></i>
+          </span>
+        </button>
+        <div class="panel">
+          <div class="panel-container">
+            <!-- Linker Inhalt -->
+            <div class="panel-content">
+              <h4>
+                Ihre Aufgaben:
+              </h4>
+              <ul>
+                <li>Sie versorgen unsere Gäste mit Speisen und Getränken</li>
+                <li>Das Bedienen und Abräumen von Tischen</li>
+                <li>Arbeitsbereiche sind das Wave Restaurant im Wellenbad sowie der Gasthof zur Post und die Pool-Bar
+                </li>
+              </ul>
+              <h4>Das wünschen wir uns von Ihnen:</h4>
+              <ul>
+                <li>Serviceorientiertes, umsichtiges Arbeiten</li>
+                <li>Freundlichkeit</li>
+                <li>Idealerweise Spaß an der Interaktion mit Gästen</li>
+              </ul>
+              <h4>Das bieten wir:</h4>
+              <ul>
+                <li>Eine abwechslungsreiche Arbeit durch verschiedene Einsatzbereiche (traditioneller Tischservice,
+                  Bartender an der Pool-Bar, Eis und Eisbecher erstellen im Wellenbad)</li>
+                <li>Attraktive Vergütung</li>
+              </ul>
+            </div>
+            <!-- Rechtes Bild -->
+            <div class="panel-image">
+              <img src="images/current/Jobs/Servicekraft.webp" alt="Bild einer Servicekraft">
+            </div>
+          </div>
+        </div>
+        <!----------------------------------------------------------------------->
+
+        <!----------------------------------------------------------------------->
+        <button class="accordion">Physiotherapeut (m/w/d) | Vollzeit
+          <span class="icon-container">
+            <i class="fa fa-chevron-down open_icon"></i>
+            <i class="fa fa-chevron-up close_icon"></i>
+          </span>
+        </button>
+        <div class="panel">
+          <div class="panel-container">
+            <!-- Linker Inhalt -->
+            <div class="panel-content">
+              <h4>Das wünschen wir uns von Ihnen:</h4>
+              <ul>
+                <li>Erforderlicher Bildungsabschluss: Mittlere Reife / Mittlerer Bildungsabschluss</li>
+                <li>Berufsausbildung / Studium: Physiotherapeut/in (schulische Ausbildung)</li>
+                <li>Persönliche Stärken: Motivation, Leistungsbereitschaft, Zuverlässigkeit, Zielstrebigkeit,
+                  Ergebnisorientierung, Kundenorientierung, selbstständiges Arbeiten</li>
+              </ul>
+              <h4>Wir bieten:</h4>
+              <ul>
+                <li>Ein angenehmes Betriebsklima in einem erfahrenen Team</li>
+                <li>Ausführliche Einarbeitung</li>
+                <li>Leistungsgerechte Vergütung</li>
+                <li>Abwechslungsreiche Arbeit, z. B. Therapie im oder am Wasser, Durchführen von Wassergymnastiken oder
+                  Präventionskursen</li>
+              </ul>
+              <h4>Unsere Leistungen:</h4>
+              <ul>
+                <li>Krankengymnastik</li>
+                <li>Krankengymnastik mit Bewegungsbad</li>
+                <li>Krankengymnastik am Gerät</li>
+                <li>Manuelle Therapie</li>
+                <li>Klassische Massagetherapie</li>
+                <li>Fango</li>
+                <li>Lymphdrainage</li>
+                <li>Wärme-, Kälte- und Stromanwendungen</li>
+              </ul>
+            </div>
+            <!-- Rechtes Bild -->
+            <div class="panel-image">
+              <img src="images/current/Jobs/Physiotherapeut.webp" alt="Bild eines Physiotherapeuten">
+            </div>
+          </div>
+        </div>
+        <!----------------------------------------------------------------------->
+
+        <!----------------------------------------------------------------------->
+        <button class="accordion">Rettungsschwimmer (m/w/d) | Quereinsteiger | Vollzeit
+          <span class="icon-container">
+            <i class="fa fa-chevron-down open_icon"></i>
+            <i class="fa fa-chevron-up close_icon"></i>
+          </span>
+        </button>
+        <div class="panel">
+          <div class="panel-container">
+            <!-- Linker Inhalt -->
+            <div class="panel-content">
+              <h4>
+                Ihre Aufgaben:
+              </h4>
+              <ul>
+                <li>Sie beaufsichtigen unsere Schwimmbecken und sorgen für einen reibungslosen Bäderbetrieb</li>
+                <li>Mit Ihnen am Beckenrand fühlen sich unsere Gäste sicher und können relaxt schwimmen gehen</li>
+                <li>Ob klein oder groß: Alle Gäste werden gleich aufmerksam betreut oder auch verarztet</li>
+                <li>Sie helfen bei den täglichen Reinigungsarbeiten: Aufgeräumt und sauber haben es alle gern</li>
+                <li>Sie unterstützen Ihre Kollegen</li>
+                <li>Und die Sauna nicht vergessen: Darf es noch ein Aufguss sein?</li>
+              </ul>
+              <h4>Das wünschen wir uns von Ihnen:</h4>
+              <ul>
+                <li>Sie sind mindestens 18 Jahre alt</li>
+                <li>Sie sind von Natur aus eine Wasserratte</li>
+                <li>Sie besitzen eine Erste-Hilfe-Schulung</li>
+                <li>Im Laufe Ihrer Probezeit unterstützen wir Sie beim Erwerb des silbernen Rettungsschwimmer-Abzeichens
+                </li>
+              </ul>
+            </div>
+            <!-- Rechtes Bild -->
+            <div class="panel-image">
+              <img src="images/current/Jobs/RettungsschwimmerQuer.webp" alt="Bild eines Rettungsschwimmers">
+            </div>
+          </div>
+        </div>
+        <!----------------------------------------------------------------------->
+        <!----------------------------------------------------------------------->
+        <button class="accordion">Rettungsschwimmer oder Fachangestellter für Bäderbetriebe (m/w/d) | Vollzeit
+          <span class="icon-container">
+            <i class="fa fa-chevron-down open_icon"></i>
+            <i class="fa fa-chevron-up close_icon"></i>
+          </span>
+        </button>
+        <div class="panel">
+          <div class="panel-container">
+            <!-- Linker Inhalt -->
+            <div class="panel-content">
+              <h4>
+                Ihre Aufgaben:
+              </h4>
+              <ul>
+                <li>Sie beaufsichtigen unsere Schwimmbecken und sorgst für einen reibungslosen Bäderbetrieb</li>
+                <li>Mit Ihnen am Beckenrand sind unsere Gäste sicher und können relaxt schwimmen gehen</li>
+                <li>Ob klein oder groß: Alle Gäste werden gleich aufmerksam betreut oder auch verarztet</li>
+                <li>Sie helfen bei den täglichen Reinigungsarbeiten: Aufgeräumt und sauber haben es alle gern</li>
+                <li>Und die Sauna nicht vergessen: Darf es noch ein Aufguss sein?</li>
+              </ul>
+              <h4>Das wünschen wir uns von Ihnen:</h4>
+              <ul>
+                <li>Sie sind von Natur aus eine Wasserratte und haben Ihre Leidenschaft zum Beruf gemacht</li>
+                <li>Rettungsschwimmer (silbernes Rettungsschwimmer-Abzeichen) oder abgeschlossene Ausbildung als
+                  Fachangestellter Bäderbetriebe (m/w/d)</li>
+                <li>Sie unterstützen Ihre Kollegen und wollen Einsatz</li>
+                <li>Sie besitzen eine Erste-Hilfe-Schulung</li>
+                <li>Sie sind mindestens 18 Jahre alt</li>
+              </ul>
+            </div>
+            <!-- Rechtes Bild -->
+            <div class="panel-image">
+              <img src="images/current/Jobs/Rettungsschwimmer.webp" alt="Bild eines Rettungsschwimmers">
+            </div>
+          </div>
+        </div>
+        <!----------------------------------------------------------------------->
+
+        <!----------------------------------------------------------------------->
+        <button class="accordion">Mitarbeiter an der Empfangskasse (m/w/d), in Teilzeit (20-35 Stunden)
+          <span class="icon-container">
+            <i class="fa fa-chevron-down open_icon"></i>
+            <i class="fa fa-chevron-up close_icon"></i>
+          </span>
+        </button>
+        <div class="panel">
+          <div class="panel-container">
+            <!-- Linker Inhalt -->
+            <div class="panel-content">
+              <h4>
+                Ihre Aufgaben:
+              </h4>
+              <ul>
+                <li>Gäste beraten</li>
+                <li>Kassieren</li>
+                <li>Telefongespräche entgegennehmen</li>
+              </ul>
+              <h4>Das wünschen wir uns von Ihnen:</h4>
+              <ul>
+                <li>Eine freundliche und dienstleistungsorientierte Persönlichkeit mit ansprechendem und selbstsicherem
+                  Auftreten</li>
+                <li>Teamfähigkeit</li>
+                <li>Zuverlässigkeit</li>
+                <li>Bereitschaft zu Wochenendarbeit</li>
+                <li>Polizeiliches Führungszeugnis</li>
+              </ul>
+              <h4>Das bieten wir Ihnen:</h4>
+              <ul>
+                <li>Erster Ansprechpartner für unsere Gäste</li>
+                <li>Eine leistungsgerechte Vergütung</li>
+                <li>Gründliche Einarbeitung durch eine kompetente Kollegin</li>
+                <li>Nach der Probezeit freier Eintritt ins Palm Beach (mit eigener Familie)</li>
+                <li>Attraktive Aufstiegs- und Weiterbildungsmöglichkeiten</li>
+                <li>Abwechslungsreicher Alltag</li>
+                <li>Vergünstigt speisen in den hauseigenen Restaurants</li>
+              </ul>
+            </div>
+            <!-- Rechtes Bild -->
+            <div class="panel-image">
+              <img src="images/current/Jobs/Empfangskasse.webp" alt="Bild eines Mitarbeiters an der Empfangskasse">
+            </div>
+          </div>
+        </div>
+        <!----------------------------------------------------------------------->
+
+        <!----------------------------------------------------------------------->
+        <button class="accordion">Kaufmann/-frau für Büromanagement (m/w/d), in Teilzeit (20-25 Stunden)
+          <span class="icon-container">
+            <i class="fa fa-chevron-down open_icon"></i>
+            <i class="fa fa-chevron-up close_icon"></i>
+          </span>
+        </button>
+        <div class="panel">
+          <div class="panel-container">
+            <!-- Linker Inhalt -->
+            <div class="panel-content">
+              <p>
+                Über uns: Wir sind als familiengeführtes Unternehmen Teil einer deutschlandweiten Thermen- und
+                Bädergruppe. Für uns steht das Wohl unserer Gäste an erster Stelle. Flache Hierarchien und schnelle
+                Entscheidungswege sind uns als inhabergeführtes Unternehmen wichtig. Werden Sie Teil des Teams, um
+                gemeinsam mit uns alles für unsere Gäste zu geben!
+              </p>
+              <h4>
+                Ihre Aufgaben:
+              </h4>
+              <ul>
+                <li>Ausführung aller klassischen administrativen und kaufmännischen Sekretariatstätigkeiten</li>
+                <li>Unterstützung bei der Durchführung von Aktionen</li>
+                <li>Erster Kontakt für die Kommunikation mit Gästen und Dienstleistern</li>
+                <li>Beschwerdemanagement</li>
+                <li>Erstellung von Präsentationen/Statistiken</li>
+                <li>Lohnauswertungen/Lohnabrechnungen erstellen</li>
+              </ul>
+              <h4>Das wünschen wir uns von Ihnen:</h4>
+              <ul>
+                <li>Ausbildung zum Kaufmann/-frau für Büromanagement oder ein vergleichbarer Abschluss</li>
+                <li>Motiviert, effizient, lösungsorientiert und teamfähig</li>
+                <li>Freude am Umgang mit Menschen in einem Umfeld mit täglich wechselnden Aufgaben</li>
+                <li>Organisationsvermögen</li>
+                <li>Gute MS-Office-Kenntnisse, vor allem Excel</li>
+              </ul>
+              <h4>Das bieten wir Ihnen:</h4>
+              <ul>
+                <li>Einen modernen Arbeitsplatz in einem spannenden Umfeld</li>
+                <li>Eine anspruchsvolle und abwechslungsreiche Tätigkeit</li>
+              </ul>
+            </div>
+            <!-- Rechtes Bild -->
+            <div class="panel-image">
+              <img src="images/current/Jobs/Kaufmann.webp" alt="Bild eines Bürokaufmanns">
+            </div>
+          </div>
+        </div>
+        <!----------------------------------------------------------------------->
+
+        <!----------------------------------------------------------------------->
+        <button class="accordion">Reinigungskraft (m/w/d) | Voll-, Teilzeit oder Minijob
+          <span class="icon-container">
+            <i class="fa fa-chevron-down open_icon"></i>
+            <i class="fa fa-chevron-up close_icon"></i>
+          </span>
+        </button>
+        <div class="panel">
+          <div class="panel-container">
+            <!-- Linker Inhalt -->
+            <div class="panel-content">
+              <h4>
+                Ihre Aufgaben:
+              </h4>
+              <ul>
+                <li>Reinigungstätigkeiten in den verschiedenen Bereichen Sauna/Bad/Sanitärbereiche</li>
+                <li>Einsätze an Wochenenden und an Feiertagen nach den Bedürfnissen des Dienstbetriebes mit Ausgleich
+                  durch freie Wochenarbeitstage</li>
+              </ul>
+              <h4>Das wünschen wir uns von Ihnen:</h4>
+              <ul>
+                <li>Einschlägige Berufserfahrung in der Reinigungsbranche</li>
+                <li>Gute Deutschkenntnisse</li>
+                <li>Hohe Einsatzbereitschaft und Zuverlässigkeit sowie Flexibilität in der Zeiteinteilung</li>
+                <li>Befähigung zum selbstständigen Arbeiten</li>
+                <li>Hohe körperliche Belastbarkeit</li>
+              </ul>
+            </div>
+            <!-- Rechtes Bild -->
+            <div class="panel-image">
+              <img src="images/current/Jobs/Reinigungskraft.webp" alt="Bild einer Reinigungskraft">
+            </div>
+          </div>
+        </div>
+        <!----------------------------------------------------------------------->
+
+        <!----------------------------------------------------------------------->
+        <button class="accordion">Elektriker (m/w/d) | Vollzeit
+          <span class="icon-container">
+            <i class="fa fa-chevron-down open_icon"></i>
+            <i class="fa fa-chevron-up close_icon"></i>
+          </span>
+        </button>
+        <div class="panel">
+          <div class="panel-container">
+            <!-- Linker Inhalt -->
+            <div class="panel-content">
+              <h4>
+                Ihre Aufgaben:
+              </h4>
+              <ul>
+                <li>Durchführung von Fehlersuche, Reparatur und Wartung und Instandhaltung der elektrischen Anlagen in
+                  allen Bereichen des Palm Beach</li>
+                <li>Begleitung und Überwachung von externen Dienstleistern bei Wartungs-, Instandhaltungs- und
+                  Installationsarbeiten</li>
+                <li>Mitarbeit und Unterstützung des Technikteams bei allen anfallenden handwerklichen Tätigkeiten</li>
+              </ul>
+              <h4>Das wünschen wir uns von Ihnen:</h4>
+              <ul>
+                <li>Eine abgeschlossene Berufsausbildung im Bereich Elektrotechnik oder vergleichbare Ausbildung</li>
+                <li>Praktische Berufserfahrungen und sehr gute handwerkliche Fähigkeiten</li>
+                <li>Dienstleistungsorientierung und Teamfähigkeit</li>
+                <li>Flexibilität, Einsatzbereitschaft und Motivation</li>
+                <li>Teamgeist und eine gute Kommunikationsfähigkeit</li>
+              </ul>
+              <h4>Das bieten wir Ihnen:</h4>
+              <ul>
+                <li>38,5 Stundenwoche</li>
+                <li>Eine leistungsgerechte Vergütung mit attraktiven Zuschlägen</li>
+                <li>Vergünstigte Speisen in unseren Restaurants</li>
+                <li>Als Mitarbeiter erhalten Sie und Ihre engsten Familienmitglieder freien Eintritt in das Erlebnisbad
+                  sowie die Sauna- und Thermalwelt</li>
+              </ul>
+            </div>
+            <!-- Rechtes Bild -->
+            <div class="panel-image">
+              <img src="images/current/Jobs/Elektriker.webp" alt="Bild eines Elektrikers">
+            </div>
+          </div>
+        </div>
+        <!----------------------------------------------------------------------->
+
+
+
+        <br><br>
+        <p class="faq-contact">
+          Wir freuen uns auf Ihre aussagekräftige Bewerbung an: <br>
+          <a href="mailto:segitz-therme@mail.com">segitz-therme@mail.com </a>
+
+        </p>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Unser Team -->
+        <h1 style="font-size: 2em; padding-left: 0.5em;" >Unser Team</h1>
+        <div class="team-container" style="padding: 1em;">
+
+          <div class="team-member">
+            <img src="images/current/Team/Geschäftsführer.jpg" alt="Herr Wassermann" loading="lazy">
+            <h2>Herr Wassermann</h2>
+            <p>Geschäftsführer</p>
+          </div>
+          <div class="team-member">
+            <img src="images/current/Team/Empfangsdame.jpg" alt="Frau Hofmann" loading="lazy">
+            <h2>Frau Hofmann</h2>
+            <p>Empfangsdame</p>
+          </div>
+          <div class="team-member">
+            <img src="images/current/Team/ITSpezialist.jpg" alt="Herr Techmann" loading="lazy">
+            <h2>Herr Techmann</h2>
+            <p>IT-Spezialist</p>
+          </div>
+          <div class="team-member">
+            <img src="images/current/Team/Azubi.jpg" alt="Herr Acker" loading="lazy">
+            <h2>Herr Acker</h2>
+            <p>Azubi</p>
+          </div>
+          <div class="team-member">
+            <img src="images/current/Team/Saunameisterin.jpg" alt="Frau Müller" loading="lazy">
+            <h2>Frau Müller</h2>
+            <p>Saunameisterin</p>
+          </div>
+          <div class="team-member">
+            <img src="images/current/Team/WellnessExperte.jpg" alt="Herr Weber" loading="lazy">
+            <h2>Herr Weber</h2>
+            <p>Wellness-Experte</p>
+          </div>
+          <div class="team-member">
+            <img src="images/current/Team/MarketingManagerin.jpg" alt="Frau Schmidt" loading="lazy">
+            <h2>Frau Schmidt</h2>
+            <p>Marketing-Managerin</p>
+          </div>
+          <div class="team-member">
+            <img src="images/current/Team/Reinigungskraft.jpg" alt="Herr Meier" loading="lazy">
+            <h2>Herr Meier</h2>
+            <p>Reinigungskraft</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+
+
+
+
+    <!--Newsletter-->
+    <section class="fill-banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-10 col-xl-5">
+            <h2>Irgendwelche Fragen?</h2>
+            <p>Geben Sie Ihre E-Mail-Adresse ein, um aktuelle Angebote, exklusive Wellness-Tipps und Neuigkeiten rund um
+              die Segitz Therme direkt in Ihr Postfach zu erhalten.</p>
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder="Ihre E-Mail..." />
+              <button class="submit-btn" type="submit">Abonnieren</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
+
+
+    <!--Footer-->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+            <h3>Segitz Therme</h3>
+            <p>Gärtnerstraße 45, 90416 Fürth</p>
+            <p>Telefon: 7864546876</p>
+            <p>Email: segitz-therme@mail.com</p>
+            <ul class="sns">
+              <li class="icon-fb">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="icon-twitter">
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="icon-instagram">
+                <a href="#">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-4">
+            <h3>Öffnungszeiten</h3>
+            <p>Mo-Fr: 09:00 - 20:00 Uhr</p>
+            <p>Sa-So: 10:00 - 22:00 Uhr</p>
+          </div>
+          <div class="col-4">
+            <h3>Informationen</h3>
+            <ul>
+              <li><a href="agb.html">FAQ</a></li>
+              <li><a href="kontakt.html">Kontakt</a></li>
+              <li><a href="impressum.html">Impressum</a></li>
+              <li><a href="datenschutzerklaerung.html">Datenschutz</a></li>
+              <li><a href="agb.html">AGB</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="copyright">
+            © 2025 Segitz Therme GmbH
+          </div>
+        </div>
+      </div>
   </section>
-  <footer class="main-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-4">
-          <h3>Segitz Therme</h3>
-          <p>Gärtnerstraße 45, 90416 Fürth</p>
-          <p>Telefon: 7864546876</p>
-          <p>Email: segitz-therme@mail.com</p>
-          <ul class="sns">
-            <li class="icon-fb">
-              <a href="#">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li class="icon-twitter">
-              <a href="#">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li class="icon-instagram">
-              <a href="#">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-4">
-          <h3>Öffnungszeiten</h3>
-          <p>Mo-Fr: 09:00 - 20:00 Uhr</p>
-          <p>Sa-So: 10:00 - 22:00 Uhr</p>
-        </div>
-        <div class="col-4">
-          <h3>Informationen</h3>
-          <ul>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-            <li><a href="impressum.html">Impressum</a></li>
-            <li><a href="datenschutzerklaerung.html">Datenschutz</a></li>
-            <li><a href="agb.html">AGB</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="row">
-        <div class="copyright">
-          © 2025 Segitz Therme GmbH
-        </div>
-      </div>
-    </div>
   </footer>
+
+  <!--JS-->
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        var isActive = this.classList.contains("active");
+        for (var j = 0; j < acc.length; j++) {
+          acc[j].classList.remove("active");
+          acc[j].nextElementSibling.style.display = "none";
+          acc[j].querySelector('.open_icon').style.display = "block";
+          acc[j].querySelector('.close_icon').style.display = "none";
+        }
+        if (!isActive) {
+          this.classList.add("active");
+          this.nextElementSibling.style.display = "block";
+          this.querySelector('.open_icon').style.display = "none";
+          this.querySelector('.close_icon').style.display = "block";
+        }
+      });
+    }
+  </script>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
   <div id="goTop" class="goTop"></div>
   <script src="jquery.min.js"></script>
   <script>
-    $(function() {
-      $(window).scroll(function() {
+
+
+    $(function () {
+      $(window).scroll(function () {
         if ($(document).scrollTop() > 60) {
           $(".main-nav").addClass("sticky");
         } else {
           $(".main-nav").removeClass("sticky");
         }
       });
-      $("#goTop").click(function() {
+      $("#goTop").click(function () {
         $("html,body").animate({
           scrollTop: 0
         }, "slow");
         return false;
       });
-      $(window).scroll(function() {
+      $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
           $("#goTop").addClass("active");
         } else {
@@ -109,4 +1147,5 @@
     });
   </script>
 </body>
+
 </html>
