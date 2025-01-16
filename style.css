@@ -1120,3 +1120,19 @@ a {
   color: #1f3d46;
 
 }
+
+/* Speziell für Wellnesslink */
+
+.personen-gallery{
+  display: flex;
+  justify-content: center; /* Zentriert die Bilder horizontal */
+  gap: 1rem; /* Fügt Abstand zwischen den Bildern hinzu */
+  border-radius: 50%;
+}
+
+.Massagepersonal {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  object-fit: cover;
+}
