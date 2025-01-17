@@ -98,6 +98,7 @@
 
   </div>
 </section>
+<!--Newletter-->
 <section class="fill-banner banner-1-bg">
   <div class="container">
     <div class="row">
@@ -105,13 +106,16 @@
         <h2>Irgendwelche Fragen?</h2>
         <p>Geben Sie Ihre E-Mail-Adresse ein, um aktuelle Angebote, exklusive Wellness-Tipps und Neuigkeiten rund um die Segitz Therme direkt in Ihr Postfach zu erhalten.</p>
         <div class="form-group">
-          <input class="form-control" type="text" placeholder="Ihre E-Mail..." />
-          <button class="submit-btn" type="submit">Abonnieren</button>
+          <input id="newsletter-email" class="form-control" type="text" placeholder="Ihre E-Mail..." required />
+          <button id="subscribe-btn" class="submit-btn" type="submit">Abonnieren</button>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+
+
 <footer class="main-footer">
   <div class="container">
     <div class="row">
@@ -218,7 +222,21 @@
     })
     .catch(error => console.error('Fehler beim Laden des Pop-ups:', error));
 </script>
+<script>
+  document.getElementById('subscribe-btn').addEventListener('click', function(event) {
+    event.preventDefault(); // Verhindert die Standardaktion des Buttons
 
+    const emailInput = document.getElementById('newsletter-email');
+    const email = emailInput.value.trim();
+
+    if (email) {
+      alert('Vielen Dank für Ihre Anmeldung zum Newsletter!');
+      window.location.href = 'index.html'; // Weiterleitung zur Startseite
+    } else {
+      alert('Bitte geben Sie eine gültige E-Mail-Adresse ein.');
+    }
+  });
+</script>
 
 
 

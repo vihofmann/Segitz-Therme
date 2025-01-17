@@ -64,7 +64,7 @@
     </div>
     <section class="banner-2-bg">
     <!--Inhalt-->
-    <section class="all-content"> <!--damit hintergrundsbild gut aussieht-->
+    <section class="all-content"> <!--Damit hintergrundsbild gut aussieht-->
     <section class="content">
         <h2>Häufig gestellte Fragen (FAQ)</h2>
         <br>
@@ -284,37 +284,5 @@
     }).scroll();
   });
 </script>
-
-<div id="popup-container"></div>
-<script>
-  // Pop-up HTML laden und in die Seite einfügen
-  fetch('popup.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('popup-container').innerHTML = data;
-
-      // Pop-up JavaScript aktivieren
-      const closeButton = document.getElementById('popup-close-btn');
-      const popup = document.getElementById('popup');
-      const hidePopupCheckbox = document.getElementById('hide-popup');
-
-      // Beim Schließen des Pop-ups
-      closeButton.addEventListener('click', function () {
-        popup.style.display = 'none';
-
-        // Wenn die Checkbox "Nicht mehr anzeigen" aktiviert ist
-        if (hidePopupCheckbox.checked) {
-          localStorage.setItem('hidePopup', 'true');
-        }
-      });
-
-      // Pop-up nur anzeigen, wenn es nicht deaktiviert wurde
-      if (localStorage.getItem('hidePopup') === 'true') {
-        popup.style.display = 'none';
-      }
-    })
-    .catch(error => console.error('Fehler beim Laden des Pop-ups:', error));
-</script>
-
 </body>
 </html>
