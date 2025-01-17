@@ -18,6 +18,103 @@
       <a href="info.html">Info</a>
     </nav>
   </div>
+
+  <section class="dresscode fill-banner banner-1-bg">
+    <h2 style="margin: 0 !important; padding-top: 20px; padding-bottom: 20px; text-shadow: 2px 2px 15px rgb(95, 101, 104);">Shop & Gutscheine</h2>
+    <div >
+    <div class=row>
+      
+      </div>
+    </div>
+</section>      
+
+
+<div class="button-grid">
+  <!-- Button 1 -->
+  <button class="btn" onclick="toggleSectionVisibility('grid1')">
+      Best Deals <span class="toggle-icon fa fa-angle-double-down"></span>
+  </button>
+  <!-- Button 2 -->
+  <button class="btn" onclick="toggleSectionVisibility('grid2')">
+      Massagen <span class="toggle-icon fa fa-angle-double-down"></span>
+  </button>
+  <!-- Button 3 -->
+  <button class="btn" onclick="toggleSectionVisibility('grid3')">
+      Wertgutscheine <span class="toggle-icon fa fa-angle-double-down"></span>
+  </button>
+  <!-- Button 4 -->
+  <button class="btn" onclick="toggleSectionVisibility('grid4')">
+      Geschenksets <span class="toggle-icon fa fa-angle-double-down"></span>
+  </button>
+</div>
+
+<!-- Grids for each button -->
+<div id="grid1" class="grid-item">
+  <!-- Grid for Button 1 -->
+  <!-- Repeatedly for six images with descriptions -->
+  <section class="doc-section">
+
+    <section class="doc-section">
+
+    
+
+    <div class="row flex-container margin">
+        <div class="col-8 col-md-6 image-container">
+            <img src="images/current/saltgrotte.png" alt="Salzdampfbad" class="img">
+            <h3>25 euro <br> Massage</h3>
+            <div class="hover-text">Massage für zwei</div>
+        </div>
+        <div class="col-8 col-md-6 image-container">
+          <img src="images/current/saltgrotte.png" alt="Salzdampfbad" class="img">
+          <h3>25 euro <br> Massage</h3>
+          <div class="hover-text">Massage für zwei</div>
+      </div>
+      <div class="col-8 col-md-6 image-container">
+        <img src="images/current/saltgrotte.png" alt="Salzdampfbad" class="img">
+        <h3>25 euro <br> Massage</h3>
+        <div class="hover-text">Massage für zwei</div>
+    </div>
+    </div>
+    <div class="row flex-container margin">
+      <div class="col-8 col-md-6 image-container">
+        <img src="images/current/saltgrotte.png" alt="Salzdampfbad" class="img">
+        <h3>25 euro <br> Massage</h3>
+        <div class="hover-text">Massage für zwei</div>
+    </div>
+    <div class="col-8 col-md-6 image-container">
+      <img src="images/current/saltgrotte.png" alt="Salzdampfbad" class="img">
+      <h3>25 euro <br> Massage</h3>
+      <div class="hover-text">Massage für zwei</div>
+  </div>
+  <div class="col-8 col-md-6 image-container">
+    <img src="images/current/saltgrotte.png" alt="Salzdampfbad" class="img">
+    <h3>25 euro <br> Massage</h3>
+    <div class="hover-text">Massage für zwei</div>
+</div>
+    </div>
+  <!-- Continue adding images and descriptions -->
+</div>
+
+<div id="grid2" class="grid-item">
+  <!-- Grid for Button 2 -->
+  <img src="images/current/holzsauna.PNG" alt="Holz Sauna">
+  <p>Description of Image 2</p>
+  <!-- Continue adding images and descriptions -->
+</div>
+
+<div id="grid3" class="grid-item">
+  <!-- Grid for Button 3 -->
+  <img src="images/current/holzsauna.PNG" alt="Holz Sauna">
+  <p>Description of Image 3</p>
+  <!-- Continue adding images and descriptions -->
+</div>
+
+<div id="grid4" class="grid-item">
+  <!-- Grid for Button 4 -->
+  <img src="images/current/holzsauna.PNG" alt="Holz Sauna">
+  <p>Description of Image 4</p>
+  <!-- Continue adding images and descriptions -->
+</div>
   <section class="fill-banner banner-1-bg">
     <div class="container">
       <div class="row">
@@ -107,6 +204,17 @@
         }
       }).scroll();
     });
+
+    function toggleSectionVisibility(id) {
+    var grids = document.querySelectorAll('.grid-item');
+    grids.forEach(function(grid) {
+        if(grid.id === id) {
+            grid.style.display = grid.style.display === 'none' ? 'grid' : 'none';
+        } else {
+            grid.style.display = 'none';
+        }
+    });
+}
   </script>
 </body>
 </html>
