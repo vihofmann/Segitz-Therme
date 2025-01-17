@@ -1133,11 +1133,7 @@ a {
   overflow: hidden;
 }
 
-.image-container img {
-  display: block;
-  width: 100%;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
+
 
 .image-container .hover-text {
   position: absolute;
@@ -1185,17 +1181,18 @@ a {
 
 /* Styling für die Bildcontainer */
 #massage-gallery{
-  margin: 2%;
+  height: 350px;
+  margin: 0 2% 2% 2%;
   position: relative;
   overflow: hidden;
-  width: 50px;
+  object-position: center top;
 }
 
 #massage-gallery img {
 
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 350px;
+  height: 350px;
   object-fit: cover; /* Bild an Container anpassen */
   transition: transform 0.9s ease, opacity 0.3s ease;
   object-position: center top;
