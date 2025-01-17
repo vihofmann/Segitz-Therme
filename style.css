@@ -1131,7 +1131,7 @@ a {
 .image-container {
   position: relative;
   overflow: hidden;
-  padding-bottom: 40px;
+  padding:  40px 0;
 }
 
 .image-container img {
@@ -1212,10 +1212,11 @@ a {
 
 #massage-gallery img {
   display: block;
-  width: 100%;
+  width: 60%;
   height: 100%; /* Füllt den Container aus */
   object-fit: cover; /* Bild proportional anpassen */
   transition: transform 0.9s ease, opacity 0.3s ease;
+  border-radius: 20%;
 }
 
 #massage-gallery .hover-text {
@@ -1256,7 +1257,7 @@ a {
 /* Responsive Anpassungen */
 @media screen and (max-width: 1024px) {
   #massage-gallery .image-container {
-    width: 30vh;
+    width: 10vh;
     height: 30vh;
   }
 
