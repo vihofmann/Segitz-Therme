@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pop-up Aktuelle Informationen</title>
+  <style>
+    /* Styling für das Pop-up */
+    #popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    #popup-content {
+      display: flex;
+      background: white;
+      border-radius: 10px;
+      max-width: 800px;
+      width: 90%;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Bildbereich */
+    #popup-image {
+      flex: 1;
+      background-image: url('images/current/Masseuse3.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 300px;
+    }
+
+    /* Textbereich */
+    #popup-text {
+      flex: 1;
+      padding: 20px;
+      text-align: left;
+      position: relative;
+    }
+
+    #popup-text h2 {
+      margin-top: 0;
+      font-size: 1.5em;
+      color: #333;
+    }
+
+    #popup-text p {
+      margin: 10px 0;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* Schließen-Button */
+    #popup-close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #333;
+    }
+
+    /* Checkbox */
+    #hide-popup-container {
+      margin-top: 20px;
+    }
+
+    #hide-popup-container label {
+      margin-left: 5px;
+      color: #555;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="popup">
+    <div id="popup-content">
+      <!-- Linker Bildbereich -->
+      <div id="popup-image"></div>
+
+      <!-- Rechter Textbereich -->
+      <div id="popup-text">
+        <button id="popup-close-btn" aria-label="Schließen">X</button>
+        <h2>Aktuelle Informationen</h2>
+        <p>
+          Liebe Gäste, aufgrund einer technischen Störung des Internets sind EC-Zahlungen sowie die telefonische
+          Erreichbarkeit derzeit leider nicht möglich!
+        </p>
+        <p>
+          Der Dienstleister arbeitet bereits mit Hochdruck daran, das Problem zu lösen.
+        </p>
+        <p>
+          Vielen Dank für Ihr Verständnis! <br>
+          Ihre Segitz Therma
+        </p>
+        <div id="hide-popup-container">
+          <input type="checkbox" id="hide-popup" />
+          <label for="hide-popup">Nicht mehr anzeigen</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Warten, bis die Seite geladen ist
+    document.addEventListener('DOMContentLoaded', function () {
+      const closeButton = document.getElementById('popup-close-btn');
+      const popup = document.getElementById('popup');
+      const hidePopupCheckbox = document.getElementById('hide-popup');
+
+      // Beim Schließen des Pop-ups
+      closeButton.addEventListener('click', function () {
+        popup.style.display = 'none';
+
+        // Wenn die Checkbox "Nicht mehr anzeigen" aktiviert ist
+        if (hidePopupCheckbox.checked) {
+          localStorage.setItem('hidePopup', 'true');
+        }
+      });
+
+      // Pop-up nur anzeigen, wenn es nicht deaktiviert wurde
+      if (localStorage.getItem('hidePopup') === 'true') {
+        popup.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
