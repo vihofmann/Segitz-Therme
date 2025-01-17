@@ -6,6 +6,122 @@
   <title>Shop & Gutscheine</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+#centered-section-shop {
+  margin: 0 auto; /* Centers the section horizontally */
+  max-width: 1500px; /* Adjust based on your design preference */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Aligns items in the center of the flex container */
+}
+
+.flex-container-shop {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Aligns items centrally, better for even spacing */
+}
+
+.column-shop {
+  flex: 0 0 calc(33.333% - 94px); /* Adjusting flex-basis to account for 47px margin on each side */
+  max-width: calc(33.333% - 94px); /* Ensures each column does not exceed adjusted width */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the images and text vertically within each column */
+  margin: 0 47px; /* Horizontal margins */
+  margin-bottom: 50px; /* Vertical space between rows */
+}
+
+.image-container-shop {
+  position: relative;
+  width: 250px; /* Adjust width as needed */
+  height: auto; /* This should be auto to maintain aspect ratio */
+  overflow: hidden; /* Prevents overlay from spilling out */
+  cursor: pointer;
+}
+
+.image-shop {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.image-description-container {
+  border: 3px solid #ffffff;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+  transition: transform 0.5s ease; /* Transition for scaling the container on hover */
+  cursor: pointer; /* Indicates interactivity */
+}
+
+.image-description-container:hover {
+  transform: scale(1.4); /* Scales the container slightly on hover */
+}
+
+.hover-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Matches the width of the image container */
+  height: 100%; /* Matches the height of the image */
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  color: #cbc1ca;
+
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease; /* Fades in the text on hover */
+  font-size: 12px;
+}
+
+.image-container-shop:hover .hover-text {
+  opacity: 1; /* Shows the overlay only on the image when hovered */
+}
+
+.description {
+  color: #000000;
+  font-size: 14px;
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  width: 100%;
+}
+
+.price-tag {
+  color: rgb(65, 77, 78);
+  font-size: 20px;
+  padding-top: 5px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.service-title {
+  color: rgb(65, 77, 78) !important;
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 0;
+  padding-bottom: 10px;
+}
+.hover-text ul {
+  margin: 13px 7px; /* Space between items */
+  font-size: 11pt;
+  color: #f5e8f3;
+}
+
+.hover-text li {
+  margin: 13px 7px; /* Space between items */
+  font-size: 11pt;
+  color: #cbc1ca;
+}
+
+.hover-text li::before {
+  content: "\f00c"; /* FontAwesome check icon */
+  font-family: 'FontAwesome'; /* Ensure this is loaded in your HTML */
+  color: #9d6191; /* Icon color */
+  margin-right: 10px; /* Space between icon and text */
+}
+  </style>
 </head>
 <body>
   <div class="main-nav">
@@ -32,6 +148,8 @@
       
       </div>
     </div>
+
+
 </section>      
 
 
@@ -54,73 +172,149 @@
   </button>
 </div>
 
-<!-- Grids for each button -->
-<div id="grid1" class="grid-item">
-  <!-- Grid for Button 1 -->
-  <!-- Repeatedly for six images with descriptions -->
-  <section class="doc-section">
-
-    <section class="doc-section">
-
-    
-
-    <div class="row flex-container margin">
-        <div class="col-8 col-md-6 image-container">
-            <img src="images/current/saltgrotte.png" alt="Salzdampfbad" class="img">
-            <h3>25 euro <br> Massage</h3>
-            <div class="hover-text">Massage für zwei</div>
+<div id="grid1" style="display: block;">
+  <section id="centered-section-shop">
+    <!-- Grid of items -->
+    <div class="flex-container-shop">
+      <!-- First item -->
+      <div class="column-shop">
+        <div class="image-description-container">
+          <div class="image-container-shop">
+            <img src="images\current\shop\parrmassage.jpeg"  class="image-shop">
+            <div class="hover-text">
+              
+              <ul>
+                <li>Eine 60-minütige Massage für zwei Personen</li>
+                <li>Nutzung unserer privaten Spa-Einrichtungen</li>
+                <li>Komplementäre aromatische Öle und eine Auswahl an beruhigenden Musikoptionen</li>
+                <li>Ein kostenloses Glas Sekt</li>
+              </ul>
+            </div>
+             <!-- This stays within the image container only -->
+          </div>
+          <h2 class="price-tag">50 €</h2>
+          <h1 class="service-title">Romantische Paar-Massage</h1>
         </div>
-        <div class="col-8 col-md-6 image-container">
-          <img src="images/current/saltgrotte.png" alt="Salzdampfbad" class="img">
-          <h3>25 euro <br> Massage</h3>
-          <div class="hover-text">Massage für zwei</div>
       </div>
-      <div class="col-8 col-md-6 image-container">
-        <img src="images/current/saltgrotte.png" alt="Salzdampfbad" class="img">
-        <h3>25 euro <br> Massage</h3>
-        <div class="hover-text">Massage für zwei</div>
+      
+      <!-- Second item -->
+      <div class="column-shop">
+        <div class="image-description-container">
+          <div class="image-container-shop">
+            <img src="images\current\shop\day-gutschein.jpg"  class="image-shop">
+            <div class="hover-text">
+              
+              <ul>
+                <li>Unbegrenzter Zugang zu Thermalbecken</li>
+                <li>Unbegrenzter Sauna-Eintritt</li>
+                <li>Nutzung der Ruhezonen</li>
+                <li>Begrüßungsgetränk</li>
+              </ul>
+            </div>          </div>
+          <h2 class="price-tag">45 €</h2>
+          <h1 class="service-title">Tages-Gutschein</h1>
+        </div>
+      </div>
+      <!-- Third item -->
+      <div class="column-shop">
+        <div class="image-description-container">
+          <div class="image-container-shop">
+            <img src="images/current/shop/aromatherapie-gutschein.jpg"class="image-shop">
+            <div class="hover-text">
+              <ul>
+                <li>Eine 90-minütige Aromatherapie-Massage</li>
+                <li>Individuelle Auswahl ätherischer Öle</li>
+                <li>Privatzugang zur Aromatherapie-Lounge</li>
+                <li>Entspannungstee und Snacks</li>
+              </ul>
+            </div>
+          </div>
+          <h2 class="price-tag">75 €</h2>
+          <h1 class="service-title">Aromatherapie-Erlebnis</h1>
+        </div>
+      </div>
+      
+  </section>
+  <section id="centered-section-shop">
+    <!-- Grid of items -->
+    <div class="flex-container-shop">
+      <!-- First item -->
+      <div class="column-shop">
+        <div class="image-description-container">
+          <div class="image-container-shop">
+            <img src="images/current/shop/home-aromatherapy-kit.jpg" class="image-shop">
+            <div class="hover-text">
+              <ul>
+                <li>Exklusives Set ätherischer Öle</li>
+                <li>Hochwertiger Ultraschall-Aroma-Diffuser</li>
+                <li>Detaillierte Anleitung zur Anwendung</li>
+                <li>Gutschein für einen Online-Workshop</li>
+              </ul>
+            </div>
+          </div>
+          <h2 class="price-tag">50 €</h2>
+          <h1 class="service-title">Home Aromatherapy Kit</h1>
+        </div>
+      </div>
+      
+      <!-- Second item -->
+      <div class="column-shop">
+        <div class="image-description-container">
+          <div class="image-container-shop">
+            <img src="images/current/shop/luxury-home-spa-kit.jpg" class="image-shop">
+            <div class="hover-text">
+              <ul>
+                <li>Hochwertiges Badesalz</li>
+                <li>Entspannende Körperöle</li>
+                <li>Umweltfreundliche Duftkerzen</li>
+                <li>Weiche Spa-Bademäntel und Hausschuhe</li>
+                <li>Wiederverwendbare Gesichtsmasken</li>
+              </ul>
+            </div>
+          </div>
+          <h2 class="price-tag">75 €</h2>
+          <h1 class="service-title">Luxus Home Spa Kit</h1>
+        </div>
+      </div>
+      
+      <!-- Third item -->
+      <div class="column-shop">
+        <div class="image-description-container">
+          <div class="image-container-shop">
+            <img src="images/current/shop/thermal-water-fitness.jpg" class="image-shop">
+            <div class="hover-text">
+              <ul>
+                <li>10 Kurse inbegriffen</li>
+                <li>Zugang zu spezialisierten Aquafitness-Instruktoren</li>
+                <li>Verbessern Sie Flexibilität und Ausdauer</li>
+                <li>Stressabbau durch Wassertherapie</li>
+              </ul>
+            </div>
+          </div>
+          <h2 class="price-tag">100 €</h2>
+          <h1 class="service-title">Thermalwasser Fitness</h1>
+        </div>
+      </div>
+      
     </div>
-    </div>
-    <div class="row flex-container margin">
-      <div class="col-8 col-md-6 image-container">
-        <img src="images/current/saltgrotte.png" alt="Salzdampfbad" class="img">
-        <h3>25 euro <br> Massage</h3>
-        <div class="hover-text">Massage für zwei</div>
-    </div>
-    <div class="col-8 col-md-6 image-container">
-      <img src="images/current/saltgrotte.png" alt="Salzdampfbad" class="img">
-      <h3>25 euro <br> Massage</h3>
-      <div class="hover-text">Massage für zwei</div>
-  </div>
-  <div class="col-8 col-md-6 image-container">
-    <img src="images/current/saltgrotte.png" alt="Salzdampfbad" class="img">
-    <h3>25 euro <br> Massage</h3>
-    <div class="hover-text">Massage für zwei</div>
-</div>
-    </div>
-  <!-- Continue adding images and descriptions -->
+  </section>
 </div>
 
-<div id="grid2" class="grid-item">
-  <!-- Grid for Button 2 -->
-  <img src="images/current/holzsauna.PNG" alt="Holz Sauna">
-  <p>Description of Image 2</p>
-  <!-- Continue adding images and descriptions -->
+ 
+
+<div id="grid2" class="grid-item-shop">
+  
 </div>
 
-<div id="grid3" class="grid-item">
-  <!-- Grid for Button 3 -->
-  <img src="images/current/holzsauna.PNG" alt="Holz Sauna">
-  <p>Description of Image 3</p>
-  <!-- Continue adding images and descriptions -->
+<div id="grid3" class="grid-item-shop">
+  
 </div>
 
-<div id="grid4" class="grid-item">
-  <!-- Grid for Button 4 -->
-  <img src="images/current/holzsauna.PNG" alt="Holz Sauna">
-  <p>Description of Image 4</p>
-  <!-- Continue adding images and descriptions -->
+<div id="grid4" class="grid-item-shop">
+  
 </div>
+
+
   <section class="fill-banner banner-1-bg">
     <div class="container">
       <div class="row">
@@ -185,6 +379,16 @@
     </div>
   </footer>
   <div id="goTop" class="goTop"></div>
+
+
+
+
+
+
+
+
+
+
   <script src="jquery.min.js"></script>
   <script>
     $(function() {
@@ -212,15 +416,21 @@
     });
 
     function toggleSectionVisibility(id) {
-    var grids = document.querySelectorAll('.grid-item');
-    grids.forEach(function(grid) {
-        if(grid.id === id) {
-            grid.style.display = grid.style.display === 'none' ? 'grid' : 'none';
-        } else {
-            grid.style.display = 'none';
-        }
-    });
+    var element = document.getElementById(id);
+    if (element.style.display === 'none' || element.style.display === '') {
+        element.style.display = 'block'; // Show the div if it is hidden
+        // Hide all other grid divs
+        var grids = document.querySelectorAll('.grid-item-shop');
+        grids.forEach(function(grid) {
+            if (grid.id !== id) {
+                grid.style.display = 'none';
+            }
+        });
+    } else {
+        element.style.display = 'none'; // Hide the div if it is shown
+    }
 }
+
   </script>
 
 <div id="popup-container"></div>
