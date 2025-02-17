@@ -181,7 +181,7 @@
     </div>
 
 
-  </section>
+  
 
 
   <div class="button-grid">
@@ -202,9 +202,9 @@
       Geschenksets <span class="toggle-icon fa fa-angle-double-down"></span>
     </button>
   </div>
-
+</section>
   <!-- Best Deals -->
-  <div id="grid1" style="display: block;">
+  <div id="grid1" class="grid-item-shop">
     <section id="centered-section-shop">
       <!-- Grid of items -->
       <div class="flex-container-shop">
@@ -682,21 +682,54 @@
       }).scroll();
     });
 
-    function toggleSectionVisibility(id) {
-      var element = document.getElementById(id);
-      if (element.style.display === 'none' || element.style.display === '') {
-        element.style.display = 'block'; // Show the div if it is hidden
-        // Hide all other grid divs
-        var grids = document.querySelectorAll('.grid-item-shop');
-        grids.forEach(function (grid) {
-          if (grid.id !== id) {
-            grid.style.display = 'none';
-          }
-        });
-      } else {
-        element.style.display = 'none'; // Hide the div if it is shown
-      }
+    document.addEventListener("DOMContentLoaded", function () {
+    // Set grid1 visible by default when the page loads
+    var defaultGrid = document.getElementById("grid1");
+    if (defaultGrid) {
+        defaultGrid.style.display = "block"; // Make grid1 visible
     }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Set grid1 visible by default when the page loads
+    var defaultGrid = document.getElementById("grid1");
+    if (defaultGrid) {
+        defaultGrid.style.display = "block"; // Make grid1 visible
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Set grid1 visible by default when the page loads
+    var defaultGrid = document.getElementById("grid1");
+    if (defaultGrid) {
+        defaultGrid.style.display = "block"; // Make grid1 visible
+    }
+});
+
+function toggleSectionVisibility(id) {
+    var grids = document.querySelectorAll('.grid-item-shop');
+    var clickedGrid = document.getElementById(id);
+
+    // Check if the clicked grid is already visible
+    var isVisible = clickedGrid.style.display === 'block';
+
+    // Hide all grids
+    grids.forEach(function (grid) {
+        grid.style.display = 'none';
+    });
+
+    // Toggle visibility: Show only if it was previously hidden
+    if (!isVisible) {
+        clickedGrid.style.display = 'block';
+
+        // Scroll to the section smoothly
+        clickedGrid.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+}
+
+
+
+
 
   </script>
 
