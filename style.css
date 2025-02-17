@@ -66,6 +66,13 @@ margin-top: 0px;
   font-size: 15px !important;  
   
 }
+.grid-item-shop {
+  display: none !important; /* Hide all grids */
+}
+
+#grid1 {
+  display: block !important; /* Show grid1 by default */
+}
 
 .button-grid {
   display: grid;
