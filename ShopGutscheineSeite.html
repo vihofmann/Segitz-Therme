@@ -343,7 +343,7 @@
               </ul>
             </div>          </div>
           <h2 class="price-tag">45 €</h2>
-          <h1 class="service-title">Tages-Gutschein</h1>
+          <h1 class="service-title">Thai-Massage</h1>
         </div>
       </div>
       <!-- Third item -->
@@ -361,7 +361,7 @@
             </div>
           </div>
           <h2 class="price-tag">75 €</h2>
-          <h1 class="service-title">Aromatherapie-Erlebnis</h1>
+          <h1 class="service-title">Hot Stone Massage</h1>
         </div>
       </div>
       
@@ -384,7 +384,7 @@
             </div>
           </div>
           <h2 class="price-tag">50 €</h2>
-          <h1 class="service-title">Home Aromatherapy Kit</h1>
+          <h1 class="service-title">Reflexzonenmassage</h1>
         </div>
       </div>
       
@@ -404,7 +404,7 @@
             </div>
           </div>
           <h2 class="price-tag">75 €</h2>
-          <h1 class="service-title">Luxus Home Spa Kit</h1>
+          <h1 class="service-title">Kräuterstempelmassage</h1>
         </div>
       </div>
       
@@ -423,7 +423,7 @@
             </div>
           </div>
           <h2 class="price-tag">100 €</h2>
-          <h1 class="service-title">Thermalwasser Fitness</h1>
+          <h1 class="service-title">Gesichtsmassage</h1>
         </div>
       </div>
       
@@ -752,16 +752,6 @@
     </div>
   </footer>
   <div id="goTop" class="goTop"></div>
-
-
-
-
-
-
-
-
-
-
   <script src="jquery.min.js"></script>
   <script>
     $(function() {
@@ -788,20 +778,21 @@
       }).scroll();
     });
 
-    document.addEventListener("DOMContentLoaded", function () {
-    // Ensure all grids are hidden except `grid1`
-    let grids = document.querySelectorAll(".grid-item-shop");
-    grids.forEach(grid => grid.style.display = "none");
-    document.getElementById("grid1").style.display = "block"; // Show first grid
-
-    // Function to toggle grids when buttons are clicked
-    window.toggleSectionVisibility = function (id) {
-        grids.forEach(grid => {
-            grid.style.display = (grid.id === id) ? "block" : "none";
+    function toggleSectionVisibility(id) {
+    var element = document.getElementById(id);
+    if (element.style.display === 'none' || element.style.display === '') {
+        element.style.display = 'block'; // Show the div if it is hidden
+        // Hide all other grid divs
+        var grids = document.querySelectorAll('.grid-item-shop');
+        grids.forEach(function(grid) {
+            if (grid.id !== id) {
+                grid.style.display = 'none';
+            }
         });
-    };
-});
-
+    } else {
+        element.style.display = 'none'; // Hide the div if it is shown
+    }
+}
 
   </script>
 
