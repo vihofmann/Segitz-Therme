@@ -39,7 +39,17 @@ margin-top: 0px;
   width: 100px; /* Example: adds a red border around the image */
 }
 .grid-item-shop {
-  display: none; /* Hide all grids by default */
+ padding: 15mm  0mm !important; 
+
+}
+/* Hide all grids by default */
+.grid-item-shop {
+  display: none;
+}
+
+/* Show grid1 by default */
+#grid1 {
+  display: block;
 }
 
 .button-grid {
