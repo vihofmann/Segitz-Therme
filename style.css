@@ -516,12 +516,12 @@ section.doc-section div.container div.row p {
   background: url(images/current/mid-img.png) center no-repeat fixed !important;
 }
 .main-footer {
-  font-size: 0.9rem;
-  line-height: 1.5;
+  width: 100%;
+  background-color: #c3ecf2;
   padding-top: 3em;
   padding-bottom: 3em;
   color: #434445;
-  background-color:  #c3ecf2;
+  /* Keine fixed- oder sticky-Positionierung mehr */
 }
 .main-footer h3 {
   color: #1d425b !important;
@@ -532,9 +532,6 @@ section.doc-section div.container div.row p {
   padding: 1cm 0;
 }
 
-.fill-banner {
-  
-}
 
 .banner-1-bg {
   background-image: url('images/current/banner.jpeg');

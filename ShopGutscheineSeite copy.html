@@ -28,6 +28,8 @@
       flex-wrap: wrap;
       gap: 20px;
       justify-content: flex-start;
+      margin-left: 20em;
+    margin-right: 20em;
     }
     /* WICHTIG*/
     .product-card {
@@ -39,7 +41,7 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       transition: transform 0.3s;
       flex: 1 0 calc(33.33% - 20px);
-      max-width: calc(33.33% - 20px);
+      max-width: 300px;
     }
     /* WICHTIG*/
     .product-card:hover {
@@ -118,7 +120,9 @@
     padding-left: 2em;
 }
 
+
   </style>
+
 </head>
 <body>
   <body>
@@ -140,9 +144,15 @@
     </div>
   
   <!-- Banner mit Überschrift und Hintergrund -->
-  <section class="banner-1-bg">
-    <h2>Shop & Gutscheine</h2>
-  </section>
+  <section class="dresscode fill-banner banner-1-bg" style="margin-bottom: 0;">
+    <h2
+      style="margin: 0 !important; padding-top: 20px; padding-bottom: 20px; text-shadow: 2px 2px 15px rgb(24, 26, 27);">
+      Shop & Gutscheine</h2>
+    <div>
+      <div class=row>
+
+      </div>
+    </div>
   
 <!-- Hauptcontainer -->
 <div class="container">
@@ -368,10 +378,10 @@
     
   </div>
   
-  <footer class="main-footer">
-    <div class="container">
+  <footer class="main-footer" style="width: 100% !important;">
+    <div class="container-fluid" style="max-width: 100% !important; margin: 0 !important;">
       <div class="row">
-        <div class="col-4">
+        <div class="col-md-4">
           <h3>Segitz Therme</h3>
           <p>Gärtnerstraße 45, 90416 Fürth</p>
           <p>Telefon: 7864546876</p>
@@ -394,12 +404,12 @@
             </li>
           </ul>
         </div>
-        <div class="col-4">
+        <div class="col-md-4">
           <h3>Öffnungszeiten</h3>
           <p>Mo-Fr: 09:00 - 20:00 Uhr</p>
           <p>Sa-So: 10:00 - 22:00 Uhr</p>
         </div>
-        <div class="col-4">
+        <div class="col-md-4">
           <h3>Informationen</h3>
           <ul>
             <li><a href="faq.html">FAQ</a></li>
@@ -411,12 +421,21 @@
         </div>
       </div>
       <div class="row">
+        <div class="awards-container">
+          <img src="images/current/awards/gewinner.png" alt="Gewinner Award">
+          <img src="images/current/awards/Siegel.png" alt="Siegel Award">
+          <img src="images/current/awards/top.png" alt="Top Award">
+        </div>
+      </div>
+      <div class="row">
         <div class="copyright">
           © 2025 Segitz Therme GmbH
         </div>
       </div>
     </div>
   </footer>
+  
+  
   
   <script>
     // Funktion zum Umschalten der Kategorien und Toggle-Icon
