@@ -1,3 +1,14 @@
+.award-banner-img {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  max-width: 200px; /* Adjusted size */
+  width: auto;
+  height: auto;
+}
+
+
+
 .awards-container img {
   max-width: 130px; /* Maximum width of each image */
   height: auto; /* Ensure the height adjusts based on the width to maintain aspect ratio */
@@ -479,8 +490,20 @@ section.doc-section div.container div.row p {
 }
 
 .slider-banner .item-kv-1 {
-  background: url(images/current/background-banner.png) top center no-repeat;
+  background: url('images/current/background-banner.png') top center no-repeat !important;
+  background-size: contain !important; /* Ensures the entire background image is visible */
+  background-position: center center !important; /* Centers the background image */
+  width: 100% !important; /* Ensures the div takes full width of its container */
+  height: 100% !important; /* Adjust based on your layout needs */
+  min-height: 500px !important; /* Minimum height to accommodate the image properly */
 }
+
+@media (max-width: 768px) {
+  .slider-banner .item-kv-1 {
+    min-height: 300px !important; /* Adjusts the height specifically for smaller devices */
+  }
+}
+
 .doc-section {
   background-color: #c3ecf2;
   padding-top: 4em;
@@ -543,7 +566,7 @@ section.doc-section div.container div.row p {
 .kv  .doc-section .btn, .main-footer .submit-btn {
   background-color: #0066cc;
   color: white;
-  padding: 10px 20px;
+  
   border: none;
   border-radius: 5px;
   text-transform: uppercase;
@@ -896,7 +919,7 @@ a {
 .slider-container {
   position: relative;
   width: 100%;
-  height: 760px;
+  height: auto;
   margin: auto;
 }
 .slider-banner .item {
@@ -915,7 +938,7 @@ a {
 
 .slider-banner .item-kv-txt {
   display: block;
-  padding-top: 5em 0;
+  padding-top: 0cm 0;
 }
 .slider-banner .slider-dot {
   position: absolute;
