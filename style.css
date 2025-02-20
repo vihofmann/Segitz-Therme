@@ -1,3 +1,21 @@
+.awards-container img {
+  max-width: 130px; /* Maximum width of each image */
+  height: auto; /* Ensure the height adjusts based on the width to maintain aspect ratio */
+  margin-left: 21px; /* Space between images */
+  margin-top: 15px;
+  object-fit: contain; /* Ensures images are resized to fit while preserving aspect ratio */
+  transition: transform 0.3s ease; /* Smooth transition for transform changes */
+}
+
+.awards-container img:hover {
+  transform: scale(1.5); /* Scale up image by 20% on hover */
+}
+
+.awards-container img:first-child {
+  margin-left: 0;
+}
+
+
 body {
   font-family: Arial, sans-serif;
 }
@@ -568,7 +586,7 @@ body {
 .main-footer .copyright,
 .main-footer .copyright a {
   color: #777777;
-  padding: 100px 0 0 20px;
+  padding: 50px 0 0 20px;
 }
 .submit-btn {
   padding: 15px 30px;
