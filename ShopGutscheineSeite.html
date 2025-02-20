@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,98 +7,83 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <style>
+    /* Button und Pfeil-Styles */
+    .btn {
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 10px;
+      transition: color 0.3s;
+    }
+    .btn .toggle-icon {
+      margin-left: 8px;
+      transition: transform 0.3s;
+    }
+    .btn.active .toggle-icon {
+      transform: rotate(180deg);
+    }
+
+    /* Styles für den Shop-Bereich */
     #centered-section-shop {
       margin: 0 auto;
-      /* Centers the section horizontally */
       max-width: 1500px;
-      /* Adjust based on your design preference */
       display: flex;
       flex-direction: column;
       align-items: center;
-      /* Aligns items in the center of the flex container */
     }
-
     .flex-container-shop {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      /* Aligns items centrally, better for even spacing */
     }
-
     .column-shop {
       flex: 0 0 calc(33.333% - 94px);
-      /* Adjusting flex-basis to account for 47px margin on each side */
       max-width: calc(33.333% - 94px);
-      /* Ensures each column does not exceed adjusted width */
       display: flex;
       flex-direction: column;
       align-items: center;
-      /* Centers the images and text vertically within each column */
-      margin: 0 47px;
-      /* Horizontal margins */
-      margin-bottom: 50px;
-      /* Vertical space between rows */
+      margin: 0 47px 50px;
     }
-
     .image-container-shop {
       position: relative;
       width: 250px;
-      /* Adjust width as needed */
-      height: auto;
-      /* This should be auto to maintain aspect ratio */
       overflow: hidden;
-      /* Prevents overlay from spilling out */
       cursor: pointer;
     }
-
     .image-shop {
       width: 100%;
       height: auto;
       transition: transform 0.5s ease;
     }
-
     .image-description-container {
       border: 3px solid #ffffff;
       padding: 15px;
       text-align: center;
       margin-bottom: 20px;
       transition: transform 0.5s ease;
-      /* Transition for scaling the container on hover */
       cursor: pointer;
-      /* Indicates interactivity */
     }
-
     .image-description-container:hover {
       transform: scale(1.4);
-      /* Scales the container slightly on hover */
     }
-
     .hover-text {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      /* Matches the width of the image container */
       height: 100%;
-      /* Matches the height of the image */
       background: rgba(0, 0, 0, 0.7);
-      /* Semi-transparent black background */
       color: #cbc1ca;
-
       display: flex;
       align-items: center;
       justify-content: center;
       opacity: 0;
       transition: opacity 0.5s ease;
-      /* Fades in the text on hover */
       font-size: 12px;
     }
-
     .image-container-shop:hover .hover-text {
       opacity: 1;
-      /* Shows the overlay only on the image when hovered */
     }
-
     .description {
       color: #000000;
       font-size: 14px;
@@ -108,7 +92,6 @@
       padding: 5px;
       width: 100%;
     }
-
     .price-tag {
       color: rgb(65, 77, 78);
       font-size: 20px;
@@ -116,7 +99,6 @@
       margin-top: 10px;
       margin-bottom: 0;
     }
-
     .service-title {
       color: rgb(65, 77, 78) !important;
       font-size: 18px;
@@ -124,36 +106,24 @@
       margin-bottom: 0;
       padding-bottom: 10px;
     }
-
     .hover-text ul {
       margin: 13px 7px;
-      /* Space between items */
       font-size: 11pt;
       color: #f5e8f3;
     }
-
     .hover-text li {
       margin: 13px 7px;
-      /* Space between items */
       font-size: 11pt;
       color: #cbc1ca;
     }
-
     .hover-text li::before {
       content: "\f00c";
-      /* FontAwesome check icon */
       font-family: 'FontAwesome';
-      /* Ensure this is loaded in your HTML */
       color: #9d6191;
-      /* Icon color */
       margin-right: 10px;
-      /* Space between icon and text */
-
-      
     }
   </style>
 </head>
-
 <body>
   <div class="main-nav">
     <nav class="sticky">
@@ -169,85 +139,69 @@
           <a href="Jobs.html">Jobs & Karriere</a>
           <a href="Unser-team.html">Unser Team</a>
         </div>
+      </div>
     </nav>
   </div>
 
   <section class="dresscode fill-banner banner-1-bg" style="margin-bottom: 0;">
-    <h2
-      style="margin: 0 !important; padding-top: 20px; padding-bottom: 20px; text-shadow: 2px 2px 15px rgb(24, 26, 27);">
-      Shop & Gutscheine</h2>
-    <div>
-      <div class=row>
-
-      </div>
+    <h2 style="margin: 0 !important; padding-top: 20px; padding-bottom: 20px; text-shadow: 2px 2px 15px rgb(24, 26, 27);">
+      Shop & Gutscheine
+    </h2>
+    <div class="button-grid">
+      <!-- Button 1 -->
+      <button class="btn active" onclick="toggleSectionVisibility('grid1', this)">
+        Best Deals <span class="toggle-icon fa fa-angle-double-down"></span>
+      </button>
+      <!-- Button 2 -->
+      <button class="btn" onclick="toggleSectionVisibility('grid2', this)">
+        Massagen <span class="toggle-icon fa fa-angle-double-down"></span>
+      </button>
+      <!-- Button 3 -->
+      <button class="btn" onclick="toggleSectionVisibility('grid3', this)">
+        Wertgutscheine <span class="toggle-icon fa fa-angle-double-down"></span>
+      </button>
+      <!-- Button 4 -->
+      <button class="btn" onclick="toggleSectionVisibility('grid4', this)">
+        Geschenksets <span class="toggle-icon fa fa-angle-double-down"></span>
+      </button>
     </div>
-
-
-  
-
-
-  <div class="button-grid">
-    <!-- Button 1 -->
-    <button class="btn" onclick="toggleSectionVisibility('grid1')">
-      Best Deals <span class="toggle-icon fa fa-angle-double-down"></span>
-    </button>
-    <!-- Button 2 -->
-    <button class="btn" onclick="toggleSectionVisibility('grid2')">
-      Massagen <span class="toggle-icon fa fa-angle-double-down"></span>
-    </button>
-    <!-- Button 3 -->
-    <button class="btn" onclick="toggleSectionVisibility('grid3')">
-      Wertgutscheine <span class="toggle-icon fa fa-angle-double-down"></span>
-    </button>
-    <!-- Button 4 -->
-    <button class="btn" onclick="toggleSectionVisibility('grid4')">
-      Geschenksets <span class="toggle-icon fa fa-angle-double-down"></span>
-    </button>
-  </div>
-  <div style="width: 300px; padding: 20px 20px 0px; background: linear-gradient(to bottom, #ffffff 0%, #f9f9f9 100%); border: 1px solid #ccc; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-radius: 10px; margin: 0 auto; color: #333; font-family: 'Arial', sans-serif; font-size: 16px; text-align: center;">
-    <p>Um Gutscheine zu erwerben, nutzen Sie bitte unser <a href="kontakt.html" style=" text-decoration: none;">Kontaktformular</a>.</p>
-</div>
-
-
-</section>
+    <div style="width: 300px; padding: 20px 20px 0px; background: linear-gradient(to bottom, #ffffff 0%, #f9f9f9 100%); border: 1px solid #ccc; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-radius: 10px; margin: 0 auto; color: #333; font-family: 'Arial', sans-serif; font-size: 16px; text-align: center;">
+      <p>Um Gutscheine zu erwerben, nutzen Sie bitte unser <a href="kontakt.html" style="text-decoration: none;">Kontaktformular</a>.</p>
+    </div>
+  </section>
 
   <!-- Best Deals -->
-  <div id="grid1" class="grid-item-shop">
+  <div id="grid1" class="grid-item-shop" style="display: block;">
     <section id="centered-section-shop">
-      <!-- Grid of items -->
       <div class="flex-container-shop">
-        <!-- First item -->
+        <!-- Erster Artikel -->
         <div class="column-shop">
           <div class="image-description-container">
             <div class="image-container-shop">
-              <img src="images\current\shop\parrmassage.jpeg" class="image-shop">
+              <img src="images/current/shop/parrmassage.jpeg" class="image-shop" alt="Romantische Paar-Massage">
               <div class="hover-text">
-
                 <ul>
-                  <li>Eine 60-minütige Massage für zwei Personen</li>
-                  <li>Nutzung unserer privaten Spa-Einrichtungen</li>
-                  <li>Komplementäre aromatische Öle und eine Auswahl an beruhigenden Musikoptionen</li>
-                  <li>Ein kostenloses Glas Sekt</li>
+                  <li>60-minütige Massage für zwei Personen</li>
+                  <li>Nutzung privater Spa-Einrichtungen</li>
+                  <li>Komplementäre Öle & Musik</li>
+                  <li>Ein Glas Sekt</li>
                 </ul>
               </div>
-              <!-- This stays within the image container only -->
             </div>
             <h2 class="price-tag">100,00 €</h2>
             <h1 class="service-title">Romantische Paar-Massage</h1>
           </div>
         </div>
-
-        <!-- Second item -->
+        <!-- Zweiter Artikel -->
         <div class="column-shop">
           <div class="image-description-container">
             <div class="image-container-shop">
-              <img src="images\current\shop\day-gutschein.jpg" class="image-shop">
+              <img src="images/current/shop/day-gutschein.jpg" class="image-shop" alt="Tages-Gutschein">
               <div class="hover-text">
-
                 <ul>
-                  <li>Unbegrenzter Zugang zu Thermalbecken</li>
-                  <li>Unbegrenzter Sauna-Eintritt</li>
-                  <li>Nutzung der Ruhezonen</li>
+                  <li>Zugang zu Thermalbecken</li>
+                  <li>Sauna-Eintritt</li>
+                  <li>Ruhezonen-Nutzung</li>
                   <li>Begrüßungsgetränk</li>
                 </ul>
               </div>
@@ -256,17 +210,17 @@
             <h1 class="service-title">Tages-Gutschein</h1>
           </div>
         </div>
-        <!-- Third item -->
+        <!-- Dritter Artikel -->
         <div class="column-shop">
           <div class="image-description-container">
             <div class="image-container-shop">
-              <img src="images/current/shop/aromatherapie-gutschein.jpg" class="image-shop">
+              <img src="images/current/shop/aromatherapie-gutschein.jpg" class="image-shop" alt="Aromatherapie-Erlebnis">
               <div class="hover-text">
                 <ul>
-                  <li>Eine 90-minütige Aromatherapie-Massage</li>
-                  <li>Individuelle Auswahl ätherischer Öle</li>
-                  <li>Privatzugang zur Aromatherapie-Lounge</li>
-                  <li>Entspannungstee und Snacks</li>
+                  <li>90-minütige Aromatherapie-Massage</li>
+                  <li>Individuelle Ölauswahl</li>
+                  <li>Privatzugang zur Lounge</li>
+                  <li>Entspannungstee & Snacks</li>
                 </ul>
               </div>
             </div>
@@ -274,43 +228,38 @@
             <h1 class="service-title">Aromatherapie-Erlebnis</h1>
           </div>
         </div>
-
+      </div>
     </section>
     <section id="centered-section-shop">
-      <!-- Grid of items -->
       <div class="flex-container-shop">
-        <!-- First item -->
+        <!-- Vierter Artikel -->
         <div class="column-shop">
           <div class="image-description-container">
             <div class="image-container-shop">
-              <img src="images\current\set.jpg" class="image-shop">
+              <img src="images/current/set.jpg" class="image-shop" alt="Geschenkset Segitz Therme">
               <div class="hover-text">
                 <ul>
-                  <li>Ein Lippenpflegestift für sanfte Pflege</li>
-                  <li>Ein Spiegel mit dem Segitz Therme Logo</li>
-                  <li>Ein weiches Handtuch speziell für das Gesicht</li>
+                  <li>Lippenpflegestift</li>
+                  <li>Spiegel mit Logo</li>
+                  <li>Gesichtshandtuch</li>
                 </ul>
-                
-                </div>
-              <!-- This stays within the image container only -->
+              </div>
             </div>
             <h2 class="price-tag">35,00 €</h2>
             <h1 class="service-title">Geschenkset Segitz Therme</h1>
           </div>
         </div>
-
-        <!-- Second item -->
+        <!-- Fünfter Artikel -->
         <div class="column-shop">
           <div class="image-description-container">
             <div class="image-container-shop">
-              <img src="images/current/shop/luxury-home-spa-kit.jpg" class="image-shop">
+              <img src="images/current/shop/luxury-home-spa-kit.jpg" class="image-shop" alt="Luxus Home Spa Kit">
               <div class="hover-text">
                 <ul>
-                  <li>Hochwertiges Badesalz</li>
-                  <li>Entspannende Körperöle</li>
-                  <li>Umweltfreundliche Duftkerzen</li>
-                  <li>Weiche Spa-Bademäntel und Hausschuhe</li>
-                  <li>Wiederverwendbare Gesichtsmasken</li>
+                  <li>Badesalz & Körperöle</li>
+                  <li>Duftkerzen</li>
+                  <li>Spa-Bademäntel</li>
+                  <li>Gesichtsmasken</li>
                 </ul>
               </div>
             </div>
@@ -318,18 +267,17 @@
             <h1 class="service-title">Luxus Home Spa Kit</h1>
           </div>
         </div>
-
-        <!-- Third item -->
+        <!-- Sechster Artikel -->
         <div class="column-shop">
           <div class="image-description-container">
             <div class="image-container-shop">
-              <img src="images/current/shop/thermal-water-fitness.jpg" class="image-shop">
+              <img src="images/current/shop/thermal-water-fitness.jpg" class="image-shop" alt="Thermalwasser Fitness">
               <div class="hover-text">
                 <ul>
-                  <li>10 Kurse inbegriffen</li>
-                  <li>Zugang zu spezialisierten Aquafitness-Instruktoren</li>
-                  <li>Verbessern Sie Flexibilität und Ausdauer</li>
-                  <li>Stressabbau durch Wassertherapie</li>
+                  <li>10 Inklusionskurse</li>
+                  <li>Aquafitness-Training</li>
+                  <li>Flexibilitäts- & Ausdauerförderung</li>
+                  <li>Wassertherapie</li>
                 </ul>
               </div>
             </div>
@@ -337,215 +285,187 @@
             <h1 class="service-title">Thermalwasser Fitness</h1>
           </div>
         </div>
-
       </div>
     </section>
   </div>
 
-
   <!-- Massagen -->
-  <div id="grid2" class="grid-item-shop">
+  <div id="grid2" class="grid-item-shop" style="display: none;">
     <section id="centered-section-shop">
-      <!-- Grid of items -->
       <div class="flex-container-shop">
-        <!-- First item -->
+        <!-- Erster Artikel -->
         <div class="column-shop">
           <div class="image-description-container">
             <div class="image-container-shop">
-              <img src="images\current\shop\parrmassage.jpeg" class="image-shop">
+              <img src="images/current/shop/parrmassage.jpeg" class="image-shop" alt="Romantische Paar-Massage">
               <div class="hover-text">
-
                 <ul>
-                  <li>Eine 60-minütige Massage für zwei Personen</li>
-                  <li>Nutzung unserer privaten Spa-Einrichtungen</li>
-                  <li>Komplementäre aromatische Öle und eine Auswahl an beruhigenden Musikoptionen</li>
-                  <li>Ein kostenloses Glas Sekt</li>
+                  <li>60-minütige Massage für zwei Personen</li>
+                  <li>Spa-Nutzung</li>
+                  <li>Öle & Musik</li>
+                  <li>Ein Glas Sekt</li>
                 </ul>
               </div>
-              <!-- This stays within the image container only -->
             </div>
             <h2 class="price-tag">50,00 €</h2>
             <h1 class="service-title">Romantische Paar-Massage</h1>
           </div>
         </div>
-
-        <!-- Second item -->
+        <!-- Zweiter Artikel -->
         <div class="column-shop">
           <div class="image-description-container">
             <div class="image-container-shop">
-              <img src="images\current\massage\thai.jpg" class="image-shop">
+              <img src="images/current/massage/thai.jpg" class="image-shop" alt="Thai-Massage">
               <div class="hover-text">
-
                 <ul>
-                  <li>Eine 90-minütige dynamische Massage, die traditionelle Techniken verwendet</li>
-                  <li>Dehnungen und Gelenkmobilisation zur Verbesserung der Flexibilität und zur Entspannung</li>
-                  <li>Einsatz von natürlichen Ölen zur Steigerung der Entspannung und zum Lösen von Muskelverspannungen
-                  </li>
+                  <li>90-minütige dynamische Massage</li>
+                  <li>Dehnungen & Mobilisation</li>
+                  <li>Natürliche Öle</li>
                 </ul>
-
               </div>
             </div>
             <h2 class="price-tag">85,00 €</h2>
             <h1 class="service-title">Thai-Massage</h1>
           </div>
         </div>
-        <!-- Third item -->
+        <!-- Dritter Artikel -->
         <div class="column-shop">
           <div class="image-description-container">
             <div class="image-container-shop">
-              <img src="images\current\massage\stone.jpg" class="image-shop">
+              <img src="images/current/massage/stone.jpg" class="image-shop" alt="Hot Stone Massage">
               <div class="hover-text">
                 <ul>
-                  <li>Eine 60-minütige Massage mit erwärmten Steinen</li>
-                  <li>Entspannung tiefer Muskelschichten durch gezielte Wärmeeinwirkung</li>
-                  <li>Komplementäre entspannende Musik zur Steigerung der Wohlfühlatmosphäre</li>
+                  <li>60 Minuten Massage mit erwärmten Steinen</li>
+                  <li>Gezielte Wärmeanwendung</li>
+                  <li>Entspannende Musik</li>
                 </ul>
-
               </div>
             </div>
             <h2 class="price-tag">75,00 €</h2>
             <h1 class="service-title">Hot Stone Massage</h1>
           </div>
         </div>
-
+      </div>
     </section>
     <section id="centered-section-shop">
-      <!-- Grid of items -->
       <div class="flex-container-shop">
-        <!-- First item -->
+        <!-- Vierter Artikel -->
         <div class="column-shop">
           <div class="image-description-container">
             <div class="image-container-shop">
-              <img src="images/current/massage/reflex.jpg" class="image-shop">
+              <img src="images/current/massage/reflex.jpg" class="image-shop" alt="Reflexzonenmassage">
               <div class="hover-text">
                 <ul>
-                  <li>Eine 45-minütige fokussierte Massage der Fußreflexzonen</li>
-                  <li>Anregung von Körperbereichen durch gezielte Druckpunktmassage</li>
-                  <li>Eine ruhige Umgebung mit sanfter Entspannungsmusik</li>
+                  <li>45-minütige Fußreflexzonenmassage</li>
+                  <li>Druckpunkt-Stimulation</li>
+                  <li>Entspannungsmusik</li>
                 </ul>
-
               </div>
             </div>
             <h2 class="price-tag">60,00 €</h2>
             <h1 class="service-title">Reflexzonenmassage</h1>
           </div>
         </div>
-
-        <!-- Second item -->
+        <!-- Fünfter Artikel -->
         <div class="column-shop">
           <div class="image-description-container">
             <div class="image-container-shop">
-              <img src="images/current/massage/Kräuterstempelmassage.jpg" class="image-shop">
+              <img src="images/current/massage/Kräuterstempelmassage.jpg" class="image-shop" alt="Kräuterstempelmassage">
               <div class="hover-text">
                 <ul>
-                  <li>Eine 70-minütige Massage mit warmen Kräuterstempeln</li>
-                  <li>Entspannung und Revitalisierung der Haut durch heilende Kräuter</li>
-                  <li>Sanfte Musik und aromatische Düfte zur Förderung der Entspannung</li>
+                  <li>70-minütige Massage mit Kräuterstempeln</li>
+                  <li>Revitalisierung der Haut</li>
+                  <li>Entspannende Düfte</li>
                 </ul>
-
               </div>
             </div>
             <h2 class="price-tag">90,00 €</h2>
             <h1 class="service-title">Kräuterstempelmassage</h1>
           </div>
         </div>
-
-        <!-- Third item -->
+        <!-- Sechster Artikel -->
         <div class="column-shop">
           <div class="image-description-container">
             <div class="image-container-shop">
-              <img src="images/current/massage/Gesichtsmassage.jpg" class="image-shop">
+              <img src="images/current/massage/Gesichtsmassage.jpg" class="image-shop" alt="Gesichtsmassage">
               <div class="hover-text">
                 <ul>
-                  <li>Eine 30-minütige sanfte Gesichtsmassage</li>
-                  <li>Belebung der Gesichtszüge und Förderung der Hautdurchblutung</li>
-                  <li>Entspannende Hintergrundmusik und sanfte Raumbeleuchtung für maximale Entspannung</li>
+                  <li>30-minütige sanfte Gesichtsmassage</li>
+                  <li>Förderung der Durchblutung</li>
+                  <li>Entspannende Hintergrundmusik</li>
                 </ul>
-
               </div>
             </div>
             <h2 class="price-tag">50,00 €</h2>
             <h1 class="service-title">Gesichtsmassage</h1>
           </div>
         </div>
-
       </div>
     </section>
   </div>
 
-  </div>
   <!-- Wertgutscheine -->
-  <div id="grid3" class="grid-item-shop">
+  <div id="grid3" class="grid-item-shop" style="display: none;">
     <section id="centered-section-shop">
-      <!-- Grid of items -->
       <div class="flex-container-shop">
-        <!------------------------------------------------------------------------------------------>
-        <!-- 1 -->
+        <!-- Artikel 1 -->
         <div class="column-shop">
           <div class="image-description-container">
             <div class="image-container-shop">
-              <img src="images\current\25-gut.jpg" class="image-shop">
+              <img src="images/current/25-gut.jpg" class="image-shop" alt="Wertgutschein 25€">
               <div class="hover-text">
                 <p>Ein Wertgutschein im Wert von 25€</p>
               </div>
-              <!-- This stays within the image container only -->
             </div>
             <h2 class="price-tag">25,00 €</h2>
             <h1 class="service-title">Wertgutschein</h1>
           </div>
         </div>
-        <!------------------------------------------------------------------------------------------>
-        <!------------------------------------------------------------------------------------------>
-        <!-- 2 -->
+        <!-- Artikel 2 -->
         <div class="column-shop">
           <div class="image-description-container">
             <div class="image-container-shop">
-              <img src="images\current\50-gut.jpg" class="image-shop">
+              <img src="images/current/50-gut.jpg" class="image-shop" alt="Wertgutschein 50€">
               <div class="hover-text">
                 <p>Ein Wertgutschein im Wert von 50€</p>
               </div>
-              <!-- This stays within the image container only -->
             </div>
             <h2 class="price-tag">50,00 €</h2>
             <h1 class="service-title">Wertgutschein</h1>
           </div>
         </div>
-        <!------------------------------------------------------------------------------------------>
-        <!------------------------------------------------------------------------------------------>
-        <!-- 3 -->
+        <!-- Artikel 3 -->
         <div class="column-shop">
           <div class="image-description-container">
             <div class="image-container-shop">
-              <img src="images\current\100-gut.jpg" class="image-shop">
+              <img src="images/current/100-gut.jpg" class="image-shop" alt="Wertgutschein 100€">
               <div class="hover-text">
-                <p>Ein Wertgutschein im Wert von 100</p>
+                <p>Ein Wertgutschein im Wert von 100€</p>
               </div>
-              <!-- This stays within the image container only -->
             </div>
             <h2 class="price-tag">100,00 €</h2>
             <h1 class="service-title">Wertgutschein</h1>
           </div>
         </div>
-        <!------------------------------------------------------------------------------------------>
-
+      </div>
     </section>
   </div>
+
   <!-- Geschenkset -->
-  <div id="grid4" class="grid-item-shop">
+  <div id="grid4" class="grid-item-shop" style="display: none;">
     <section id="centered-section-shop">
-      <!-- Grid of items -->
       <div class="flex-container-shop">
-        <!-- First item -->
+        <!-- Artikel 1 -->
         <div class="column-shop">
           <div class="image-description-container">
             <div class="image-container-shop">
-              <img src="images/current/shop/home-aromatherapy-kit.jpg" class="image-shop">
+              <img src="images/current/shop/home-aromatherapy-kit.jpg" class="image-shop" alt="Home Aromatherapy Kit">
               <div class="hover-text">
                 <ul>
                   <li>Exklusives Set ätherischer Öle</li>
-                  <li>Hochwertiger Ultraschall-Aroma-Diffuser</li>
-                  <li>Detaillierte Anleitung zur Anwendung</li>
-                  <li>Gutschein für einen Online-Workshop</li>
+                  <li>Ultraschall-Aroma-Diffuser</li>
+                  <li>Anleitung zur Anwendung</li>
+                  <li>Workshop-Gutschein</li>
                 </ul>
               </div>
             </div>
@@ -553,19 +473,17 @@
             <h1 class="service-title">Home Aromatherapy Kit</h1>
           </div>
         </div>
-
-        <!-- Second item -->
+        <!-- Artikel 2 -->
         <div class="column-shop">
           <div class="image-description-container">
             <div class="image-container-shop">
-              <img src="images/current/shop/luxury-home-spa-kit.jpg" class="image-shop">
+              <img src="images/current/shop/luxury-home-spa-kit.jpg" class="image-shop" alt="Luxus Home Spa Kit">
               <div class="hover-text">
                 <ul>
-                  <li>Hochwertiges Badesalz</li>
-                  <li>Entspannende Körperöle</li>
-                  <li>Umweltfreundliche Duftkerzen</li>
-                  <li>Weiche Spa-Bademäntel und Hausschuhe</li>
-                  <li>Wiederverwendbare Gesichtsmasken</li>
+                  <li>Badesalz & Körperöle</li>
+                  <li>Duftkerzen</li>
+                  <li>Spa-Bademäntel</li>
+                  <li>Gesichtsmasken</li>
                 </ul>
               </div>
             </div>
@@ -573,39 +491,33 @@
             <h1 class="service-title">Luxus Home Spa Kit</h1>
           </div>
         </div>
-        <!------------------------------------------------------------------------------------------>
-        <!-- 3 -->
+        <!-- Artikel 3 -->
         <div class="column-shop">
           <div class="image-description-container">
             <div class="image-container-shop">
-              <img src="images\current\set.jpg" class="image-shop">
+              <img src="images/current/set.jpg" class="image-shop" alt="Geschenkset Segitz Therme">
               <div class="hover-text">
                 <ul>
-                  <li>Ein Lippenpflegestift für sanfte Pflege</li>
-                  <li>Ein Spiegel mit dem Segitz Therme Logo</li>
-                  <li>Ein weiches Handtuch speziell für das Gesicht</li>
+                  <li>Lippenpflegestift</li>
+                  <li>Spiegel mit Logo</li>
+                  <li>Gesichtshandtuch</li>
                 </ul>
-                
-                </div>
-              <!-- This stays within the image container only -->
+              </div>
             </div>
             <h2 class="price-tag">35,00 €</h2>
             <h1 class="service-title">Geschenkset Segitz Therme</h1>
           </div>
         </div>
-        <!------------------------------------------------------------------------------------------>
-
+      </div>
     </section>
   </div>
-
 
   <section class="fill-banner banner-1-bg">
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-10 col-xl-5">
           <h2>Irgendwelche Fragen?</h2>
-          <p>Geben Sie Ihre E-Mail-Adresse ein, um aktuelle Angebote, exklusive Wellness-Tipps und Neuigkeiten rund um
-            die Segitz Therme direkt in Ihr Postfach zu erhalten.</p>
+          <p>Geben Sie Ihre E-Mail-Adresse ein, um aktuelle Angebote, exklusive Wellness-Tipps und Neuigkeiten rund um die Segitz Therme direkt in Ihr Postfach zu erhalten.</p>
           <div class="form-group">
             <input class="form-control" type="text" placeholder="Ihre E-Mail..." />
             <button class="submit-btn" type="submit">Abonnieren</button>
@@ -616,64 +528,59 @@
   </section>
 
   <footer class="main-footer">
-  <div class="container">
-    
-    <div class="row">
-      <div class="col-4">
-        <h3>Segitz Therme</h3>
-        <p>Gärtnerstraße 45, 90416 Fürth</p>
-        <p>Telefon: 7864546876</p>
-        <p>Email: segitz-therme@mail.com</p>
-        <ul class="sns">
-          <li class="icon-fb">
-            <a href="#">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-          </li>
-          <li class="icon-twitter">
-            <a href="#">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li class="icon-instagram">
-            <a href="#">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </li>
-        </ul>
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <h3>Segitz Therme</h3>
+          <p>Gärtnerstraße 45, 90416 Fürth</p>
+          <p>Telefon: 7864546876</p>
+          <p>Email: segitz-therme@mail.com</p>
+          <ul class="sns">
+            <li class="icon-fb">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="icon-twitter">
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="icon-instagram">
+              <a href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-4">
+          <h3>Öffnungszeiten</h3>
+          <p>Mo-Fr: 09:00 - 20:00 Uhr</p>
+          <p>Sa-So: 10:00 - 22:00 Uhr</p>
+        </div>
+        <div class="col-4">
+          <h3>Informationen</h3>
+          <ul>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutzerklaerung.html">Datenschutz</a></li>
+            <li><a href="agb.html">AGB</a></li>
+          </ul>
+        </div>
+        <div class="awards-container">
+          <img src="images/current/awards/gewinner.png" alt="Gewinner Award">
+          <img src="images/current/awards/Siegel.png" alt="Siegel Award">
+          <img src="images/current/awards/top.png" alt="Top Award">
+        </div>
       </div>
-      <div class="col-4">
-        <h3>Öffnungszeiten</h3>
-        <p>Mo-Fr: 09:00 - 20:00 Uhr</p>
-        <p>Sa-So: 10:00 - 22:00 Uhr</p>
-      </div>
-      <div class="col-4">
-        <h3>Informationen</h3>
-        <ul>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
-          <li><a href="impressum.html">Impressum</a></li>
-          <li><a href="datenschutzerklaerung.html">Datenschutz</a></li>
-          <li><a href="agb.html">AGB</a></li>
-        </ul>
-      </div>
-
-      <div class="awards-container">
-        <img src="images/current/awards/gewinner.png" alt="Gewinner Award">
-        <img src="images/current/awards/Siegel.png" alt="Siegel Award">
-        <img src="images/current/awards/top.png" alt="Top Award">
-      </div>
-
-    </div>
-    <div class="row">
-      <div class="copyright">
-        © 2025 Segitz Therme GmbH
+      <div class="row">
+        <div class="copyright">
+          © 2025 Segitz Therme GmbH
+        </div>
       </div>
     </div>
-    
-  </div>
-  
-</footer>
+  </footer>
 
   <div id="goTop" class="goTop"></div>
 
@@ -688,9 +595,7 @@
         }
       });
       $("#goTop").click(function () {
-        $("html,body").animate({
-          scrollTop: 0
-        }, "slow");
+        $("html,body").animate({ scrollTop: 0 }, "slow");
         return false;
       });
       $(window).scroll(function () {
@@ -703,55 +608,31 @@
       }).scroll();
     });
 
-    document.addEventListener("DOMContentLoaded", function () {
-    // Set grid1 visible by default when the page loads
-    var defaultGrid = document.getElementById("grid1");
-    if (defaultGrid) {
-        defaultGrid.style.display = "block"; // Make grid1 visible
-    }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    // Set grid1 visible by default when the page loads
-    var defaultGrid = document.getElementById("grid1");
-    if (defaultGrid) {
-        defaultGrid.style.display = "block"; // Make grid1 visible
-    }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    // Set grid1 visible by default when the page loads
-    var defaultGrid = document.getElementById("grid1");
-    if (defaultGrid) {
-        defaultGrid.style.display = "block"; // Make grid1 visible
-    }
-});
-
-function toggleSectionVisibility(id) {
-    var grids = document.querySelectorAll('.grid-item-shop');
-    var clickedGrid = document.getElementById(id);
-
-    // Check if the clicked grid is already visible
-    var isVisible = clickedGrid.style.display === 'block';
-
-    // Hide all grids
-    grids.forEach(function (grid) {
+    // Dynamische Pfeil-Drehung & Sichtbarkeitssteuerung
+    function toggleSectionVisibility(id, btn) {
+      // Alle Grids (Shop-Bereiche) ausblenden
+      var grids = document.querySelectorAll('.grid-item-shop');
+      grids.forEach(function (grid) {
         grid.style.display = 'none';
-    });
+      });
 
-    // Toggle visibility: Show only if it was previously hidden
-    if (!isVisible) {
+      // Angeklikktes Grid umschalten
+      var clickedGrid = document.getElementById(id);
+      if (clickedGrid.style.display === 'block') {
+        clickedGrid.style.display = 'none';
+      } else {
         clickedGrid.style.display = 'block';
-
-        // Scroll to the section smoothly
         clickedGrid.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      // Alle Buttons zurücksetzen (aktive Klasse entfernen)
+      var buttons = document.querySelectorAll('.btn');
+      buttons.forEach(function (button) {
+        button.classList.remove('active');
+      });
+      // Auf den angeklickten Button die aktive Klasse setzen
+      btn.classList.add('active');
     }
-}
-
-
-
-
-
   </script>
 
   <div id="popup-container"></div>
@@ -761,23 +642,15 @@ function toggleSectionVisibility(id) {
       .then(response => response.text())
       .then(data => {
         document.getElementById('popup-container').innerHTML = data;
-
-        // Pop-up JavaScript aktivieren
         const closeButton = document.getElementById('popup-close-btn');
         const popup = document.getElementById('popup');
         const hidePopupCheckbox = document.getElementById('hide-popup');
-
-        // Beim Schließen des Pop-ups
         closeButton.addEventListener('click', function () {
           popup.style.display = 'none';
-
-          // Wenn die Checkbox "Nicht mehr anzeigen" aktiviert ist
           if (hidePopupCheckbox.checked) {
             localStorage.setItem('hidePopup', 'true');
           }
         });
-
-        // Pop-up nur anzeigen, wenn es nicht deaktiviert wurde
         if (localStorage.getItem('hidePopup') === 'true') {
           popup.style.display = 'none';
         }
@@ -785,5 +658,4 @@ function toggleSectionVisibility(id) {
       .catch(error => console.error('Fehler beim Laden des Pop-ups:', error));
   </script>
 </body>
-
 </html>
