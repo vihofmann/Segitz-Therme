@@ -414,13 +414,38 @@ h2 {
 }
 .slider-banner .sauna-banner {
   background: url(images/current/sauna-banner.png) top center no-repeat;
+  
+  background-size: cover !important; /* Ensures the entire background image is visible */
+  background-position: center center !important; /* Centers the background image */
+   /* Ensures the div takes full width of its container */
+  height: 100% !important; /* Adjust based on your layout needs */
+  min-height: 500px !important; /* Minimum height to accommodate the image properly */
+  margin: 0 !important; /* Removes any default margins */
+  padding: 0 !important; /* Removes any default padding */
+  box-sizing: border-box !important;
 }
 .slider-banner .therme-banner {
   background: url(images/current/therme-banner.png) top center no-repeat;
+  background-size: cover !important; /* Ensures the entire background image is visible */
+  background-position: center center !important; /* Centers the background image */
+   /* Ensures the div takes full width of its container */
+  height: 100% !important; /* Adjust based on your layout needs */
+  min-height: 500px !important; /* Minimum height to accommodate the image properly */
+  margin: 0 !important; /* Removes any default margins */
+  padding: 0 !important; /* Removes any default padding */
+  box-sizing: border-box !important;
 }
 .slider-banner .wellness-banner {
   
   background: url(images/current/wellness-banner.png) top center no-repeat;
+  background-size: cover !important; /* Ensures the entire background image is visible */
+  background-position: center center !important; /* Centers the background image */
+   /* Ensures the div takes full width of its container */
+  height: 100% !important; /* Adjust based on your layout needs */
+  min-height: 500px !important; /* Minimum height to accommodate the image properly */
+  margin: 0 !important; /* Removes any default margins */
+  padding: 0 !important; /* Removes any default padding */
+  box-sizing: border-box !important;
   
 }
 
@@ -491,11 +516,15 @@ section.doc-section div.container div.row p {
 
 .slider-banner .item-kv-1 {
   background: url('images/current/background-banner.png') top center no-repeat !important;
-  background-size: contain !important; /* Ensures the entire background image is visible */
+  background-size: cover !important; /* Ensures the entire background image is visible */
   background-position: center center !important; /* Centers the background image */
-  width: 100% !important; /* Ensures the div takes full width of its container */
+   /* Ensures the div takes full width of its container */
   height: 100% !important; /* Adjust based on your layout needs */
   min-height: 500px !important; /* Minimum height to accommodate the image properly */
+  margin: 0 !important; /* Removes any default margins */
+  padding: 0 !important; /* Removes any default padding */
+  box-sizing: border-box !important; /* Includes padding and border in the element's total width and height */
+
 }
 
 @media (max-width: 768px) {
@@ -668,6 +697,7 @@ a {
   margin-left: calc(var(--col-gap) * -1);
   margin-right: calc(var(--col-gap) * -1);
 }
+
 [class^="col-"] {
   padding-left: var(--col-gap);
   padding-right: var(--col-gap);
