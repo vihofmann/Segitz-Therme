@@ -1,136 +1,218 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt - Segitz Therme</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .content {
-            display: flex;
-            justify-content: space-between;
-            padding: 50px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt - Segitz Therme</title>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 
-        .contact-info {
-            width: 40%;
-        }
+  <style>
+    .content {
+      display: flex;
+      justify-content: space-between;
+      padding: 50px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .contact-info {
+      width: 40%;
+    }
+    .contact-form {
+      width: 50%;
+    }
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .submit-btn {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background-color: #0056b3;
+    }
+    .contact-info p a {
+      text-decoration: none;
+      color: #007BFF;
+    }
+    .contact-info p a:hover {
+      text-decoration: underline;
+    }
+    .card {
+      margin-left: 12em;
+    }
 
-        .contact-form {
-            width: 50%;
-        }
+    body .form-check {
+  padding-left: 2em;
+}
 
-        input, select, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .submit-btn {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .submit-btn:hover {
-            background-color: #0056b3;
-        }
-
-        .contact-info p a {
-            text-decoration: none;
-            color: #007BFF;
-        }
-
-        .contact-info p a:hover {
-            text-decoration: underline;
-        }
-
-        .radio-group {
-            display: flex;
-            gap: 10px;
-        }
-
-        #datenschutz {
-            margin-right: 10px;
-        }
-    </style>
+.main-nav nav {
+    width: 100%;
+}
+  </style>
 </head>
 <body>
-    <!--Navbar-->
-    <div class="main-nav">
-      <nav class ="sticky">
-        <a href="index.html" class="logo"><img src="images/current/logo.png" alt="Segitz Therme Logo" class="logo"></a>
-        <a href="therme.html">Therme</a>
-        <a href="sauna.html">Sauna</a>
-        <a href="wellness.html">Wellness</a>
-        <a href="ShopGutscheineSeite.html">Shop & Gutscheine</a>
-        <div class="dropdown">
-          <a>Info</a>
-          <div class="dropdown-content">
-            <a href="info.html">Unternehmensgeschichte</a>
-            <a href="Jobs.html">Jobs & Karriere</a>
-            <a href="Unser-team.html">Unser Team</a>
-          </div>
-      </nav>
-    </div>
-<section class="banner-2-bg">
+  <!--Navbar-->
+  <div class="main-nav">
+    <nav class ="sticky">
+      <a href="index.html" class="logo"><img src="images/current/logo.png" alt="Segitz Therme Logo" class="logo"></a>
+      <a href="therme.html">Therme</a>
+      <a href="sauna.html">Sauna</a>
+      <a href="wellness.html">Wellness</a>
+      <a href="ShopGutscheineSeite.html">Shop & Gutscheine</a>
+      <div class="dropdown">
+        <a>Info</a>
+        <div class="dropdown-content">
+          <a href="info.html">Unternehmensgeschichte</a>
+          <a href="Jobs.html">Jobs & Karriere</a>
+          <a href="Unser-team.html">Unser Team</a>
+        </div>
+    </nav>
+  </div>
+
+  <section class="banner-2-bg">
     <!--Inhalt-->
     <section class="all-content">
-    <!--Kontaktbereich-->
-    <section class="content">
+      <!--Kontaktbereich-->
+      <section class="content">
+        <!-- Linke Spalte: Kontakt-Infos -->
         <div class="contact-info">
-            <h1>Ihr Kontakt zu uns</h1>
-            <p><a href="tel:+49911688350"><small><a href="tel:+497864546876">TELEFON:</a></small></a><br>7864546876</p>
-            <p><a href="mailto:segitz-therme@mail.com"><small><a href="mailto:segitz-therme@mail.com">E-MAIL:</a></small></a><br>segitz-therme@mail.com</p>
-            <p><a href="index.html"><small><a href="index.html">ÖFFNUNGSZEITEN:</a></small></a><br>Unsere Öffnungszeiten finden Sie <a href="index.html">hier</a>.</p>
-            <p><a href="index.html"><small><a href="https://www.google.com/maps/dir//Ottostra%C3%9Fe+22,+90762+F%C3%BCrth/">ROUTE BERECHNEN:</a></small></a><br>Zu Google Maps gelangen Sie <a href="https://www.google.com/maps/dir//Ottostra%C3%9Fe+22,+90762+F%C3%BCrth/">hier</a>.</p>
+          <h1>Ihr Kontakt zu uns</h1>
+          <p>
+            <a href="tel:+49911688350">
+              <small>TELEFON:</small>
+            </a>
+            <br>7864546876
+          </p>
+          <p>
+            <a href="mailto:segitz-therme@mail.com">
+              <small>E-MAIL:</small>
+            </a>
+            <br>segitz-therme@mail.com
+          </p>
+          <p>
+            <a href="index.html">
+              <small>ÖFFNUNGSZEITEN:</small>
+            </a>
+            <br>Unsere Öffnungszeiten finden Sie <a href="index.html">hier</a>.
+          </p>
+          <p>
+            <a href="https://www.google.com/maps/dir//Ottostra%C3%9Fe+22,+90762+F%C3%BCrth/">
+              <small>ROUTE BERECHNEN:</small>
+            </a>
+            <br>Zu Google Maps gelangen Sie <a href="https://www.google.com/maps/dir//Ottostra%C3%9Fe+22,+90762+F%C3%BCrth/">hier</a>.
+          </p>
         </div>
-        <div class="contact-form">
-          <form id="contactForm">
-              <label for="anrede">Anrede:</label><br>
-              <div class="radio-group">
-                  <input type="radio" id="herr" name="anrede" value="Herr"> Herr
-                  <input type="radio" id="frau" name="anrede" value="Frau"> Frau
-                  <input type="radio" id="divers" name="anrede" value="Divers"> Divers
-              </div>
-              <br>
-      
-              <label for="name">Name:</label>
-              <input type="text" id="name" name="name" placeholder="Max Mustermann" required>
-      
-              <label for="email">E-Mail-Adresse:</label>
-              <input type="email" id="email" name="email" placeholder="beispiel@mail.com" required>
-      
-              <label for="thema">Thema:</label>
-              <select id="thema" name="thema" required>
-                  <option value="">- Bitte auswählen -</option>
-                  <option value="allgemein">Allgemeine Anfrage</option>
-                  <option value="therme">Therme</option>
-                  <option value="sauna">Sauna</option>
-                  <option value="wellness">Wellness</option>
-                  <option value="shop">Shop & Gutscheine</option>
-              </select>
-      
-              <label for="nachricht">Ihre Nachricht an uns:</label>
-              <textarea id="nachricht" name="nachricht" rows="5" required></textarea>
-              
-              <input type="checkbox" id="datenschutz" name="datenschutz" required>
-              <label for="datenschutz">Ich erkläre mich mit der Verarbeitung der eingegebenen Daten sowie der <a href="datenschutzerklaerung.html">Datenschutzerklärung</a> einverstanden. *</label>
-              <br><br>
-      
-              <button type="submit" class="submit-btn">Absenden</button>
-          </form>
-      </div>
+
+        <!-- Rechte Spalte: Kontaktformular -->
+        <section class="container" id="contactFormContainer">
+          <div class="card">
+            <div class="card-header">
+              Kontaktformular
+            </div>
+            <div class="card-body">
+              <form method="post" id="contactForm">
+                <input type="hidden" name="csrfToken" value="123">
+
+                <!-- Anrede -->
+                <div class="row form-group">
+                  <div class="col-2">
+                    Anrede:
+                  </div>
+                  <div class="col">
+                    <div class="form-check form-check-inline">
+                      <input name="salutation" id="salutationMrs" class="form-check-input" type="radio" value="mrs" required>
+                      <label class="form-check-label" for="salutationMrs"> Frau</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input name="salutation" id="salutationMr" class="form-check-input" type="radio" value="mr">
+                      <label class="form-check-label" for="salutationMr"> Herr</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input name="salutation" id="salutationD" class="form-check-input" type="radio" value="d">
+                      <label class="form-check-label" for="salutationD"> Divers</label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Name -->
+                <div class="row form-group">
+                  <label class="col-2 col-form-label" for="name">
+                    Name:
+                  </label>
+                  <div class="col">
+                    <input type="text" name="name" id="name" placeholder="Max Mustermann" class="form-control" required>
+                  </div>
+                </div>
+
+                <!-- Betreff -->
+                <div class="row form-group">
+                  <label class="col-2 col-form-label" for="subject">
+                    Betreff:
+                  </label>
+                  <div class="col">
+                    <select id="subject" name="subject" class="form-control" required>
+                      <option value="">Bitte wählen</option>
+                      <option value="help">Therme</option>
+                      <option value="feedback">Sauna</option>
+                      <option value="bug">Wellness</option>
+                      <option value="business">Shop/Kaufanfrage</option>
+                      <option value="others">Sonstiges</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Nachricht -->
+                <div class="row form-group">
+                  <label class="col-2 col-form-label" for="message">
+                    Nachricht:
+                  </label>
+                  <div class="col">
+                    <textarea id="message" name="message" class="form-control" rows="3" required></textarea>
+                  </div>
+                </div>
+
+                <!-- Checkbox (Roboter-Bestätigung) -->
+                <div class="row form-group">
+                  <div class="col-2"></div>
+                  <div class="col-10">
+                    <div class="form-check">
+                      <input type="checkbox" name="robot" id="robot" class="form-check-input" required>
+                      <label for="robot" class="form-check-label">
+                        Hiermit bestätige ich, dass ich kein Roboter bin.
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="card-footer">
+              <!-- 'form' Attribut sorgt dafür, dass der Button das obenstehende Formular anspricht -->
+              <button class="btn btn-primary" form="contactForm">Anfrage senden</button>
+            </div>
+          </div>
+        </section>
+      </section>
     </section>
-    </section>
+  </section>
 
   <!--Footer-->
   <footer class="main-footer">
@@ -195,7 +277,13 @@
 
   <!--JS-->
   <div id="goTop" class="goTop"></div>
-  <script src="jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+          integrity="sha384-CSxYr2R+oq6NeqNLS7njq2ns1rCR3Of+eh6drDGqEvM3ilOJz0v+vMCQ19Lh8AuC"
+          crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+          integrity="sha384-1CmrxMRARb6aLqgBO7fwZ6Fx5H2OJ2d8yJhO44i4S3Z7VoXr1SrtN4W8mTnG0qU"
+          crossorigin="anonymous"></script>
+
   <script>
     $(function() {
       $(window).scroll(function() {
@@ -206,9 +294,7 @@
         }
       });
       $("#goTop").click(function() {
-        $("html,body").animate({
-          scrollTop: 0
-        }, "slow");
+        $("html,body").animate({ scrollTop: 0 }, "slow");
         return false;
       });
       $(window).scroll(function() {
@@ -222,44 +308,86 @@
     });
   </script>
 
-<div id="popup-container"></div>
-<script>
-  // Pop-up HTML laden und in die Seite einfügen
-  fetch('popup.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('popup-container').innerHTML = data;
+  <div id="popup-container"></div>
+  <script>
+    // Pop-up HTML laden und in die Seite einfügen
+    fetch('popup.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('popup-container').innerHTML = data;
 
-      // Pop-up JavaScript aktivieren
-      const closeButton = document.getElementById('popup-close-btn');
-      const popup = document.getElementById('popup');
-      const hidePopupCheckbox = document.getElementById('hide-popup');
+        // Pop-up JavaScript aktivieren
+        const closeButton = document.getElementById('popup-close-btn');
+        const popup = document.getElementById('popup');
+        const hidePopupCheckbox = document.getElementById('hide-popup');
 
-      // Beim Schließen des Pop-ups
-      closeButton.addEventListener('click', function () {
-        popup.style.display = 'none';
+        // Beim Schließen des Pop-ups
+        closeButton.addEventListener('click', function () {
+          popup.style.display = 'none';
 
-        // Wenn die Checkbox "Nicht mehr anzeigen" aktiviert ist
-        if (hidePopupCheckbox.checked) {
-          localStorage.setItem('hidePopup', 'true');
+          // Wenn die Checkbox "Nicht mehr anzeigen" aktiviert ist
+          if (hidePopupCheckbox.checked) {
+            localStorage.setItem('hidePopup', 'true');
+          }
+        });
+
+        // Pop-up nur anzeigen, wenn es nicht deaktiviert wurde
+        if (localStorage.getItem('hidePopup') === 'true') {
+          popup.style.display = 'none';
         }
-      });
+      })
+      .catch(error => console.error('Fehler beim Laden des Pop-ups:', error));
+  </script>
 
-      // Pop-up nur anzeigen, wenn es nicht deaktiviert wurde
-      if (localStorage.getItem('hidePopup') === 'true') {
-        popup.style.display = 'none';
+  <script>
+    // Validierung, Simulation der erfolgreichen Übermittlung und Zurücksetzen des Formulars
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Standard-Absenden verhindern
+
+      // 1. Anrede prüfen
+      if (!document.querySelector('input[name="salutation"]:checked')) {
+        alert('Bitte wählen Sie eine Anrede aus.');
+        return;
       }
-    })
-    .catch(error => console.error('Fehler beim Laden des Pop-ups:', error));
-</script>
 
-<script>
-  document.getElementById('contactForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Verhindert das Standardformular-Absenden
-      alert('Vielen Dank für Ihre Nachricht! Sie werden zur Startseite weitergeleitet.');
-      window.location.href = 'index.html'; // Leitet auf index.html weiter
-  });
-</script>
+      // 2. Name prüfen
+      const name = document.getElementById('name').value.trim();
+      if (name === '') {
+        alert('Bitte geben Sie Ihren Namen ein.');
+        return;
+      }
 
+      // 3. Betreff prüfen
+      const subject = document.getElementById('subject').value;
+      if (subject === '') {
+        alert('Bitte wählen Sie einen Betreff aus.');
+        return;
+      }
+
+      // 4. Nachricht prüfen
+      const message = document.getElementById('message').value.trim();
+      if (message === '') {
+        alert('Bitte geben Sie eine Nachricht ein.');
+        return;
+      }
+
+      // 5. Checkbox: Kein Roboter prüfen
+      if (!document.getElementById('robot').checked) {
+        alert('Bitte bestätigen Sie, dass Sie kein Roboter sind.');
+        return;
+      }
+
+      // Wenn alle Pflichtfelder validiert sind:
+      alert('Vielen Dank für Ihre Nachricht! Ihre Anfrage wurde erfolgreich abgesendet.');
+
+      // Formular zurücksetzen (alle Eingaben löschen)
+      document.getElementById('contactForm').reset();
+      
+      // Optional: Leite nach kurzer Zeit zurück zur Startseite
+      // setTimeout(function() {
+      //   window.location.href = 'index.html';
+      // }, 2000);
+    });
+  </script>
 </body>
 </html>

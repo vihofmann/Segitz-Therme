@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produktdetails – Segitz Therme</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #3f3f3f;
+      color: #fff;
+      padding: 15px 20px;
+      text-align: center;
+    }
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .product-image {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    h1 {
+      font-size: 1.8em;
+      margin-top: 10px;
+      color: #333;
+    }
+    .price {
+      font-size: 1.4em;
+      color: #e67e22;
+      margin: 10px 0;
+    }
+    .details {
+      margin: 15px 0;
+    }
+    .details ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      background-color: #3f3f3f;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 4px;
+    }
+    .back-link:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Produktdetails</h1>
+  </header>
+  <div class="container" id="product-container">
+    <!-- Hier werden die Produktdetails geladen -->
+  </div>
+  
+  <script>
+    // Vordefinierte Produktdaten
+    const products = {
+      "paarmassage": {
+        title: "Romantische Paar-Massage",
+        price: "50,00 €",
+        image: "images/current/shop/parrmassage.jpeg",
+        details: [
+          "Eine 60-minütige Massage für zwei Personen",
+          "Nutzung unserer privaten Spa-Einrichtungen",
+          "Komplementäre aromatische Öle und eine Auswahl an beruhigenden Musikoptionen",
+          "Ein kostenloses Glas Sekt"
+        ]
+      },
+      "tag_gutschein": {
+        title: "Tages-Gutschein",
+        price: "45,00 €",
+        image: "images/current/shop/day-gutschein.jpg",
+        details: [
+          "Unbegrenzter Zugang zu Thermalbecken",
+          "Unbegrenzter Sauna-Eintritt",
+          "Nutzung der Ruhezonen",
+          "Begrüßungsgetränk"
+        ]
+      },
+      "aromatherapie_erlebnis": {
+        title: "Aromatherapie-Erlebnis",
+        price: "75,00 €",
+        image: "images/current/shop/aromatherapie-gutschein.jpg",
+        details: [
+          "Eine 90-minütige Aromatherapie-Massage",
+          "Individuelle Auswahl ätherischer Öle",
+          "Privatzugang zur Aromatherapie-Lounge",
+          "Entspannungstee und Snacks"
+        ]
+      },
+      "home_aromatherapy_kit": {
+        title: "Home Aromatherapy Kit",
+        price: "50,00 €",
+        image: "images/current/shop/home-aromatherapy-kit.jpg",
+        details: [
+          "Exklusives Set ätherischer Öle",
+          "Hochwertiger Ultraschall-Aroma-Diffuser",
+          "Detaillierte Anleitung zur Anwendung",
+          "Gutschein für einen Online-Workshop"
+        ]
+      },
+      "luxus_home_spa_kit": {
+        title: "Luxus Home Spa Kit",
+        price: "75,00 €",
+        image: "images/current/shop/luxury-home-spa-kit.jpg",
+        details: [
+          "Hochwertiges Badesalz",
+          "Entspannende Körperöle",
+          "Umweltfreundliche Duftkerzen",
+          "Weiche Spa-Bademäntel und Hausschuhe",
+          "Wiederverwendbare Gesichtsmasken"
+        ]
+      },
+      "thermalwasser_fitness": {
+        title: "Thermalwasser Fitness",
+        price: "100,00 €",
+        image: "images/current/shop/thermal-water-fitness.jpg",
+        details: [
+          "10 Kurse inbegriffen",
+          "Zugang zu spezialisierten Aquafitness-Instruktoren",
+          "Verbessern Sie Flexibilität und Ausdauer",
+          "Stressabbau durch Wassertherapie"
+        ]
+      },
+      "thai_massage": {
+        title: "Thai-Massage",
+        price: "85,00 €",
+        image: "images/current/massage/thai.jpg",
+        details: [
+          "Eine 90-minütige dynamische Massage, die traditionelle Techniken verwendet",
+          "Dehnungen und Gelenkmobilisation zur Verbesserung der Flexibilität und zur Entspannung",
+          "Einsatz von natürlichen Ölen zur Steigerung der Entspannung und zum Lösen von Muskelverspannungen"
+        ]
+      },
+      "hot_stone_massage": {
+        title: "Hot Stone Massage",
+        price: "75,00 €",
+        image: "images/current/massage/stone.jpg",
+        details: [
+          "Eine 60-minütige Massage mit erwärmten Steinen",
+          "Entspannung tiefer Muskelschichten durch gezielte Wärmeeinwirkung",
+          "Komplementäre entspannende Musik zur Steigerung der Wohlfühlatmosphäre"
+        ]
+      },
+      "reflexzonenmassage": {
+        title: "Reflexzonenmassage",
+        price: "60,00 €",
+        image: "images/current/massage/reflex.jpg",
+        details: [
+          "Eine 45-minütige fokussierte Massage der Fußreflexzonen",
+          "Anregung von Körperbereichen durch gezielte Druckpunktmassage",
+          "Eine ruhige Umgebung mit sanfter Entspannungsmusik"
+        ]
+      },
+      "kraeuterstempelmassage": {
+        title: "Kräuterstempelmassage",
+        price: "90,00 €",
+        image: "images/current/massage/Kräuterstempelmassage.jpg",
+        details: [
+          "Eine 70-minütige Massage mit warmen Kräuterstempeln",
+          "Entspannung und Revitalisierung der Haut durch heilende Kräuter",
+          "Sanfte Musik und aromatische Düfte zur Förderung der Entspannung"
+        ]
+      },
+      "gesichtsmassage": {
+        title: "Gesichtsmassage",
+        price: "50,00 €",
+        image: "images/current/massage/Gesichtsmassage.jpg",
+        details: [
+          "Eine 30-minütige sanfte Gesichtsmassage",
+          "Belebung der Gesichtszüge und Förderung der Hautdurchblutung",
+          "Entspannende Hintergrundmusik und sanfte Raumbeleuchtung für maximale Entspannung"
+        ]
+      },
+      "wertgutschein_25": {
+        title: "Wertgutschein 25€",
+        price: "25,00 €",
+        image: "images/current/25-gut.jpg",
+        details: [
+          "Ein Wertgutschein im Wert von 25€"
+        ]
+      },
+      "wertgutschein_50": {
+        title: "Wertgutschein 50€",
+        price: "50,00 €",
+        image: "images/current/50-gut.jpg",
+        details: [
+          "Ein Wertgutschein im Wert von 50€"
+        ]
+      },
+      "wertgutschein_100": {
+        title: "Wertgutschein 100€",
+        price: "100,00 €",
+        image: "images/current/100-gut.jpg",
+        details: [
+          "Ein Wertgutschein im Wert von 100€"
+        ]
+      },
+      "geschenkset_segitz_therme": {
+        title: "Geschenkset Segitz Therme",
+        price: "35,00 €",
+        image: "images/current/set.jpg",
+        details: [
+          "Ein Lippenpflegestift für sanfte Pflege",
+          "Ein Spiegel mit dem Segitz Therme Logo",
+          "Ein weiches Handtuch speziell für das Gesicht"
+        ]
+      }
+    };
+    
+    // URL-Parameter auslesen
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+    
+    const productId = getQueryParam('product');
+    const container = document.getElementById('product-container');
+    
+    if (productId && products[productId]) {
+      const product = products[productId];
+      let html = `
+        <img src="${product.image}" alt="${product.title}" class="product-image">
+        <h1>${product.title}</h1>
+        <p class="price">${product.price}</p>
+        <div class="details">
+          <h3>Details:</h3>
+          <ul>`;
+      product.details.forEach(item => {
+        html += `<li>${item}</li>`;
+      });
+      html += `</ul>
+        </div>
+        <a href="ShopGutscheineSeite.html" class="back-link">Zurück zum Shop</a>
+      `;
+      container.innerHTML = html;
+    } else {
+      container.innerHTML = '<p>Produkt nicht gefunden.</p><a href="ShopGutscheineSeite.html" class="back-link">Zurück zum Shop</a>';
+    }
+  </script>
+</body>
+</html>
