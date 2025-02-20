@@ -452,7 +452,7 @@ h2 {
 
 .h1-überschrift {
   position: absolute;
-  margin: 18% 10%;
+  margin: 10% 10%;
   z-index: 2;
   color: white;
   /*-webkit-text-stroke: 2px  #1d425b; */
@@ -939,6 +939,9 @@ a {
 .slider-banner {
   color: #fff;
   position: relative;
+  display: flex;
+  justify-content: center !important; /* Centers horizontally */
+  align-items: center !important;
 }
 .slider-banner .container {
   position: relative;
