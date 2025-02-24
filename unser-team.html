@@ -373,23 +373,42 @@
 
 
 
-    <!--Newsletter-->
-    <section class="fill-banner">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-10 col-xl-5">
-            <h2>Irgendwelche Fragen?</h2>
-            <p>Geben Sie Ihre E-Mail-Adresse ein, um aktuelle Angebote, exklusive Wellness-Tipps und Neuigkeiten rund um
-              die Segitz Therme direkt in Ihr Postfach zu erhalten.</p>
-            <div class="form-group">
-              <input class="form-control" type="text" placeholder="Ihre E-Mail..." />
-              <button class="submit-btn" type="submit">Abonnieren</button>
-            </div>
+<!--Newsletter-->
+<section class="fill-banner banner-1-bg" style="background: none !important;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-10 col-xl-5">
+        <h2>Irgendwelche Fragen?</h2>
+        <p>
+          Geben Sie Ihre E-Mail-Adresse ein, um aktuelle Angebote, exklusive Wellness-Tipps und Neuigkeiten rund um die Segitz Therme direkt in Ihr Postfach zu erhalten.
+        </p>
+
+        <form id="newsletterForm" style="max-width: 100%;">
+          <div class="form-group" style="display: flex;">
+            <input
+              id="newsletter-email"
+              name="newsletter-email"
+              class="form-control"
+              type="email"
+              placeholder="Ihre E-Mail..."
+              required
+              style="border-top-right-radius: 0; border-bottom-right-radius: 0;"
+            />
+            <button
+              id="subscribe-btn"
+              class="submit-btn"
+              type="submit"
+              style="border-top-left-radius: 0; border-bottom-left-radius: 0;"
+            >
+              Abonnieren
+            </button>
           </div>
-        </div>
+        </form>
       </div>
-    </section>
-  </section>
+    </div>
+  </div>
+</section>
+
 
 
     <!--Footer-->
@@ -404,17 +423,17 @@
             <p>Email: segitz-therme@mail.com</p>
             <ul class="sns">
               <li class="icon-fb">
-                <a href="#">
+                <a href="https://www.facebook.com/">
                   <i class="fab fa-facebook-f"></i>
                 </a>
               </li>
               <li class="icon-twitter">
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
+                <a href="https://x.com/">
+                  <i class="fab fa-x"></i>
                 </a>
               </li>
               <li class="icon-instagram">
-                <a href="#">
+                <a href="https://www.instagram.com/">
                   <i class="fab fa-instagram"></i>
                 </a>
               </li>
@@ -537,6 +556,32 @@
     })
     .catch(error => console.error('Fehler beim Laden des Pop-ups:', error));
 </script>
+
+<script>
+  document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Standard-Absenden verhindern
+  
+    const emailInput = document.getElementById('newsletter-email');
+    const email = emailInput.value.trim();
+  
+    // Prüfen, ob die E-Mail-Adresse eingegeben wurde
+    if (email === '') {
+      alert('Bitte geben Sie Ihre E-Mail-Adresse ein.');
+      return;
+    }
+  
+    // Überprüfen, ob die E-Mail-Adresse dem Standardformat entspricht
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('Bitte geben Sie eine gültige E-Mail-Adresse ein.');
+      return;
+    }
+  
+    // Wenn alle Prüfungen erfolgreich sind:
+    alert('Vielen Dank für Ihre Anmeldung zum Newsletter!');
+    // Optional: Weiterleitung oder andere Aktionen
+  });
+  </script>
 
 </body>
 

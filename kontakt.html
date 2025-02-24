@@ -59,14 +59,12 @@
     .card {
       margin-left: 4em;
     }
-
     body .form-check {
-  padding-left: 2em;
-}
-
-.main-nav nav {
-    width: 100%;
-}
+      padding-left: 2em;
+    }
+    .main-nav nav {
+      width: 100%;
+    }
   </style>
 </head>
 <body>
@@ -163,6 +161,14 @@
                   </div>
                 </div>
 
+                <!-- E-Mail -->
+                <div class="row form-group">
+                  <label class="col-2 col-form-label" for="email">E-Mail:</label>
+                  <div class="col">
+                    <input type="email" name="email" id="email" placeholder="name@beispiel.de" class="form-control" required>
+                  </div>
+                </div>
+
                 <!-- Betreff -->
                 <div class="row form-group">
                   <label class="col-2 col-form-label" for="subject">
@@ -213,7 +219,41 @@
       </section>
     </section>
   </section>
+<!--Newsletter-->
+<section class="fill-banner banner-1-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-10 col-xl-5">
+        <h2>Irgendwelche Fragen?</h2>
+        <p>
+          Geben Sie Ihre E-Mail-Adresse ein, um aktuelle Angebote, exklusive Wellness-Tipps und Neuigkeiten rund um die Segitz Therme direkt in Ihr Postfach zu erhalten.
+        </p>
 
+        <form id="newsletterForm" style="max-width: 100%;">
+          <div class="form-group" style="display: flex;">
+            <input
+              id="newsletter-email"
+              name="newsletter-email"
+              class="form-control"
+              type="email"
+              placeholder="Ihre E-Mail..."
+              required
+              style="border-top-right-radius: 0; border-bottom-right-radius: 0;"
+            />
+            <button
+              id="subscribe-btn"
+              class="submit-btn"
+              type="submit"
+              style="border-top-left-radius: 0; border-bottom-left-radius: 0;"
+            >
+              Abonnieren
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
   <!--Footer-->
   <footer class="main-footer">
     <div class="container">
@@ -226,17 +266,17 @@
           <p>Email: segitz-therme@mail.com</p>
           <ul class="sns">
             <li class="icon-fb">
-              <a href="#">
+              <a href="https://www.facebook.com/">
                 <i class="fab fa-facebook-f"></i>
               </a>
             </li>
             <li class="icon-twitter">
-              <a href="#">
-                <i class="fab fa-twitter"></i>
+              <a href="https://x.com/">
+                <i class="fab fa-x"></i>
               </a>
             </li>
             <li class="icon-instagram">
-              <a href="#">
+              <a href="https://www.instagram.com/">
                 <i class="fab fa-instagram"></i>
               </a>
             </li>
@@ -356,6 +396,18 @@
         alert('Bitte geben Sie Ihren Namen ein.');
         return;
       }
+      
+      // 2a. E-Mail prüfen
+      const email = document.getElementById('email').value.trim();
+      if (email === '') {
+        alert('Bitte geben Sie Ihre E-Mail-Adresse ein.');
+        return;
+      }
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Bitte geben Sie eine gültige E-Mail-Adresse ein.');
+        return;
+      }
 
       // 3. Betreff prüfen
       const subject = document.getElementById('subject').value;
@@ -388,6 +440,32 @@
       //   window.location.href = 'index.html';
       // }, 2000);
     });
+  </script>
+
+<script>
+  document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Standard-Absenden verhindern
+  
+    const emailInput = document.getElementById('newsletter-email');
+    const email = emailInput.value.trim();
+  
+    // Prüfen, ob die E-Mail-Adresse eingegeben wurde
+    if (email === '') {
+      alert('Bitte geben Sie Ihre E-Mail-Adresse ein.');
+      return;
+    }
+  
+    // Überprüfen, ob die E-Mail-Adresse dem Standardformat entspricht
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('Bitte geben Sie eine gültige E-Mail-Adresse ein.');
+      return;
+    }
+  
+    // Wenn alle Prüfungen erfolgreich sind:
+    alert('Vielen Dank für Ihre Anmeldung zum Newsletter!');
+    // Optional: Weiterleitung oder andere Aktionen
+  });
   </script>
 </body>
 </html>
